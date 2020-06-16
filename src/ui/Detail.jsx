@@ -163,7 +163,8 @@ const rows = [
 const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 
 
-export default function FixedContainer() {
+export default function Detail(props) {
+    const id = props.match.params.id
     const editor = useRef(null)
     const [itemTitle, setTitle] = useState(itemTitleText);
     const [itemDetail, setDetail] = useState(itemDetailText);
@@ -324,7 +325,7 @@ export default function FixedContainer() {
                                 </Box>
                                 <TextField id="fabric" label="素材" variant="standard" fullWidth />
                                 <TextField id="manifactured" label="原産国" variant="standard" fullWidth value={'中国'} />
-                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth />
+                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth value={id} />
                                 <TextField id="itemReturn" label="返品について" variant="standard" fullWidth />
                             </Box>
                         </Container>
