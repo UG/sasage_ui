@@ -1,14 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import clsx from 'clsx';
 import { lighten, makeStyles } from '@material-ui/core/styles';
-import { Table, TableBody, TableCell, TableHead, TableRow, TablePagination, TableSortLabel, Toolbar, Paper, Box, Typography, TableContainer } from '@material-ui/core';
-;
+import { Table, TableBody, TableCell, TableHead, TableRow, TablePagination, TableSortLabel, Toolbar, Paper, Box, Typography, TableContainer, Grid, InputBase, IconButton, Checkbox } from '@material-ui/core';
+import { Search, GetApp, Publish } from '@material-ui/icons';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '90%',
         marginLeft: 'auto',
-        marginRight: 'auto'
+        marginRight: 'auto',
     },
     paper: {
         width: '100%',
@@ -17,20 +18,9 @@ const useStyles = makeStyles((theme) => ({
     table: {
         minWidth: 550,
     },
-    visuallyHidden: {
-        border: 0,
-        clip: 'rect(0 0 0 0)',
-        height: 1,
-        margin: -1,
-        overflow: 'hidden',
-        padding: 0,
-        position: 'absolute',
-        top: 20,
-        width: 1,
-    },
     virticalSpacing: {
         height: 40
-    }
+    },
 }));
 
 function createData(id, title, price, size, madeby, nutrition, detail) {
@@ -97,7 +87,7 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
-    const { classes, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+    const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
     };
@@ -105,6 +95,14 @@ function EnhancedTableHead(props) {
     return (
         <TableHead>
             <TableRow>
+                <TableCell padding="checkbox">
+                    <Checkbox
+                        indeterminate={numSelected > 0 && numSelected < rowCount}
+                        checked={rowCount > 0 && numSelected === rowCount}
+                        onChange={onSelectAllClick}
+                        inputProps={{ 'aria-label': 'select all desserts' }}
+                    />
+                </TableCell>
                 {headCells.map((headCell) => (
                     <TableCell
                         key={headCell.id}
@@ -130,15 +128,6 @@ function EnhancedTableHead(props) {
         </TableHead>
     );
 }
-EnhancedTableHead.propTypes = {
-    classes: PropTypes.object.isRequired,
-    numSelected: PropTypes.number.isRequired,
-    onRequestSort: PropTypes.func.isRequired,
-    onSelectAllClick: PropTypes.func.isRequired,
-    order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-    orderBy: PropTypes.string.isRequired,
-    rowCount: PropTypes.number.isRequired,
-};
 
 const useToolbarStyles = makeStyles((theme) => ({
     root: {
@@ -158,26 +147,64 @@ const useToolbarStyles = makeStyles((theme) => ({
     title: {
         flex: '1 1 100%',
     },
+    files: {
+        textAlign: 'right'
+    },
+    searchBox: {
+        border: "1px solid orange",
+        padding: '2px 4px',
+        display: 'flex',
+        width: 400,
+    },
+    input: {
+        marginLeft: theme.spacing(1),
+        flex: 1,
+    },
+    iconButton: {
+        padding: 10,
+    },
 }));
 
 const EnhancedTableToolbar = (props) => {
     const classes = useToolbarStyles();
-
+    const { numSelected } = props;
     return (
-        <Toolbar>
-            <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-                ささげ商品
-            </Typography>
+        <Toolbar
+            className={clsx(classes.root, {
+                [classes.highlight]: numSelected > 0,
+            })}
+        >
+            <Grid container>
+                <Grid item xs={3} >
+                    <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
+                        ささげ商品
+                    </Typography>
+                </Grid>
+                <Grid item xs={6} >
+                    <Paper component="form" className={classes.searchBox}>
+                        <InputBase
+                            className={classes.input}
+                            placeholder="プロダクト名, JANコード検索"
+                            inputProps={{ 'aria-label': 'プロダクト名 JANコード' }}
+                        />
+                        <IconButton type="submit" className={classes.iconButton} aria-label="search">
+                            <Search />
+                        </IconButton>
+                    </Paper>
+                </Grid>
+                <Grid item xs={3} className={classes.files}>
+                    <IconButton><GetApp /></IconButton>
+                    <IconButton><Publish /></IconButton>
+                </Grid>
+            </Grid>
         </Toolbar>
     );
 };
 
-EnhancedTableToolbar.propTypes = {
-    numSelected: PropTypes.number.isRequired,
-};
 
 
-export default function ListView() {
+
+export default function ListView(props) {
     const classes = useStyles();
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('calories');
@@ -191,18 +218,24 @@ export default function ListView() {
         setOrderBy(property);
     };
 
-
+    const handleSelectAllClick = (event) => {
+        if (event.target.checked) {
+            const newSelecteds = rows.map((n) => n.id);
+            setSelected(newSelecteds);
+            return;
+        }
+        setSelected([]);
+    };
     const handleClick = (event, id) => {
         const selectedIndex = selected.indexOf(id);
 
-        /**  
         let newSelected = [];
         if (selectedIndex === -1) {
             newSelected = newSelected.concat(selected, id);
         } else if (selectedIndex === 0) {
             newSelected = newSelected.concat(selected.slice(1));
         } else if (selectedIndex === selected.length - 1) {
-             newSelected = newSelected.concat(selected.slice(0, -1));
+            newSelected = newSelected.concat(selected.slice(0, -1));
         } else if (selectedIndex > 0) {
             newSelected = newSelected.concat(
                 selected.slice(0, selectedIndex),
@@ -210,7 +243,6 @@ export default function ListView() {
             );
         }
         setSelected(newSelected);
-        */
     };
 
     const handleChangePage = (event, newPage) => {
@@ -230,7 +262,7 @@ export default function ListView() {
     return (
         <div className={classes.root}>
             <Box className={classes.virticalSpacing} ></Box>
-            <Paper className={classes.paper}>
+            <Paper className={classes.paper} >
                 <EnhancedTableToolbar numSelected={selected.length} />
                 <TableContainer>
                     <Table
@@ -244,6 +276,7 @@ export default function ListView() {
                             numSelected={selected.length}
                             order={order}
                             orderBy={orderBy}
+                            onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
                             rowCount={rows.length}
                         />
@@ -253,7 +286,6 @@ export default function ListView() {
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.id);
                                     const labelId = `enhanced-table-checkbox-${index}`;
-
                                     return (
                                         <TableRow
                                             hover
@@ -264,8 +296,13 @@ export default function ListView() {
                                             key={row.id}
                                             selected={isItemSelected}
                                         >
-
-                                            <TableCell component="th" id={labelId} scope="row" padding="none" align="center"><a href={"./Detail?id=" + row.id}>{row.id}</a></TableCell>
+                                            <TableCell padding="checkbox">
+                                                <Checkbox
+                                                    checked={isItemSelected}
+                                                    inputProps={{ 'aria-labelledby': labelId }}
+                                                />
+                                            </TableCell>
+                                            <TableCell component="th" id={labelId} scope="row" padding="none" align="center"><Link to={'/Detail/' + row.id + '/'}>{row.id}</Link></TableCell>
                                             <TableCell align="center">{row.title}</TableCell>
                                             <TableCell align="center">{row.price}</TableCell>
                                             <TableCell align="center">{row.size}</TableCell>
@@ -284,7 +321,7 @@ export default function ListView() {
                     </Table>
                 </TableContainer>
                 <TablePagination
-                    rowsPerPageOptions={20}
+                    rowsPerPageOptions={[20]}
                     component="div"
                     count={rows.length}
                     rowsPerPage={rowsPerPage}
@@ -297,3 +334,4 @@ export default function ListView() {
         </div >
     );
 }
+
