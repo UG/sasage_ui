@@ -7,7 +7,9 @@ import { ArrowBack, Visibility, VisibilityOff } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import Gallery from "react-photo-gallery";
+import ReactImageMagnify from 'react-image-magnify';
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -18,11 +20,13 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
         maxWidth: 600,
-        maxHeight: 360,
+        maxHeight: 230,
         margin: 5,
+        flexWrap: 'nowrap',
+        overflow: 'auto'
     },
     gridImage: {
-        width: 125,
+        width: 130,
         height: 180,
     },
     verticalTiny: {
@@ -54,6 +58,23 @@ const useStyles = makeStyles((theme) => ({
     border: {
         border: '1px solid #666',
         padding: 15
+    },
+    mainImage: {
+        textAlign: 'center',
+        width: 300,
+        height: 400
+    },
+    overlay: {
+        textAlign: 'center',
+        position: 'relative',
+        bottom: 30,
+        height: 30,
+        background: 'rgba(0, 0, 0, 0.4)',
+        color: '#f1f1f1',
+        width: '100%',
+        transition: '.5s ease',
+        opacity: 1,
+        fontSize: 12,
     }
 }));
 const brand = ["XLARGE", "XLARGE USA", "MILKFED", "X-GIRL", "MILKFED(KIDS)", "MTG", "HUNTISM", "SILAS", "SILAS WOMEN", "SILAS OTHER", "MARIA OTHER", "X-GIRL STAGES FIRST STAGE", "X-GIRL STAGES NEXT STAGE", "XL-KIDS", "STITCH", "ADIDAS", "XG", "SARCASTIC", "AMONGST FRIENDS", "2K BY GINGHAM", "SNEAKER LAB", "NIKE", "NEW BALANCE", "REEBOK", "MILK CRATE", "ANYTHING", "VANS", "PUMA", "US VERSUS THEM", "ODD FUTURE", "DJ SHADOW", "COCOLO BLAND", "LADYS SHOES", "LAKAI MAIN", "LAKAI ANCHOR", "LAKAI ECHELON", "LAKAI STANDARD", "THE HILL SIDE ", "WHITE RAVEN", "Community Mill 雑貨", "Community Mill アパレル", "CONVERSE", "ASICS TIGER", "STANCE", "CHAMPION", "CANDIES", "MISFISH T", "NITTA KEIICHI", "GIZMOBIES", "OGURA", "FLATLUX", "TERUYA", "X-CLOSET ADIDAS ORIGINALS", "X-CLOSET", "店舗 OTHER", "CALIF OTHER", "営サ OTHER", "STYLES OTHER", "MONTAGE OTHER", "STITCH OTHER", "XG OTHER", "X-GIRL STAGES OTHER", "X-GIRL OTHER", "MILKFED OTHER", "XLARGE OTHER"];
@@ -71,21 +92,21 @@ const imgList = [
         src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a001.jpg',
         id: 'XLE0120M0040_pz_a001',
         title: '',
-        alt: '',
-        representive: '',
+        alt: 'alt 123',
+        representive: 'ブラック',
     },
     {
         src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a002.jpg',
         id: 'XLE0120M0040_pz_a002',
         title: 'モデル175cm',
-        alt: '',
+        alt: 'alt hoge',
         representive: '',
     },
     {
         src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a003.jpg',
         id: 'XLE0120M0040_pz_a003.',
         title: 'モデル175cm',
-        alt: '',
+        alt: 'alt piyo',
         representive: '',
     },
     {
@@ -104,21 +125,21 @@ const imgList = [
     },
     {
         src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a006.jpg',
-        id: 'XLE0120M0040_pz_a005',
+        id: 'XLE0120M0040_pz_a006',
         title: 'モデル175cm',
         alt: '',
         representive: '',
     },
     {
         src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a007.jpg',
-        id: 'XLE0120M0040_pz_a005',
+        id: 'XLE0120M0040_pz_a007',
         title: 'モデル175cm',
         alt: '',
         representive: '',
     },
     {
         src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a008.jpg',
-        id: 'XLE0120M0040_pz_a005',
+        id: 'XLE0120M0040_pz_a008',
         title: 'モデル175cm',
         alt: '',
         representive: '',
@@ -203,25 +224,16 @@ const variantsHeader = ['カラー', 'サイズ', '価格', '在庫'];
 function createData(size, length, shawl, hood, sleeve) {
     return { size, length, shawl, hood, sleeve };
 }
-
 const rows = [
     createData("S", "70.5cm", "44cm", "46.5cm", "17cm"),
     createData("M", "72cm", "47.5cm", "51.5cm", "17.5cm"),
     createData("L", "75.5cm", "51cm", "55.5cm", "19cm"),
     createData("XL", "79.5cm", "58cm", "60.5cm", "20cm"),
 ];
+const relatedItems = ['', '', '', '', '', '', '', '', '', ''];
 const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 export default function Detail() {
     let { id } = useParams();
-    const [formats, setFormats] = React.useState('white');
-    const handleFormat = (event, newFormat) => {
-        if (newFormat) {
-            setFormats(newFormat);
-        } else {
-            setFormats('');
-        }
-    };
-    let relatedItems = ['', '', '', '', '', '', '', '', '', ''];
     const editor = useRef(null)
     const [sd, setSasage] = useState(
         {
@@ -245,16 +257,32 @@ export default function Detail() {
             relatedItem: relatedItems
         }
     );
-    const config = {
-        readonly: false
+    const [si, setSI] = React.useState(sd.images[0]);
+    const setRepresentive = (event, newRepresentive) => {
+        if (newRepresentive) {
+            sd.images[sd.images.indexOf(si)].representive = newRepresentive;
+        } else {
+            sd.images[sd.images.indexOf(si)].representive = '';
+        }
+        setSasage(sd);
+    };
+    const setAlt = (event, alt) => {
+        sd.images[sd.images.indexOf(si)].alt = alt;
+        setSasage(sd);
+    }
+    const setTitle = (event, title) => {
+        sd.images[sd.images.indexOf(si)].title = title;
+        setSasage(sd);
     }
     const classes = useStyles();
-
     const onDragEnd = (result) => {
         const { source, destination } = result;
         if (!destination) { return; }
         sd.images.splice(destination.index, 0, sd.images.splice(source.index, 1)[0]);
         setSasage(sd);
+    }
+    function changeSelectItem(item) {
+        setSI(item);
     }
     return (
         <div className={classes.root}>
@@ -272,38 +300,52 @@ export default function Detail() {
                 <Grid container spacing={1}>
                     <Grid item xs={6}>
                         <Box className={classes.border} padding={3}>
-                            <DropzoneArea dropzoneText={"イメージをここでドラッグ＆ドロップ"} ></DropzoneArea>
+                            <Box className={classes.mainImage}>
+                                <ReactImageMagnify {...{
+                                    smallImage: {
+                                        alt: si.alt,
+                                        src: si.src,
+                                        isFluidWidth: true,
+                                    },
+                                    largeImage: {
+                                        src: si.src,
+                                        width: 1200,
+                                        height: 1800
+                                    }
+                                }} />
+                            </Box>
                             <Box>
                                 <ToggleButtonGroup
-                                    value={formats}
-                                    onChange={handleFormat}
+                                    key={sd.images[sd.images.indexOf(si).id]}
+                                    value={sd.images[sd.images.indexOf(si)].representive}
+                                    onChange={setRepresentive}
                                     exclusive
                                     aria-label="text formatting">
-                                    <ToggleButton value="white" aria-label="white">
+                                    <ToggleButton value="ホワイト" aria-label="white">
                                         <Typography>ホワイト</Typography>
                                     </ToggleButton>
-                                    <ToggleButton value="black" aria-label="black">
+                                    <ToggleButton value="ブラック" aria-label="black">
                                         <Typography>ブラック</Typography>
                                     </ToggleButton>
-                                    <ToggleButton value="oragne" aria-label="orange">
+                                    <ToggleButton value="オレンジ" aria-label="orange">
                                         <Typography>オレンジ</Typography>
                                     </ToggleButton>
                                 </ToggleButtonGroup>
                             </Box>
-                            <TextField id="model_info" label="モデル情報" variant="standard" fullWidth />
-                            <TextField id="alt_text" label="ALT 文言" variant="standard" fullWidth />
+                            <TextField key={'title-' + si.id} label="モデル情報" variant="standard" fullWidth defaultValue={si.title} onChange={setTitle} />
+                            <TextField key={'alt-' + si.id} label="ALT 文言" variant="standard" fullWidth defaultValue={si.alt} onChange={setAlt} />
                             <Box className={classes.verticalSpace} />
                             {/* image Tile  */}
-                            <DragDropContext onDragEnd={onDragEnd} className={classes.gridList}>
-                                <Droppable droppableId="items" type="DraggableItem" direction="horizontal" className={classes.gridList}>
-                                    {(provided, snapshot) => (
-                                        <div
-                                            {...provided.draggableProps}
-                                            {...provided.dragHandleProps}
-                                            style={{ display: "flex" }}
-                                            ref={provided.innerRef}
-                                        >
-                                            <GridList className={classes.gridList}>
+                            <Container className={classes.gridList}>
+                                <DragDropContext onDragEnd={onDragEnd} className={classes.gridList}>
+                                    <Droppable droppableId="items" type="DraggableItem" direction="horizontal" className={classes.gridList}>
+                                        {(provided, snapshot) => (
+                                            <div
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                                style={{ display: "flex" }}
+                                                ref={provided.innerRef}
+                                            >
                                                 {sd.images.map((item, index) => (
                                                     <Draggable key={item.id} draggableId={item.id} index={index}>
                                                         {(fromprovided, fromsnapshot) => (
@@ -312,20 +354,18 @@ export default function Detail() {
                                                                 {...fromprovided.draggableProps}
                                                                 {...fromprovided.dragHandleProps}
                                                             >
-                                                                <GridListTile key={item.id} cols={1} className={classes.gridImage}>
-                                                                    <img src={item.src} alt={item.title} className={classes.gridImage} />
-                                                                    <GridListTileBar title={<Typography variant="caption">{item.title}</Typography>} />
-                                                                </GridListTile>
+                                                                <img src={item.src} alt={item.id} className={classes.gridImage} onClick={() => (changeSelectItem(item))} />
+                                                                <div class={classes.overlay}>{item.title}</div>
                                                             </div>
                                                         )}
                                                     </Draggable>
                                                 ))}
-                                            </GridList>
-                                            {provided.placeholder}
-                                        </div>
-                                    )}
-                                </Droppable>
-                            </DragDropContext >
+                                                {provided.placeholder}
+                                            </div>
+                                        )}
+                                    </Droppable>
+                                </DragDropContext >
+                            </Container>
                         </Box>
                         <Box>
                             <TextField type="string"
@@ -388,7 +428,7 @@ export default function Detail() {
                                     id={"titleExtend"}
                                     ref={editor}
                                     value={sd['titleExtend']}
-                                    config={config}
+                                    config={{ readonly: false }}
                                     tabIndex={1} // tabIndex of textarea
                                     onBlur={newTitle => setSasage(sd)}
                                     onChange={newTitle => { }}
@@ -433,7 +473,7 @@ export default function Detail() {
                                     id={"detail"}
                                     ref={editor}
                                     value={sd['detail']}
-                                    config={config}
+                                    config={{ readonly: false }}
                                     tabIndex={1} // tabIndex of textarea
                                     onBlur={newDetail => setSasage(sd)}
                                     onChange={newDetail => { }}
@@ -490,12 +530,6 @@ export default function Detail() {
 }
 
 
-// a little function to help us with reordering the result
-const reorder = (list, startIndex, endIndex) => {
-    const result = Array.from(list);
-    const [removed] = result.splice(startIndex, 1);
-    result.splice(endIndex, 0, removed);
-    return result;
-};
+
 
 

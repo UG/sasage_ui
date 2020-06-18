@@ -55,6 +55,7 @@
     "react-beautiful-dnd": "^13.0.0",
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
+    "react-image-magnify": "^2.7.4",
     "react-photo-gallery": "^8.0.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
