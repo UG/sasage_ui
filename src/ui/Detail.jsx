@@ -6,6 +6,8 @@ import { DropzoneArea } from 'material-ui-dropzone';
 import { ArrowBack, Visibility, VisibilityOff } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import Gallery from "react-photo-gallery";
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -188,8 +190,6 @@ const rows = [
     createData("XL", "79.5cm", "58cm", "60.5cm", "20cm"),
 ];
 const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
-
-
 export default function Detail() {
     let { id } = useParams();
     const [formats, setFormats] = React.useState('white');
@@ -202,6 +202,8 @@ export default function Detail() {
     };
     let relatedItems = ['', '', '', '', '', '', '', '', '', ''];
     const editor = useRef(null)
+    const [IOrder, setIOrder] = useState({ items: getItems(10) });
+    console.log(IOrder);
     const [sd, setSasage] = useState(
         {
             title: '',
@@ -229,6 +231,12 @@ export default function Detail() {
     }
     const classes = useStyles();
 
+    const onDragEnd = (result) => {
+        const { source, destination } = result;
+        if (!destination) { return; }
+        IOrder.items.splice(destination.index, 0, IOrder.items.splice(source.index, 1)[0]);
+        setIOrder(IOrder);
+    }
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -268,14 +276,36 @@ export default function Detail() {
                         </Box>
                         {/* image Tile  */}
                         <Box>
-                            <GridList className={classes.gridList}>
-                                {imgList.map((tile) => (
-                                    <GridListTile key={tile.id} cols={0.5}>
-                                        <img src={tile.src} alt={tile.title} className={classes.gridImage} />
-                                        <GridListTileBar title={<Typography variant="caption">{tile.title}</Typography>} />
-                                    </GridListTile>
-                                ))}
-                            </GridList>
+                            <DragDropContext onDragEnd={onDragEnd}>
+                                <GridList className={classes.gridList}>
+                                    <Droppable droppableId="items" type="DraggableItem" direction="horizontal">
+                                        {(provided, snapshot) => (
+                                            <div
+                                                {...provided.draggableProps}
+                                                {...provided.dragHandleProps}
+                                                style={{ display: "flex" }}
+                                                ref={provided.innerRef}
+                                            >
+
+                                                {IOrder.items.map((item, index) => (
+                                                    <Draggable key={item.id} draggableId={item.id} index={index}>
+                                                        {(fromprovided, fromsnapshot) => (
+                                                            <div
+                                                                ref={fromprovided.innerRef}
+                                                                {...fromprovided.draggableProps}
+                                                                {...fromprovided.dragHandleProps}
+                                                            >
+                                                                {item.content}
+                                                            </div>
+                                                        )}
+                                                    </Draggable>
+                                                ))}
+                                                {provided.placeholder}
+                                            </div>
+                                        )}
+                                    </Droppable>
+                                </GridList>
+                            </DragDropContext >
                         </Box>
                         <Box>
                             <TextField type="string"
@@ -438,3 +468,21 @@ export default function Detail() {
         </div >
     );
 }
+
+const getItems = count =>
+    Array.from({ length: count }, (v, k) => k).map(k => ({
+        id: `item-${k}`,
+        content: `image ${k}`
+    }));
+
+// a little function to help us with reordering the result
+const reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+};
+
+const grid = 8;
+
