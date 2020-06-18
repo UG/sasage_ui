@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Editor from '../editor';
-import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, GridList, GridListTile, GridListTileBar, Button, IconButton, MenuItem, FormControl, Select, InputLabel, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
+import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, GridList, GridListTile, GridListTileBar, Button, MenuItem, FormControl, Select, InputLabel, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
 import { DropzoneArea } from 'material-ui-dropzone';
 import { ArrowBack, Visibility, VisibilityOff } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
@@ -17,13 +17,13 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.background.paper,
     },
     gridList: {
-        width: 500,
-        height: 400,
-        transform: 'translateZ(0)',
+        maxWidth: 600,
+        maxHeight: 360,
+        margin: 5,
     },
     gridImage: {
-        width: 132,
-        height: 170
+        width: 125,
+        height: 180,
     },
     verticalTiny: {
         height: 20,
@@ -97,6 +97,27 @@ const imgList = [
     },
     {
         src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a005.jpg',
+        id: 'XLE0120M0040_pz_a005',
+        title: 'モデル175cm',
+        alt: '',
+        representive: '',
+    },
+    {
+        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a006.jpg',
+        id: 'XLE0120M0040_pz_a005',
+        title: 'モデル175cm',
+        alt: '',
+        representive: '',
+    },
+    {
+        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a007.jpg',
+        id: 'XLE0120M0040_pz_a005',
+        title: 'モデル175cm',
+        alt: '',
+        representive: '',
+    },
+    {
+        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a008.jpg',
         id: 'XLE0120M0040_pz_a005',
         title: 'モデル175cm',
         alt: '',
@@ -202,8 +223,6 @@ export default function Detail() {
     };
     let relatedItems = ['', '', '', '', '', '', '', '', '', ''];
     const editor = useRef(null)
-    const [IOrder, setIOrder] = useState({ items: getItems(10) });
-    console.log(IOrder);
     const [sd, setSasage] = useState(
         {
             title: '',
@@ -219,7 +238,7 @@ export default function Detail() {
             jancode: '',
             return: '',
             weight: '',
-            images: [],
+            images: imgList,
             sizeTableHTML: '',
             sizeTableId: '',
             sizeTableText: sizeTableText,
@@ -234,8 +253,8 @@ export default function Detail() {
     const onDragEnd = (result) => {
         const { source, destination } = result;
         if (!destination) { return; }
-        IOrder.items.splice(destination.index, 0, IOrder.items.splice(source.index, 1)[0]);
-        setIOrder(IOrder);
+        sd.images.splice(destination.index, 0, sd.images.splice(source.index, 1)[0]);
+        setSasage(sd);
     }
     return (
         <div className={classes.root}>
@@ -273,21 +292,19 @@ export default function Detail() {
                             </Box>
                             <TextField id="model_info" label="モデル情報" variant="standard" fullWidth />
                             <TextField id="alt_text" label="ALT 文言" variant="standard" fullWidth />
-                        </Box>
-                        {/* image Tile  */}
-                        <Box>
-                            <DragDropContext onDragEnd={onDragEnd}>
-                                <GridList className={classes.gridList}>
-                                    <Droppable droppableId="items" type="DraggableItem" direction="horizontal">
-                                        {(provided, snapshot) => (
-                                            <div
-                                                {...provided.draggableProps}
-                                                {...provided.dragHandleProps}
-                                                style={{ display: "flex" }}
-                                                ref={provided.innerRef}
-                                            >
-
-                                                {IOrder.items.map((item, index) => (
+                            <Box className={classes.verticalSpace} />
+                            {/* image Tile  */}
+                            <DragDropContext onDragEnd={onDragEnd} className={classes.gridList}>
+                                <Droppable droppableId="items" type="DraggableItem" direction="horizontal" className={classes.gridList}>
+                                    {(provided, snapshot) => (
+                                        <div
+                                            {...provided.draggableProps}
+                                            {...provided.dragHandleProps}
+                                            style={{ display: "flex" }}
+                                            ref={provided.innerRef}
+                                        >
+                                            <GridList className={classes.gridList}>
+                                                {sd.images.map((item, index) => (
                                                     <Draggable key={item.id} draggableId={item.id} index={index}>
                                                         {(fromprovided, fromsnapshot) => (
                                                             <div
@@ -295,16 +312,19 @@ export default function Detail() {
                                                                 {...fromprovided.draggableProps}
                                                                 {...fromprovided.dragHandleProps}
                                                             >
-                                                                {item.content}
+                                                                <GridListTile key={item.id} cols={1} className={classes.gridImage}>
+                                                                    <img src={item.src} alt={item.title} className={classes.gridImage} />
+                                                                    <GridListTileBar title={<Typography variant="caption">{item.title}</Typography>} />
+                                                                </GridListTile>
                                                             </div>
                                                         )}
                                                     </Draggable>
                                                 ))}
-                                                {provided.placeholder}
-                                            </div>
-                                        )}
-                                    </Droppable>
-                                </GridList>
+                                            </GridList>
+                                            {provided.placeholder}
+                                        </div>
+                                    )}
+                                </Droppable>
                             </DragDropContext >
                         </Box>
                         <Box>
@@ -469,20 +489,13 @@ export default function Detail() {
     );
 }
 
-const getItems = count =>
-    Array.from({ length: count }, (v, k) => k).map(k => ({
-        id: `item-${k}`,
-        content: `image ${k}`
-    }));
 
 // a little function to help us with reordering the result
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
-
     return result;
 };
 
-const grid = 8;
 
