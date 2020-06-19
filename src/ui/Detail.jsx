@@ -240,7 +240,7 @@ export default function Detail() {
     const editor = useRef(null)
     let [sd, setSasage] = useState(
         {
-            title: '',
+            title: '【XLARGE×Champion】REVERSE WEAVE S/S TEE',
             titleExtend: itemTitleText,
             variant: variants,
             detail: itemDetailText,
@@ -248,11 +248,11 @@ export default function Detail() {
             genre: '',
             category: '',
             small_genre: '',
-            fabric: '',
-            madeby: '',
-            jancode: '',
+            fabric: '麺',
+            madeby: '中国',
+            jancode: 'jancode example',
             return: '',
-            weight: '',
+            weight: '350',
             images: imgList,
             sizeTableHTML: '',
             sizeTableId: '',
@@ -264,6 +264,38 @@ export default function Detail() {
         return obj.color;
     });
     const [si, setSI] = React.useState(sd.images[0]);
+    const updateTitle = (event) => {
+        sd.title = event.target.value;
+        setSasage(sd);
+    }
+    const updateTitleEx = (obj) => {
+        sd.titleEx = obj;
+        setSasage(sd);
+    }
+    const updateDetail = (obj) => {
+        sd.detail = obj;
+        setSasage(sd);
+    }
+    const updateFablic = (event) => {
+        sd.fabric = event.target.value;
+        setSasage(sd);
+    }
+    const updateJancode = (event) => {
+        sd.jancode = event.target.value;
+        setSasage(sd);
+    }
+    const updateMadeby = (event) => {
+        sd.madeby = event.target.value;
+        setSasage(sd);
+    }
+    const updateReturn = (event) => {
+        sd.updateReturn = event.target.value;
+        setSasage(sd);
+    }
+    const updateWeight = (event) => {
+        sd.weight = event.target.value;
+        setSasage(sd);
+    }
     const setRepresentive = (event, newRepresentive) => {
         if (newRepresentive) {
             sd.images[sd.images.indexOf(si)].representive = newRepresentive;
@@ -306,6 +338,7 @@ export default function Detail() {
         setSasage(sd);
         //console.log(sd.variant[count].size[index].visible);
     }
+    console.log(sd);
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -469,17 +502,18 @@ export default function Detail() {
                     <Grid item xs={6}>
                         <Container>
                             <Box className={classes.orange}>
-                                <TextField id="outlined-basic" label="Title" variant="standard" fullWidth />
+                                <TextField key="item" label="Title" variant="standard" fullWidth onChange={updateTitle} defaultValue={sd.title} />
                             </Box>
                             <Box className={classes.blue}>
                                 <Editor
-                                    id={"titleExtend"}
+                                    key={"titleExtend"}
                                     ref={editor}
-                                    value={sd['titleExtend']}
+                                    value={sd.titleExtend}
                                     config={{ readonly: false }}
                                     tabIndex={1} // tabIndex of textarea
-                                    onBlur={newTitle => setSasage(sd)}
-                                    onChange={newTitle => { }}
+                                    onChange={(event) => {
+                                        if (event && event !== "") { updateTitleEx(event) }
+                                    }}
                                 />
                             </Box>
                             <Box>
@@ -526,8 +560,9 @@ export default function Detail() {
                                     value={sd['detail']}
                                     config={{ readonly: false }}
                                     tabIndex={1} // tabIndex of textarea
-                                    onBlur={newDetail => setSasage(sd)}
-                                    onChange={newDetail => { }}
+                                    onChange={(event) => {
+                                        if (event && event !== "") { updateDetail(event); }
+                                    }}
                                 />
                             </Box>
                             <Box>
@@ -563,11 +598,11 @@ export default function Detail() {
                                         </Select>
                                     </FormControl>
                                 </Box>
-                                <TextField id="fabric" label="素材" variant="standard" fullWidth />
-                                <TextField id="manifactured" label="原産国" variant="standard" fullWidth value={'中国'} />
-                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth value={id} />
-                                <TextField id="return" label="返品について" variant="standard" fullWidth />
-                                <TextField id="weight" label="重量" variant="standard" fullWidth />
+                                <TextField id="fabric" label="素材" variant="standard" fullWidth defaultValue={sd.fabric} onChange={updateFablic} />
+                                <TextField id="manifactured" label="原産国" variant="standard" fullWidth defaultValue={sd.madeby} onChange={updateMadeby} />
+                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth defaultValue={sd.jancode} onChange={updateJancode} />
+                                <TextField id="return" label="返品について" variant="standard" fullWidth defaultValue={sd.return} onChange={updateReturn} />
+                                <TextField id="weight" label="重量" variant="standard" fullWidth defaultValue={sd.weight} onChange={updateWeight} />
                             </Box>
                         </Container>
                     </Grid>
