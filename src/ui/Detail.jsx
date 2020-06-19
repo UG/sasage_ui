@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Editor from '../editor';
-import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, GridList, GridListTile, GridListTileBar, Button, MenuItem, FormControl, Select, InputLabel, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
+import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, Button, MenuItem, FormControl, Select, InputLabel, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
 import { DropzoneArea } from 'material-ui-dropzone';
 import { ArrowBack, Visibility, VisibilityOff } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
@@ -100,7 +100,7 @@ const imgList = [
         id: 'XLE0120M0040_pz_a002',
         title: 'モデル175cm',
         alt: 'alt hoge',
-        representive: '',
+        representive: 'オレンジ',
     },
     {
         src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a003.jpg',
@@ -235,7 +235,7 @@ const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 export default function Detail() {
     let { id } = useParams();
     const editor = useRef(null)
-    const [sd, setSasage] = useState(
+    let [sd, setSasage] = useState(
         {
             title: '',
             titleExtend: itemTitleText,
@@ -266,13 +266,16 @@ export default function Detail() {
         }
         setSasage(sd);
     };
-    const setAlt = (event, alt) => {
-        sd.images[sd.images.indexOf(si)].alt = alt;
+    const setAlt = (event) => {
+        sd.images[sd.images.indexOf(si)].alt = event.target.value;
         setSasage(sd);
     }
-    const setTitle = (event, title) => {
-        sd.images[sd.images.indexOf(si)].title = title;
+    const setTitle = (event) => {
+        sd.images[sd.images.indexOf(si)].title = event.target.value;
         setSasage(sd);
+    }
+    const getRep = () => {
+        return sd.images[sd.images.indexOf(si)].representive;
     }
     const classes = useStyles();
     const onDragEnd = (result) => {
@@ -281,9 +284,7 @@ export default function Detail() {
         sd.images.splice(destination.index, 0, sd.images.splice(source.index, 1)[0]);
         setSasage(sd);
     }
-    function changeSelectItem(item) {
-        setSI(item);
-    }
+
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -317,7 +318,7 @@ export default function Detail() {
                             <Box>
                                 <ToggleButtonGroup
                                     key={sd.images[sd.images.indexOf(si).id]}
-                                    value={sd.images[sd.images.indexOf(si)].representive}
+                                    value={getRep()}
                                     onChange={setRepresentive}
                                     exclusive
                                     aria-label="text formatting">
@@ -354,7 +355,7 @@ export default function Detail() {
                                                                 {...fromprovided.draggableProps}
                                                                 {...fromprovided.dragHandleProps}
                                                             >
-                                                                <img src={item.src} alt={item.id} className={classes.gridImage} onClick={() => (changeSelectItem(item))} />
+                                                                <img src={item.src} alt={item.id} className={classes.gridImage} onClick={() => (setSI(item))} />
                                                                 <div class={classes.overlay}>{item.title}</div>
                                                             </div>
                                                         )}
