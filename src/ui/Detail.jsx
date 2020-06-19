@@ -264,37 +264,8 @@ export default function Detail() {
         return obj.color;
     });
     const [si, setSI] = React.useState(sd.images[0]);
-    const updateTitle = (event) => {
-        sd.title = event.target.value;
-        setSasage(sd);
-    }
-    const updateTitleEx = (obj) => {
-        sd.titleEx = obj;
-        setSasage(sd);
-    }
-    const updateDetail = (obj) => {
-        sd.detail = obj;
-        setSasage(sd);
-    }
-    const updateFablic = (event) => {
-        sd.fabric = event.target.value;
-        setSasage(sd);
-    }
-    const updateJancode = (event) => {
-        sd.jancode = event.target.value;
-        setSasage(sd);
-    }
-    const updateMadeby = (event) => {
-        sd.madeby = event.target.value;
-        setSasage(sd);
-    }
-    const updateReturn = (event) => {
-        sd.updateReturn = event.target.value;
-        setSasage(sd);
-    }
-    const updateWeight = (event) => {
-        sd.weight = event.target.value;
-        setSasage(sd);
+    const setValue = (event, target) => {
+        setSasage({ ...sd, [target]: event.target.value });
     }
     const setRepresentive = (event, newRepresentive) => {
         if (newRepresentive) {
@@ -502,7 +473,7 @@ export default function Detail() {
                     <Grid item xs={6}>
                         <Container>
                             <Box className={classes.orange}>
-                                <TextField key="item" label="Title" variant="standard" fullWidth onChange={updateTitle} defaultValue={sd.title} />
+                                <TextField key="item" label="Title" variant="standard" fullWidth onChange={e => setValue(e, 'title')} defaultValue={sd.title} />
                             </Box>
                             <Box className={classes.blue}>
                                 <Editor
@@ -511,8 +482,8 @@ export default function Detail() {
                                     value={sd.titleExtend}
                                     config={{ readonly: false }}
                                     tabIndex={1} // tabIndex of textarea
-                                    onChange={(event) => {
-                                        if (event && event !== "") { updateTitleEx(event) }
+                                    onBlur={(obj) => {
+                                        if (obj && obj !== "") { setValue({ target: { value: obj } }, 'titleExtend') }
                                     }}
                                 />
                             </Box>
@@ -560,8 +531,8 @@ export default function Detail() {
                                     value={sd['detail']}
                                     config={{ readonly: false }}
                                     tabIndex={1} // tabIndex of textarea
-                                    onChange={(event) => {
-                                        if (event && event !== "") { updateDetail(event); }
+                                    onBlur={(obj) => {
+                                        if (obj && obj !== "") { setValue({ target: { value: obj } }, 'detail') }
                                     }}
                                 />
                             </Box>
@@ -598,11 +569,11 @@ export default function Detail() {
                                         </Select>
                                     </FormControl>
                                 </Box>
-                                <TextField id="fabric" label="素材" variant="standard" fullWidth defaultValue={sd.fabric} onChange={updateFablic} />
-                                <TextField id="manifactured" label="原産国" variant="standard" fullWidth defaultValue={sd.madeby} onChange={updateMadeby} />
-                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth defaultValue={sd.jancode} onChange={updateJancode} />
-                                <TextField id="return" label="返品について" variant="standard" fullWidth defaultValue={sd.return} onChange={updateReturn} />
-                                <TextField id="weight" label="重量" variant="standard" fullWidth defaultValue={sd.weight} onChange={updateWeight} />
+                                <TextField id="fabric" label="素材" variant="standard" fullWidth defaultValue={sd.fabric} onBlur={e => setValue(e, 'fabric')} />
+                                <TextField id="manifactured" label="原産国" variant="standard" fullWidth defaultValue={sd.madeby} onBlur={e => setValue(e, 'madeby')} />
+                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth defaultValue={sd.jancode} onBlur={e => setValue(e, 'jancode')} />
+                                <TextField id="return" label="返品について" variant="standard" fullWidth defaultValue={sd.return} onBlur={e => setValue(e, 'return')} />
+                                <TextField id="weight" label="重量" variant="standard" fullWidth defaultValue={sd.weight} onBlur={e => setValue(e, 'weight')} />
                             </Box>
                         </Container>
                     </Grid>
