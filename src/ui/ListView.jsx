@@ -23,14 +23,14 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function createData(id, title, price, size, madeby, nutrition, detail) {
-    return { id, title, price, size, madeby, nutrition, detail };
+function createData(id, title, price, size, madeby, nutrition, isNew) {
+    return { id, title, price, size, madeby, nutrition, isNew };
 }
 
 const rows = [
-    createData('0000001', 'CROSSFIRE SWEAT 1', 10000, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000002', 'CROSSFIRE SWEAT 2', 10100, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000003', 'CROSSFIRE SWEAT 3', 102000, 'S,M,L,XL', '中国', '綿100%', true),
+    createData('0000001', 'CROSSFIRE SWEAT 1', 10000, 'S,M,L,XL', '中国', '綿100%', false),
+    createData('0000002', 'CROSSFIRE SWEAT 2', 10100, 'S,M,L,XL', '中国', '綿100%', false),
+    createData('0000003', 'CROSSFIRE SWEAT 3', 102000, 'S,M,L,XL', '中国', '綿100%', false),
     createData('0000004', 'CROSSFIRE SWEAT 4', 10300, 'S,M,L,XL', '中国', '綿100%', true),
     createData('0000005', 'CROSSFIRE SWEAT 5', 10400, 'S,M,L,XL', '中国', '綿100%', true),
     createData('0000006', 'CROSSFIRE FULL SWEAT1', 11200, 'S,M,L,XL', '中国', '綿100%', true),
@@ -83,7 +83,7 @@ const headCells = [
     { id: 'size', numeric: false, disablePadding: false, label: 'サイズ' },
     { id: 'madeby', numeric: false, disablePadding: false, label: '生産国' },
     { id: 'nutrition', numeric: false, disablePadding: false, label: '混率' },
-    { id: 'detail', numeric: false, disablePadding: false, label: '詳細' },
+    { id: 'isNew', numeric: false, disablePadding: false, label: 'New' },
 ];
 
 function EnhancedTableHead(props) {
@@ -308,7 +308,7 @@ export default function ListView(props) {
                                             <TableCell align="center">{row.size}</TableCell>
                                             <TableCell align="center">{row.madeby}</TableCell>
                                             <TableCell align="center">{row.nutrition}</TableCell>
-                                            <TableCell align="center">{row.detail ? '◯' : '☓'}</TableCell>
+                                            <TableCell align="center">{row.isNew ? '◯' : '☓'}</TableCell>
                                         </TableRow>
                                     );
                                 })}
