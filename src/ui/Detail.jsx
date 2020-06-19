@@ -292,12 +292,20 @@ export default function Detail() {
     }
     const deleteImage = () => {
         let imgList = sd.images;
-        let newImgList = imgList.splice(sd.images.indexOf(si) + 1);
-        sd['images'] = newImgList;
+        imgList.splice(sd.images.indexOf(si), 1);
+        sd['images'] = imgList;
         setSasage(sd);
-        setSI(sd.images[0]);
+        setSI(imgList[0]);
     }
-
+    const changeVisible = (count, index) => {
+        if (sd.variant[count].size[index].visible) {
+            sd.variant[count].size[index].visible = false;
+        } else {
+            sd.variant[count].size[index].visible = true;
+        }
+        setSasage(sd);
+        console.log(sd.variant[count].size[index].visible);
+    }
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -474,7 +482,10 @@ export default function Detail() {
                                                             <TableCell align="center">{vari['label']}</TableCell>
                                                             <TableCell align="center">{vari.price.toLocaleString() + "円（税込み）"}</TableCell>
                                                             <TableCell align="center">{vari['stock'] === 0 ? '在庫切れ' : vari['stock']}</TableCell>
-                                                            <TableCell align="center">{vari['visible'] ? <Visibility /> : <VisibilityOff />}</TableCell>
+                                                            <TableCell align="center">{sd.variant[count].size[index].visible ?
+                                                                <IconButton onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
+                                                                : <IconButton onClick={() => (changeVisible(count, index))}><VisibilityOff /></IconButton>}
+                                                            </TableCell>
                                                         </TableRow>
                                                     ))
                                                 }
@@ -547,7 +558,7 @@ export default function Detail() {
                 <Box className={classes.verticalSpace}></Box>
                 <Button variant="contained" color="primary" fullWidth><Typography variant="h5"> ささげ情報を保存 </Typography></Button>
                 <Box className={classes.verticalSpace}></Box>
-            </Container>
+            </Container >
         </div >
     );
 }
