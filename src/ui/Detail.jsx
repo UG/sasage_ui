@@ -54,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
         minWidth: 120,
+        maxWidth: 500,
     },
     border: {
         border: '1px solid #666',
@@ -72,7 +73,6 @@ const useStyles = makeStyles((theme) => ({
         background: 'rgba(0, 0, 0, 0.4)',
         color: '#f1f1f1',
         width: '100%',
-        transition: '.5s ease',
         opacity: 1,
         fontSize: 12,
     },
@@ -304,7 +304,7 @@ export default function Detail() {
             sd.variant[count].size[index].visible = true;
         }
         setSasage(sd);
-        console.log(sd.variant[count].size[index].visible);
+        //console.log(sd.variant[count].size[index].visible);
     }
     return (
         <div className={classes.root}>
@@ -345,8 +345,8 @@ export default function Detail() {
                                             onChange={setRepresentive}
                                             exclusive
                                             aria-label="text formatting">
-                                            {colorList.map((color) => (
-                                                <ToggleButton value={color} aria-label="white">
+                                            {colorList.map((color, index) => (
+                                                <ToggleButton key={"color-" + index} value={color} aria-label="white">
                                                     <Typography>{color}</Typography>
                                                 </ToggleButton>
                                             ))}
@@ -383,7 +383,7 @@ export default function Detail() {
                                                                 {...fromprovided.dragHandleProps}
                                                             >
                                                                 <img src={item.src} alt={item.id} className={classes.gridImage} onClick={() => (setSI(item))} />
-                                                                <div class={classes.overlay}>
+                                                                <div className={classes.overlay}>
                                                                     <div> {item.title}</div>
                                                                     <div>{item.alt}</div>
                                                                 </div>
@@ -397,6 +397,23 @@ export default function Detail() {
                                     </Droppable>
                                 </DragDropContext >
                             </Container>
+                        </Box>
+                        <Box className={classes.verticalTiny}></Box>
+                        <Box>
+                            <FormControl className={classes.formControl}>
+                                <InputLabel id="templateSelectLabel">サイズテンプレート選択</InputLabel>
+                                <Select
+                                    labelId="templateSelectLabel"
+                                    id="templateSelect"
+                                    placeholder="サイズテンプレート"
+                                    value={'none'}
+                                    fullWidth
+                                    width={400}
+                                >
+                                    <MenuItem key={"uno"} value="none">テンプレート選択なし</MenuItem>
+                                    <MenuItem key={"dos"} value="templateGenre">テンプレートジャンル</MenuItem>
+                                </Select>
+                            </FormControl>
                         </Box>
                         <Box>
                             <TextField type="string"
@@ -445,7 +462,7 @@ export default function Detail() {
                         <Typography>関連アイテム</Typography>
                         <Box className={classes.border}>
                             {relatedItems.map((itemId, idx) => (
-                                <TextField id={'relatedItems-' + idx} label={'関連アイテムID-' + (idx + 1)} defaultValue={itemId} fullWidth />
+                                <TextField key={'relatedItems-' + idx} label={'関連アイテムID-' + (idx + 1)} defaultValue={itemId} fullWidth />
                             ))}
                         </Box>
                     </Grid>
@@ -483,8 +500,8 @@ export default function Detail() {
                                                             <TableCell align="center">{vari.price.toLocaleString() + "円（税込み）"}</TableCell>
                                                             <TableCell align="center">{vari['stock'] === 0 ? '在庫切れ' : vari['stock']}</TableCell>
                                                             <TableCell align="center">{sd.variant[count].size[index].visible ?
-                                                                <IconButton onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
-                                                                : <IconButton onClick={() => (changeVisible(count, index))}><VisibilityOff /></IconButton>}
+                                                                <IconButton key={"visblle-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
+                                                                : <IconButton key={"visible-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><VisibilityOff /></IconButton>}
                                                             </TableCell>
                                                         </TableRow>
                                                     ))
