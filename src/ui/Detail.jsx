@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Editor from '../editor';
 import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, Button, MenuItem, FormControl, Select, InputLabel, IconButton, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
 import { DropzoneArea } from 'material-ui-dropzone';
-import { ArrowBack, Visibility, VisibilityOff, Delete } from '@material-ui/icons';
+import { ArrowBack, Visibility, VisibilityOff, Delete, Backup } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -264,6 +264,7 @@ export default function Detail() {
         return obj.color;
     });
     const [si, setSI] = React.useState(sd.images[0]);
+    const [flag, setFlag] = React.useState({ upload: false });
     const setValue = (event, target) => {
         setSasage({ ...sd, [target]: event.target.value });
     }
@@ -283,8 +284,8 @@ export default function Detail() {
         sd.images[sd.images.indexOf(si)].title = event.target.value;
         setSasage(sd);
     }
-    const getRep = () => {
-        return sd.images[sd.images.indexOf(si)].representive;
+    const showUploader = (event) => {
+        setFlag({ ...flag, upload: true })
     }
     const classes = useStyles();
     const onDragEnd = (result) => {
@@ -292,6 +293,10 @@ export default function Detail() {
         if (!destination) { return; }
         sd.images.splice(destination.index, 0, sd.images.splice(source.index, 1)[0]);
         setSasage(sd);
+    }
+    const selectImage = (item) => {
+        setSI(item);
+        setFlag({ ...flag, upload: false });
     }
     const deleteImage = () => {
         let imgList = sd.images;
@@ -325,47 +330,55 @@ export default function Detail() {
                 </Box>
                 <Grid container spacing={1}>
                     <Grid item xs={6}>
+                        <Box className={classes.right}>
+                            <IconButton onClick={showUploader}>
+                                <Backup />
+                            </IconButton>
+                        </Box>
                         <Box className={classes.border} padding={3}>
-                            <Box className={classes.mainImage}>
-                                <ReactImageMagnify {...{
-                                    smallImage: {
-                                        alt: si.alt,
-                                        src: si.src,
-                                        isFluidWidth: true,
-                                    },
-                                    largeImage: {
-                                        src: si.src,
-                                        width: 1200,
-                                        height: 1800
-                                    }
-                                }} />
-                            </Box>
-                            <Box>
-                                <Grid container>
-                                    <Grid item xs={9}>
-                                        <ToggleButtonGroup
-                                            key={sd.images[sd.images.indexOf(si).id]}
-                                            value={getRep()}
-                                            onChange={setRepresentive}
-                                            exclusive
-                                            aria-label="text formatting">
-                                            {colorList.map((color, index) => (
-                                                <ToggleButton key={"color-" + index} value={color} aria-label="white">
-                                                    <Typography>{color}</Typography>
-                                                </ToggleButton>
-                                            ))}
-                                        </ToggleButtonGroup>
-                                    </Grid>
-                                    <Grid item xs={3} className={classes.right}>
-                                        <IconButton onClick={deleteImage}>
-                                            <Delete />
-                                        </IconButton>
-                                    </Grid>
-                                </Grid>
-
-                            </Box>
-                            <TextField key={'title-' + si.id} label="モデル情報" variant="standard" fullWidth defaultValue={si.title} onChange={setTitle} />
-                            <TextField key={'alt-' + si.id} label="ALT 文言" variant="standard" fullWidth defaultValue={si.alt} onChange={setAlt} />
+                            {flag.upload ? <DropzoneArea /> :
+                                <div>
+                                    <Box className={classes.mainImage}>
+                                        <ReactImageMagnify {...{
+                                            smallImage: {
+                                                alt: si.alt,
+                                                src: si.src,
+                                                isFluidWidth: true,
+                                            },
+                                            largeImage: {
+                                                src: si.src,
+                                                width: 1200,
+                                                height: 1800
+                                            }
+                                        }} />
+                                    </Box>
+                                    <Box>
+                                        <Grid container>
+                                            <Grid item xs={9}>
+                                                <ToggleButtonGroup
+                                                    key={si.id}
+                                                    value={si.representive}
+                                                    onChange={setRepresentive}
+                                                    exclusive
+                                                    aria-label="text formatting">
+                                                    {colorList.map((color, index) => (
+                                                        <ToggleButton key={"color-" + index} value={color} aria-label="white">
+                                                            <Typography>{color}</Typography>
+                                                        </ToggleButton>
+                                                    ))}
+                                                </ToggleButtonGroup>
+                                            </Grid>
+                                            <Grid item xs={3} className={classes.right}>
+                                                <IconButton onClick={deleteImage}>
+                                                    <Delete />
+                                                </IconButton>
+                                            </Grid>
+                                        </Grid>
+                                    </Box>
+                                    <TextField key={'title-' + si.id} label="モデル情報" variant="standard" fullWidth defaultValue={si.title} onChange={setTitle} />
+                                    <TextField key={'alt-' + si.id} label="ALT 文言" variant="standard" fullWidth defaultValue={si.alt} onChange={setAlt} />
+                                </div>
+                            }
                             <Box className={classes.verticalSpace} />
                             {/* image Tile  */}
                             <Container className={classes.gridList}>
@@ -386,7 +399,7 @@ export default function Detail() {
                                                                 {...fromprovided.draggableProps}
                                                                 {...fromprovided.dragHandleProps}
                                                             >
-                                                                <img src={item.src} alt={item.id} className={classes.gridImage} onClick={() => (setSI(item))} />
+                                                                <img src={item.src} alt={item.id} className={classes.gridImage} onClick={() => (selectImage(item))} />
                                                                 <div className={classes.overlay}>
                                                                     <div> {item.title}</div>
                                                                     <div>{item.alt}</div>
