@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Editor from '../editor';
-import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, Button, MenuItem, FormControl, Select, InputLabel, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
+import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, Button, MenuItem, FormControl, Select, InputLabel, IconButton, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
 import { DropzoneArea } from 'material-ui-dropzone';
-import { ArrowBack, Visibility, VisibilityOff } from '@material-ui/icons';
+import { ArrowBack, Visibility, VisibilityOff, Delete } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -67,14 +67,17 @@ const useStyles = makeStyles((theme) => ({
     overlay: {
         textAlign: 'center',
         position: 'relative',
-        bottom: 30,
-        height: 30,
+        bottom: 35,
+        height: 35,
         background: 'rgba(0, 0, 0, 0.4)',
         color: '#f1f1f1',
         width: '100%',
         transition: '.5s ease',
         opacity: 1,
         fontSize: 12,
+    },
+    right: {
+        textAlign: 'right'
     }
 }));
 const brand = ["XLARGE", "XLARGE USA", "MILKFED", "X-GIRL", "MILKFED(KIDS)", "MTG", "HUNTISM", "SILAS", "SILAS WOMEN", "SILAS OTHER", "MARIA OTHER", "X-GIRL STAGES FIRST STAGE", "X-GIRL STAGES NEXT STAGE", "XL-KIDS", "STITCH", "ADIDAS", "XG", "SARCASTIC", "AMONGST FRIENDS", "2K BY GINGHAM", "SNEAKER LAB", "NIKE", "NEW BALANCE", "REEBOK", "MILK CRATE", "ANYTHING", "VANS", "PUMA", "US VERSUS THEM", "ODD FUTURE", "DJ SHADOW", "COCOLO BLAND", "LADYS SHOES", "LAKAI MAIN", "LAKAI ANCHOR", "LAKAI ECHELON", "LAKAI STANDARD", "THE HILL SIDE ", "WHITE RAVEN", "Community Mill 雑貨", "Community Mill アパレル", "CONVERSE", "ASICS TIGER", "STANCE", "CHAMPION", "CANDIES", "MISFISH T", "NITTA KEIICHI", "GIZMOBIES", "OGURA", "FLATLUX", "TERUYA", "X-CLOSET ADIDAS ORIGINALS", "X-CLOSET", "店舗 OTHER", "CALIF OTHER", "営サ OTHER", "STYLES OTHER", "MONTAGE OTHER", "STITCH OTHER", "XG OTHER", "X-GIRL STAGES OTHER", "X-GIRL OTHER", "MILKFED OTHER", "XLARGE OTHER"];
@@ -287,6 +290,15 @@ export default function Detail() {
         sd.images.splice(destination.index, 0, sd.images.splice(source.index, 1)[0]);
         setSasage(sd);
     }
+    const deleteImage = () => {
+        let imgList = sd.images;
+        let newImgList = imgList.splice(sd.images.indexOf(si));
+        console.log(newImgList);
+        sd['images'] = newImgList;
+        setSasage(sd);
+        setSI(sd.images[0]);
+        console.log(sd);
+    }
 
     return (
         <div className={classes.root}>
@@ -319,18 +331,28 @@ export default function Detail() {
                                 }} />
                             </Box>
                             <Box>
-                                <ToggleButtonGroup
-                                    key={sd.images[sd.images.indexOf(si).id]}
-                                    value={getRep()}
-                                    onChange={setRepresentive}
-                                    exclusive
-                                    aria-label="text formatting">
-                                    {colorList.map((color) => (
-                                        <ToggleButton value={color} aria-label="white">
-                                            <Typography>{color}</Typography>
-                                        </ToggleButton>
-                                    ))}
-                                </ToggleButtonGroup>
+                                <Grid container>
+                                    <Grid item xs={9}>
+                                        <ToggleButtonGroup
+                                            key={sd.images[sd.images.indexOf(si).id]}
+                                            value={getRep()}
+                                            onChange={setRepresentive}
+                                            exclusive
+                                            aria-label="text formatting">
+                                            {colorList.map((color) => (
+                                                <ToggleButton value={color} aria-label="white">
+                                                    <Typography>{color}</Typography>
+                                                </ToggleButton>
+                                            ))}
+                                        </ToggleButtonGroup>
+                                    </Grid>
+                                    <Grid item xs={3} className={classes.right}>
+                                        <IconButton onClick={deleteImage}>
+                                            <Delete />
+                                        </IconButton>
+                                    </Grid>
+                                </Grid>
+
                             </Box>
                             <TextField key={'title-' + si.id} label="モデル情報" variant="standard" fullWidth defaultValue={si.title} onChange={setTitle} />
                             <TextField key={'alt-' + si.id} label="ALT 文言" variant="standard" fullWidth defaultValue={si.alt} onChange={setAlt} />
@@ -355,7 +377,10 @@ export default function Detail() {
                                                                 {...fromprovided.dragHandleProps}
                                                             >
                                                                 <img src={item.src} alt={item.id} className={classes.gridImage} onClick={() => (setSI(item))} />
-                                                                <div class={classes.overlay}>{item.title}</div>
+                                                                <div class={classes.overlay}>
+                                                                    <div> {item.title}</div>
+                                                                    <div>{item.alt}</div>
+                                                                </div>
                                                             </div>
                                                         )}
                                                     </Draggable>
