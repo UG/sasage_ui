@@ -292,12 +292,10 @@ export default function Detail() {
     }
     const deleteImage = () => {
         let imgList = sd.images;
-        let newImgList = imgList.splice(sd.images.indexOf(si));
-        console.log(newImgList);
+        let newImgList = imgList.splice(sd.images.indexOf(si) + 1);
         sd['images'] = newImgList;
         setSasage(sd);
         setSI(sd.images[0]);
-        console.log(sd);
     }
 
     return (
