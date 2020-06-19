@@ -257,6 +257,9 @@ export default function Detail() {
             relatedItem: relatedItems
         }
     );
+    const colorList = sd.variant.map((obj) => {
+        return obj.color;
+    });
     const [si, setSI] = React.useState(sd.images[0]);
     const setRepresentive = (event, newRepresentive) => {
         if (newRepresentive) {
@@ -322,15 +325,11 @@ export default function Detail() {
                                     onChange={setRepresentive}
                                     exclusive
                                     aria-label="text formatting">
-                                    <ToggleButton value="ホワイト" aria-label="white">
-                                        <Typography>ホワイト</Typography>
-                                    </ToggleButton>
-                                    <ToggleButton value="ブラック" aria-label="black">
-                                        <Typography>ブラック</Typography>
-                                    </ToggleButton>
-                                    <ToggleButton value="オレンジ" aria-label="orange">
-                                        <Typography>オレンジ</Typography>
-                                    </ToggleButton>
+                                    {colorList.map((color) => (
+                                        <ToggleButton value={color} aria-label="white">
+                                            <Typography>{color}</Typography>
+                                        </ToggleButton>
+                                    ))}
                                 </ToggleButtonGroup>
                             </Box>
                             <TextField key={'title-' + si.id} label="モデル情報" variant="standard" fullWidth defaultValue={si.title} onChange={setTitle} />
