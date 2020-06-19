@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Editor from '../editor';
 import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, Button, MenuItem, FormControl, Select, InputLabel, IconButton, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
 import { DropzoneArea } from 'material-ui-dropzone';
-import { ArrowBack, Visibility, VisibilityOff, Delete, Backup } from '@material-ui/icons';
+import { ArrowBack, Visibility, VisibilityOff, Delete, Backup, Image } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -237,7 +237,7 @@ const relatedItems = ['', '', '', '', '', '', '', '', '', ''];
 const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 export default function Detail() {
     let { id } = useParams();
-    const editor = useRef(null)
+    const editor = useRef(null);
     let [sd, setSasage] = useState(
         {
             title: '【XLARGE×Champion】REVERSE WEAVE S/S TEE',
@@ -248,7 +248,7 @@ export default function Detail() {
             genre: '',
             category: '',
             small_genre: '',
-            fabric: '麺',
+            fabric: '麺100%',
             madeby: '中国',
             jancode: 'jancode example',
             return: '',
@@ -287,6 +287,9 @@ export default function Detail() {
     const showUploader = (event) => {
         setFlag({ ...flag, upload: true })
     }
+    const showImage = (event) => {
+        setFlag({ ...flag, upload: false })
+    }
     const classes = useStyles();
     const onDragEnd = (result) => {
         const { source, destination } = result;
@@ -314,6 +317,11 @@ export default function Detail() {
         setSasage(sd);
         //console.log(sd.variant[count].size[index].visible);
     }
+    const setRelatedItem = (event, index) => {
+        let ri = sd.relatedItem;
+        ri[index] = event.target.value;
+        setSasage({ ...sd, relatedItem: ri });
+    }
     console.log(sd);
     return (
         <div className={classes.root}>
@@ -321,20 +329,32 @@ export default function Detail() {
             <Container fixed>
                 <Box className={classes.verticalSpace}></Box>
                 <Box>
-                    <Link to={'/'}>
-                        <Button>
-                            <ArrowBack />
-                            <Typography variant={'body1'}> ささげ一覧に戻る </Typography>
-                        </Button>
-                    </Link>
+                    <Grid container>
+                        <Grid item xs={6}>
+                            <Grid container>
+                                <Grid item xs={6} >
+                                    <Link to={'/'}>
+                                        <Button>
+                                            <ArrowBack />
+                                            <Typography variant={'body1'}> ささげ一覧に戻る </Typography>
+                                        </Button>
+                                    </Link>
+                                </Grid>
+                                <Grid item xs={6} className={classes.right}>
+                                    <IconButton onClick={showImage}>
+                                        <Image color={flag.upload ? 'none' : 'primary'} />
+                                    </IconButton>
+                                    <IconButton onClick={showUploader}>
+                                        <Backup color={flag.upload ? 'primary' : 'none'} />
+                                    </IconButton>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </Box>
                 <Grid container spacing={1}>
                     <Grid item xs={6}>
-                        <Box className={classes.right}>
-                            <IconButton onClick={showUploader}>
-                                <Backup />
-                            </IconButton>
-                        </Box>
+
                         <Box className={classes.border} padding={3}>
                             {flag.upload ? <DropzoneArea /> :
                                 <div>
@@ -370,7 +390,7 @@ export default function Detail() {
                                             </Grid>
                                             <Grid item xs={3} className={classes.right}>
                                                 <IconButton onClick={deleteImage}>
-                                                    <Delete />
+                                                    <Delete color="secondary" />
                                                 </IconButton>
                                             </Grid>
                                         </Grid>
@@ -479,7 +499,7 @@ export default function Detail() {
                         <Typography>関連アイテム</Typography>
                         <Box className={classes.border}>
                             {relatedItems.map((itemId, idx) => (
-                                <TextField key={'relatedItems-' + idx} label={'関連アイテムID-' + (idx + 1)} defaultValue={itemId} fullWidth />
+                                <TextField key={'relatedItems-' + idx} label={'関連アイテムID-' + (idx + 1)} defaultValue={itemId} fullWidth onBlur={(event) => (setRelatedItem(event, idx))} />
                             ))}
                         </Box>
                     </Grid>
