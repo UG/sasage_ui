@@ -245,7 +245,7 @@ const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 export default function Detail() {
     let { id } = useParams();
     const editor = useRef(null);
-    const [sd, setSasage] = useState(
+    const [sd, setSasage] = useState(   //mainSatate
         {
             brand: '',
             category: '',
@@ -270,11 +270,9 @@ export default function Detail() {
             weight: '350',
         }
     );
-    const colorList = sd.variant.map((obj) => {
-        return obj.color;
-    });
-    const [si, setSI] = React.useState(sd.images[0]);
-    const [flag, setFlag] = React.useState({ upload: false });
+
+    const [si, setSI] = React.useState(sd.images[0]);  //Selected Iamge
+    const [flag, setFlag] = React.useState({ upload: false });  // switch for upload mode and view Image mode
     const setValue = (event) => {
         setSasage({ ...sd, [event.target.name]: event.target.value });
     }
@@ -308,7 +306,9 @@ export default function Detail() {
     const onDragEnd = (result) => {
         const { source, destination } = result;
         if (!destination) { return; }
-        setSasage({ sd, images: sd.images.splice(destination.index, 0, sd.images.splice(source.index, 1)[0]) });
+        let img = sd.images;
+        img.splice(destination.index, 0, sd.images.splice(source.index, 1)[0])
+        setSasage({ ...sd, images: img });
     }
     const selectImage = (item) => {
         setSI(item);
@@ -337,6 +337,7 @@ export default function Detail() {
         ri[index] = event.target.value;
         setSasage({ ...sd, relatedItem: ri });
     }
+
     console.log(sd);
     return (
         <div className={classes.root}>
@@ -396,9 +397,9 @@ export default function Detail() {
                                                     onChange={setRepresentive}
                                                     exclusive
                                                     aria-label="text formatting">
-                                                    {colorList.map((color, index) => (
-                                                        <ToggleButton key={"color-" + index} value={color} aria-label="white">
-                                                            <Typography>{color}</Typography>
+                                                    {sd.variant.map((v, idx) => (
+                                                        <ToggleButton key={"color-" + idx} value={v.color}>
+                                                            <Typography>{v.color}</Typography>
                                                         </ToggleButton>
                                                     ))}
                                                 </ToggleButtonGroup>
