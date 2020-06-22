@@ -160,29 +160,21 @@ const variants = [
             {
                 label: 'S',
                 stock: 10,
-                price: 6050,
-                compareAt: 5500,
                 visible: true
             },
             {
                 label: 'M',
                 stock: 3,
-                price: 6050,
-                compareAt: 5500,
                 visible: true,
             },
             {
                 label: 'L',
                 stock: 0,
-                price: 6050,
-                compareAt: 5500,
                 visible: true,
             },
             {
                 label: 'XL',
                 stock: 0,
-                price: 6050,
-                compareAt: 5500,
                 visible: true,
             }
         ]
@@ -194,25 +186,21 @@ const variants = [
             {
                 label: 'S',
                 stock: 10,
-                price: 6050,
                 visible: true,
             },
             {
                 label: 'M',
                 stock: 3,
-                price: 6050,
                 visible: true,
             },
             {
                 label: 'L',
                 stock: 0,
-                price: 6050,
                 visible: true,
             },
             {
                 label: 'XL',
                 stock: 0,
-                price: 6050,
                 visible: false,
             }
         ]
@@ -224,13 +212,12 @@ const variants = [
             {
                 label: 'ワンサイズ',
                 stock: 0,
-                price: 6050,
                 visible: true,
             }
         ]
     }
 ];
-const variantsHeader = ['カラー', 'サイズ', '価格/Sale', '在庫', '表示'];
+const variantsHeader = ['カラー', 'サイズ', '在庫', '表示'];
 function createData(size, length, shawl, hood, sleeve) {
     return { size, length, shawl, hood, sleeve };
 }
@@ -249,6 +236,7 @@ export default function Detail() {
         {
             brand: '',
             category: '',
+            compareAt: 5000,
             detail: itemDetailText,
             fabric: '麺100%',
             genre: '',
@@ -257,6 +245,7 @@ export default function Detail() {
             images: imgList,
             jancode: 'jancode example',
             madeby: '中国',
+            price: 6050,
             relatedItem: relatedItems,
             return: '',
             scheduled: false,
@@ -264,7 +253,6 @@ export default function Detail() {
             sizeTableHTML: '',
             sizeTableId: '',
             sizeTableText: sizeTableText,
-            title: '【XLARGE×Champion】REVERSE WEAVE S/S TEE',
             titleExtend: itemTitleText,
             variant: variants,
             weight: '350',
@@ -521,9 +509,6 @@ export default function Detail() {
                     </Grid>
                     <Grid item xs={6}>
                         <Container>
-                            <Box className={classes.orange}>
-                                <TextField key="item" label="Title" variant="standard" fullWidth onChange={setValue} defaultValue={sd.title} />
-                            </Box>
                             <Box className={classes.blue}>
                                 <Editor
                                     key={"titleExtend"}
@@ -538,24 +523,27 @@ export default function Detail() {
                             </Box>
                             <Box>
                                 <Grid container>
-                                    <Grid item xs={6}>
+                                    <Grid item xs={4}>
                                         <FormControl className={classes.formControl}>
-                                            <InputLabel id="brand-select">ステータス</InputLabel>
+                                            <InputLabel key="productTypeLabel">ステータス</InputLabel>
                                             <Select
                                                 labelId="status"
-                                                id="productType"
+                                                key="productType"
                                                 fullWidth
                                                 defaultValue={sd.productType}
-                                                onBlur={setValue}
+                                                onBlur={(e) => (setValue({ target: { value: e.target.value, name: 'productType' } }))}
                                             >
                                                 <MenuItem value="none"></MenuItem>
                                                 {status.map((item, num) => (
-                                                    <MenuItem value={item} key={num}>{item}</MenuItem>
+                                                    <MenuItem value={item} key={'selection' + num}>{item}</MenuItem>
                                                 ))}
                                             </Select>
                                         </FormControl>
                                     </Grid>
-                                    <Grid item xs={6}>
+                                    <Grid item xs={4}>
+                                        <TextField id="price" label="価格" variant="standard" fullWidth defaultValue={sd.price} onBlur={setValue} />
+                                    </Grid>
+                                    <Grid item xs={4}>
                                         <TextField id="compareAt" label="セール価格" variant="standard" fullWidth defaultValue={sd.compareAt} onBlur={setValue} />
                                     </Grid>
 
@@ -566,7 +554,7 @@ export default function Detail() {
                                                     checked={sd.scheduled}
                                                     onChange={setChecked}
                                                     name="scheduled"
-                                                    disabled={publicStatus.indexOf(sd.productType) > 0 ? false : true}
+                                                    disabled={publicStatus.find(element => element === sd.productType) ? false : true}
                                                     color="primary"
                                                 />
                                             }
@@ -617,8 +605,6 @@ export default function Detail() {
                                                         <TableRow key={item.color_id + "-" + index}>
                                                             <TableCell align="center">{item.color}</TableCell>
                                                             <TableCell align="center">{vari['label']}</TableCell>
-                                                            <TableCell align="center">{"¥" + vari.price.toLocaleString()}
-                                                                {vari.compareAt ? <Typography color="secondary" variant="body1">{"¥" + vari.compareAt.toLocaleString()}</Typography> : ''}</TableCell>
                                                             <TableCell align="center">{vari['stock'] === 0 ? '在庫切れ' : vari['stock']}</TableCell>
                                                             <TableCell align="center">{sd.variant[count].size[index].visible ?
                                                                 <IconButton key={"visblle-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
