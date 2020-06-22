@@ -1,14 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Editor from '../editor';
-import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, Button, MenuItem, FormControl, Select, InputLabel, IconButton, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
+import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, Button, MenuItem, FormControl, FormControlLabel, Checkbox, Select, InputLabel, IconButton, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
 import { DropzoneArea } from 'material-ui-dropzone';
 import { ArrowBack, Visibility, VisibilityOff, Delete, Backup, Image } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import ReactImageMagnify from 'react-image-magnify';
-
+import DateFnsUtils from '@date-io/date-fns';
+import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker, } from '@material-ui/pickers';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -82,6 +83,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 const brand = ["XLARGE", "XLARGE USA", "MILKFED", "X-GIRL", "MILKFED(KIDS)", "MTG", "HUNTISM", "SILAS", "SILAS WOMEN", "SILAS OTHER", "MARIA OTHER", "X-GIRL STAGES FIRST STAGE", "X-GIRL STAGES NEXT STAGE", "XL-KIDS", "STITCH", "ADIDAS", "XG", "SARCASTIC", "AMONGST FRIENDS", "2K BY GINGHAM", "SNEAKER LAB", "NIKE", "NEW BALANCE", "REEBOK", "MILK CRATE", "ANYTHING", "VANS", "PUMA", "US VERSUS THEM", "ODD FUTURE", "DJ SHADOW", "COCOLO BLAND", "LADYS SHOES", "LAKAI MAIN", "LAKAI ANCHOR", "LAKAI ECHELON", "LAKAI STANDARD", "THE HILL SIDE ", "WHITE RAVEN", "Community Mill 雑貨", "Community Mill アパレル", "CONVERSE", "ASICS TIGER", "STANCE", "CHAMPION", "CANDIES", "MISFISH T", "NITTA KEIICHI", "GIZMOBIES", "OGURA", "FLATLUX", "TERUYA", "X-CLOSET ADIDAS ORIGINALS", "X-CLOSET", "店舗 OTHER", "CALIF OTHER", "営サ OTHER", "STYLES OTHER", "MONTAGE OTHER", "STITCH OTHER", "XG OTHER", "X-GIRL STAGES OTHER", "X-GIRL OTHER", "MILKFED OTHER", "XLARGE OTHER"];
 const genre = ["アウター", "ベスト", "ブルゾン", "ポンチョ", "ガウン", "マウンテンパーカー", "スタジャン", "デニムジャケット・Gジャン", "ライダースジャケット", "ニットアウター", "テーラードジャケット", "ノーカラージャケット", "ミリタリージャケット", "レインコート", "Pコート", "スプリングコート", "トレンチコート", "ステンカラーコート", "チェスターコート", "ダッフルコート", "ウールコート", "モッズコート・ミリタリーコート", "ダウンベスト", "ダウンジャケット/コート", "ファーアウター", "ムートンコート", "その他アウター", "トップス", "キャミソール", "チュニック", "ビスチェ", "チューブトップ・ベアトップ", "タンクトップ", "カットソー", "Ｔシャツ", "ポロシャツ", "シャツ", "ブラウス", "ニット", "カーディガン", "ボレロ", "パーカー", "スウェット・トレーナー", "プルオーバー", "アンサンブル", "トップス＋インナーセット", "ジャージ", "その他トップス", "ワンピース", "ベアワンピース", "キャミワンピース", "ノースリーブワンピース", "カットワンピース", "シャツワンピース", "ニットワンピース", "ミニワンピース", "膝丈ワンピース", "マキシ丈・ロングワンピース", "オールインワン", "パーティードレス", "ワンピース・ドレス＋トップスセット", "トップス＆ボトムセット", "その他ワンピース", "スカート", "ミニスカート", "膝丈スカート", "ロングスカート", "タイトスカート", "フレアスカート", "デニムスカート", "ジャンパースカート・サス付スカート", "その他スカート", "パンツ", "デニムショートパンツ", "デニムパンツ・ジーンズ", "ショートパンツ", "キュロット", "クロップドパンツ", "ロングパンツ", "スキニーパンツ", "レギパン", "スカパン", "チノパンツ", "タックパンツ", "カーゴパンツ", "ストレートパンツ", "ワイドパンツ", "ブーツカットパンツ", "サロペット・オーバーオール", "スウェットパンツ", "その他パンツ", "部屋着・ルームウェア", "パジャマ・ルームウェア", "シャツ", "Tシャツ・カットソー", "パーカー", "プルオーバー", "カーディガン", "ショートパンツ", "ロングパンツ", "ワンピース", "オールインワン", "セットアップ", "ガウン", "バスローブ", "小物", "ヘアアクセサリー", "ウエストウォーマー", "アイマスク", "ブランケット", "ネックピロー", "レッグウェア", "その他部屋着・ルームウェア", "スポーツウェア", "インナー", "スポーツブラ", "トップス", "スカート", "パンツ", "ワンピース", "アウター", "シューズ", "レッグウェア", "バッグ/ポーチ", "スポーツグッズ", "サウナスーツ", "その他スポーツウェア", "スーツ", "ジャケット(単品)", "スカート(単品)", "スーツパンツ(単品)", "スーツセット", "その他スーツ", "ブラックフォーマル・礼服・喪服", "ジャケット(単品)", "スーツパンツ(単品)", "スカート(単品)", "ワンピース(単品)", "セット", "その他", "制服・スクールアイテム", "シャツ", "ベスト・カーディガン", "セーター・ジャケット", "スカート", "リボン・ネクタイ・靴下", "スクールバッグ", "その他制服・スクールアイテム", "オフィスカジュアル・事務服", "事務服", "その他", "シューズ(靴)", "スニーカー", "スリッポン", "サンダル", "フラットシューズ", "パンプス", "ブーティ", "ショートブーツ", "ミドルブーツ", "ロングブーツ", "ニーハイ・サイハイブーツ", "ドレスシューズ", "ムートンブーツ", "ビーチサンダル", "レインシューズ", "シューケアグッズ", "その他シューズ(靴)", "バッグ・財布・小物入れ", "ショルダーバッグ", "ハンドバッグ", "トートバッグ", "リュック", "ボストンバッグ", "ボディバッグ・ウエストポーチ", "ポーチ", "クラッチバッグ", "カゴバッグ", "キャンバスバッグ", "キャリーケース", "メッセンジャーバッグ", "パーティーバッグ", "ドラムバッグ", "エコバッグ", "財布", "コインケース・札入れ", "カードケース", "パスケース", "名刺入れ", "その他バッグ・財布・小物入れ", "帽子", "ハット", "ニット帽", "ベレー帽", "キャップ", "ツバ広帽", "キャスケット", "その他帽子", "アクセサリー", "ピアス", "イヤリング", "リング", "ネックレス", "ブレスレット・バングル", "アンクレット", "ヘッドアクセサリー", "ブローチ", "チャーム", "その他アクセサリー", "ファッション雑貨", "ストール・マフラー・スヌード", "スカーフ・バンダナ", "ネックウォーマー", "イヤーマフ", "サングラス", "メガネ", "ブランケット", "ベルト・サスペンダー", "グローブ", "腕時計", "扇子", "傘", "キーケース・キーホルダー", "ハンカチ・ハンドタオル", "その他ファッション雑貨", "インナー・ランジェリー", "ブラジャー", "ショーツ・パンティ", "ブラ＆ショーツセット", "ヌーブラ", "アンダーウェア", "Tバック・ソング", "ブラ＆Tバックセット", "ベビードール", "ガードル", "補正下着・シェイプファンデ", "ブライダルインナー", "サニタリーショーツ", "その他インナー・ランジェリー", "レッグウェア", "タイツ・ストッキング", "レギンス・スパッツ・トレンカ", "ソックス", "レッグウォーマー", "ルームシューズ", "その他レッグウェア", "水着", "ビキニ", "水着セット", "ワンピース水着", "タンキニ", "パッド・ヌーブラ", "トップス", "ボトムス", "パレオ", "ショーツ", "ラッシュガード", "ビーチグッズ", "その他水着", "浴衣(ゆかた)", "帯", "下駄", "小物", "浴衣(単品)", "浴衣(セット)", "その他浴衣(ゆかた)", "着物", "黒紋付・喪服", "黒留袖", "色留袖", "振袖", "訪問着", "附下", "小紋", "帯", "帯揚", "帯〆", "重ね衿", "半衿", "着付小物", "草履", "バッグ", "その他", "福袋", "2019年福袋", "2018年以前福袋", "スキンケア", "化粧水", "乳液", "クリーム", "美容液・オイル", "洗顔", "クレンジング", "スクラブ", "パック・マッサージ・マスク", "リップケア", "バーム", "アイクリーム", "美容器具・ダイエット器具", "炭酸・水素アイテム", "その他スキンケア", "ヘアケア", "シャンプー", "コンディショナー", "トリートメント", "スタイリング", "ウィッグ", "アウトバストリートメント", "その他ヘアケア", "ボディケア", "ボディローション", "ボディクリーム", "ボディオイル", "ボディウォッシュ", "スクラブ", "ハンドソープ", "ハンドクリーム", "フット", "アウトドア(日焼けどめ・虫よけ)", "その他ボディケア", "デリケートケア", "デリケートケア", "デオドラント", "エチケット", "その他デリケートケア", "バス用品", "ソープ", "バスオイル", "バスソルト", "バスミルク", "その他バス用品", "メイクアップ", "アイカラー", "ファンデーション", "コンシーラー", "アイライナー", "チーク", "フェイスパウダー", "メイク小物", "つけまつげ用品", "二重コスメ", "アイブロウ", "マスカラ", "下地・UVケア", "リップ・グロス", "ネイル", "ミラー", "化粧下地", "その他メイクアップ", "その他", "その他", "メイク・スキンケアキット", "トライアル/トラベルキット", "スペシャルキット", "キットその他", "アウター", "ベスト", "ブルゾン", "ポンチョ", "ガウン", "マウンテンパーカー", "スタジャン", "デニムジャケット", "ライダースジャケット", "ニットアウター", "テーラードジャケット", "ノーカラージャケット", "ミリタリージャケット", "レインコート", "Pコート", "スプリングコート", "トレンチコート", "ステンカラーコート", "チェスターコート", "ダッフルコート", "ウールコート", "モッズコート", "ダウンベスト", "ダウンジャケット/コート", "ムートンコート", "その他", "トップス", "タンクトップ", "カットソー", "Tシャツ", "ポロシャツ", "シャツ", "ニット", "カーディガン", "パーカー", "スウェット・トレーナー", "プルオーバー", "ジャージ", "その他", "ボトムス", "ショートパンツ", "ハーフパンツ", "ロングパンツ", "スキニー", "ワイドパンツ", "バギーパンツ", "チノパンツ", "カーゴパンツ", "ブーツカットパンツ", "オールインワン", "デニムパンツ", "デニムショートパンツ", "スウェットパンツ", "その他", "ルームウェア", "パジャマ・ルームウェア", "Tシャツ・カットソー", "プルオーバー", "カーディガン", "シャツ", "パーカー", "ショートパンツ", "ロングパンツ", "ガウン", "セットアップ", "バスローブ", "小物", "ブランケット", "レッグウェア", "その他", "スポーツウェア", "インナー", "トップス", "スカート", "パンツ", "ワンピース", "アウター", "シューズ", "レッグウェア", "バッグ/ポーチ", "スポーツグッズ", "サウナスーツ", "その他", "スーツ", "ジャケット(単品)", "パンツ(単品)", "スーツセット", "その他", "ブラックフォーマル・礼服・喪服", "ジャケット(単品)", "スーツパンツ(単品)", "セット", "その他", "シューズ", "スニーカー", "カジュアルシューズ", "サンダル", "ビジネスシューズ", "ブーツ", "レインシューズ", "ビーチサンダル", "シューケアグッズ", "その他", "バッグ・財布・小物入れ", "ショルダーバッグ", "ハンドバッグ", "トートバッグ", "リュック", "ボストンバッグ", "ボディバッグ・ウエストポーチ", "ポーチ", "クラッチバッグ", "カゴバッグ", "キャンバスバッグ", "キャリーケース", "メッセンジャーバッグ", "ドラムバッグ", "エコバッグ", "財布", "コインケース・札入れ", "カードケース", "パスケース", "名刺入れ", "ビジネスバッグ", "その他", "帽子", "ハット", "ニット帽", "ベレー帽", "キャップ", "キャスケット", "その他", "アクセサリー", "ピアス", "リング", "ネックレス", "ブレスレット・バングル", "その他", "ファッション雑貨", "ストール・マフラー", "スカーフ・バンダナ", "ネックウォーマー", "イヤーマフ", "サングラス", "メガネ", "ベルト・サスペンダー", "グローブ", "腕時計", "扇子", "傘", "キーケース・キーホルダー", "ハンカチ・ハンドタオル", "ブランケット", "ネクタイ", "ネクタイピン", "カフリンクス", "その他", "インナー", "ボクサーパンツ", "トランクス", "その他", "レッグウェア", "ソックス", "ルームシューズ", "その他", "水着", "水着", "トップス", "ラッシュガード", "ビーチグッズ", "その他", "浴衣", "帯", "下駄", "小物", "浴衣(単品)", "浴衣(セット)", "その他", "着物", "その他", "福袋", "福袋", "スキンケア", "化粧水", "乳液", "クリーム", "美容液・オイル", "洗顔", "クレンジング", "スクラブ", "パック・マッサージ・マスク", "リップケア", "バーム", "美容器具・ダイエット器具", "炭酸・水素アイテム", "その他", "ヘアケア", "シャンプー", "コンディショナー", "トリートメント", "スタイリング", "アウトバストリートメント", "その他", "ボディケア", "ボディローション", "ボディクリーム", "ボディオイル", "ボディウォッシュ", "スクラブ", "ハンドソープ", "ハンドクリーム", "フット", "アウトドア(日焼けどめ・虫よけ)", "その他", "バス", "ソープ", "バスオイル", "バスソルト", "バスミルク", "その他", "その他", "その他", "アウター", "ベスト", "ブルゾン", "ポンチョ", "ガウン", "マウンテンパーカー", "スタジャン", "デニムジャケット", "ライダースジャケット", "ニットアウター", "テーラードジャケット", "ノーカラージャケット", "ミリタリージャケット", "レインコート", "Pコート", "スプリングコート", "トレンチコート", "ステンカラーコート", "チェスターコート", "ダッフルコート", "ウールコート", "モッズコート", "ダウンベスト", "ダウンジャケット/コート", "ファーアウター", "ムートンコート", "その他", "トップス", "キャミソール", "チュニック", "ビスチェ", "チューブ・ベアトップ", "タンクトップ", "カットソー", "Ｔシャツ", "ポロシャツ", "シャツ", "ブラウス", "ニット", "カーディガン", "ボレロ", "パーカー", "スウェット・トレーナー", "プルオーバー", "アンサンブル", "トップス＋インナーセット", "ジャージ", "その他", "ワンピース", "ベアワンピース", "キャミワンピース", "ノースリワンピ", "カットワンピース", "シャツワンピース", "ニットワンピース", "ミニワンピース", "膝丈ワンピース", "マキシ・ロングワンピース", "オールインワン", "ドレス", "ワンピース＋トップスセット", "トップス＆ボトムセット", "その他", "スカート", "ミニスカート", "膝丈スカート", "ロングスカート", "タイトスカート", "フレアスカート", "デニムスカート", "ジャンスカ・サス付スカート", "その他", "パンツ", "デニムショートパンツ", "デニムパンツ", "ショートパンツ", "ハーフパンツ", "キュロット", "クロップドパンツ", "スキニー", "ロングパンツ", "レギパン", "スカパン", "チノパンツ", "タックパンツ", "カーゴパンツ", "ブーツカットパンツ", "ストレートパンツ", "サロペット", "ワイドパンツ", "バギーパンツ", "スウェットパンツ", "その他", "ルームウェア", "パジャマ・ルームウェア", "シャツ", "Tシャツ・カットソー", "パーカー", "プルオーバー", "カーディガン", "ショートパンツ", "ロングパンツ", "ワンピース", "オールインワン", "セットアップ", "ガウン", "バスローブ", "小物", "ヘアアクセサリー", "ウエストウォーマー", "アイマスク", "ブランケット", "ネックピロー", "レッグウェア", "その他", "スポーツウェア", "インナー", "スポーツブラ", "トップス", "スカート", "パンツ", "ワンピース", "アウター", "シューズ", "レッグウェア", "バッグ/ポーチ", "スポーツグッズ", "サウナスーツ", "その他", "スクールアイテム", "シャツ", "ベスト・カーディガン", "セーター・ジャケット", "スカート", "リボン・ネクタイ・靴下", "バッグ", "その他", "シューズ", "スニーカー", "サンダル", "フラットシューズ", "パンプス", "ブーティ", "ショートブーツ", "ブーツ", "ムートンブーツ", "ビーチサンダル", "ドレスシューズ", "シューケアグッズ", "レインシューズ", "その他", "バッグ・財布・小物入れ", "ショルダーバッグ", "ハンドバッグ", "トートバッグ", "リュック", "ボストンバッグ", "ボディバッグ・ウエストポーチ", "ポーチ", "クラッチバッグ", "カゴバッグ", "キャンバスバッグ", "キャリーケース", "メッセンジャーバッグ", "パーティーバッグ", "ドラムバッグ", "エコバッグ", "財布", "コインケース・札入れ", "カードケース", "パスケース", "名刺入れ", "その他", "帽子", "ハット", "ニット帽", "ベレー帽", "キャップ", "ツバ広帽", "キャスケット", "その他", "アクセサリー", "ピアス", "イヤリング", "リング", "ネックレス", "ブレスレット・バングル", "アンクレット", "ヘッドアクセサリー", "ブローチ", "チャーム", "その他", "ファッション雑貨", "ストール・マフラー", "スカーフ・バンダナ", "ネックウォーマー", "イヤーマフ", "サングラス", "メガネ", "ブランケット", "ベルト・サスペンダー", "グローブ", "腕時計", "扇子", "傘", "キーケース・キーホルダー", "ハンカチ・ハンドタオル", "ネクタイ", "ネクタイピン", "カフリンクス", "その他", "インナー", "ブラ", "ショーツ・パンティ", "ブラ＆ショーツセット", "アンダーウェア", "ボクサーパンツ", "トランクス", "その他", "レッグウェア", "タイツ・ストッキング", "レギンス", "ソックス", "レッグウォーマー", "ルームシューズ", "その他", "水着", "水着", "水着セット", "ワンピース水着", "タンキニ", "トップス", "ボトムス", "パレオ", "ショーツ", "ラッシュガード", "ビーチグッズ", "その他", "浴衣", "帯", "下駄", "小物", "浴衣(単品)", "浴衣(セット)", "その他", "着物", "その他", "福袋", "福袋", "スキンケア", "化粧水", "乳液", "クリーム", "美容液・オイル", "洗顔", "クレンジング", "スクラブ", "パック・マッサージ・マスク", "リップケア", "バーム", "その他", "ヘアケア", "シャンプー", "コンディショナー", "トリートメント"];
+const status = ['予定商品', 'ささげ済み', '未公開', '販売予定告知中', '予約販売', '販売中', 'SALE', '販売終了', 'ノベリティ', '公開終了'];
+const publicStatus = ['販売予定告知中', '予約販売', '販売中', 'SALE', '販売終了'];
 const itemDetailText = `<b>【デザイン】</b><br><span>・XLARGE×Championのコラボレーションアイテム。</span><br><span>・フロントにXLARGEのスタンダードロゴをプリントしたベーシックで使い勝手の良いデザイン。</span><br><span>・同色を使用したショートパンツ(101202031001)とのSET UP展開。</span><br><br><b>【スタイリング提案】</b><br><span>・シンプルなデザインのTシャツはオーバーサイズで、カーゴパンツなどを合わせたストリート感のあるコーディネートがオススメ。</span><br><br><b>【特徴】</b><br><span>・透け感:なし</span><br><span>・裏地:なし</span><br><span>・光沢:なし</span><br><span>・生地の厚さ:やや厚手</span><br><span>・伸縮性:なし</span><br><span>・シルエット:スタンダード</span><br><br><b>【CHAMPION】</b><br><span>1919年、サイモン・フェインブルームによってニューヨーク州ロチェスターに設立。</span><br><span>米軍の訓練用ウエアや大学のアスレチックウエアとして注目された後、数々のオフィシャルスポーツウエアやユニフォームを手がけることに。</span><br><span>チャンピオンのウエアは、デザインや機能性に優れ、プロリーグも愛用するハイクオリティーなアイテムとして愛され続けている。</span><br><br><br><b>【取り扱い注意事項】</b><br><span>素材の特性上、汗や雨に濡れた場合、色にじみ・移染の恐れが有ります。濡れた場合は素早く拭き取り乾かして下さい。</span><br><br><b>※この商品は海外配送対応を行っておりませんので、予めご了承ください。</b><br><b>※画像の商品は光の照射や角度により、実物と色味が異なる場合がございます。</b><br><b>また表示のサイズ感と実物は若干異なる場合もございますので、予めご了承ください。</b><br>`;
 const itemTitleText = `<h1>【XLARGE×Champion】REVERSE WEAVE S/S TEE</h1><br>`;
 let sizeTableText =
@@ -242,26 +245,29 @@ const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 export default function Detail() {
     let { id } = useParams();
     const editor = useRef(null);
-    let [sd, setSasage] = useState(
+    const [sd, setSasage] = useState(
         {
-            title: '【XLARGE×Champion】REVERSE WEAVE S/S TEE',
-            titleExtend: itemTitleText,
-            variant: variants,
-            detail: itemDetailText,
             brand: '',
-            genre: '',
             category: '',
-            small_genre: '',
+            detail: itemDetailText,
             fabric: '麺100%',
-            madeby: '中国',
-            jancode: 'jancode example',
-            return: '',
-            weight: '350',
+            genre: '',
+            productType: '予定商品',
+            publishDate: '',
             images: imgList,
+            jancode: 'jancode example',
+            madeby: '中国',
+            relatedItem: relatedItems,
+            return: '',
+            scheduled: false,
+            small_genre: '',
             sizeTableHTML: '',
             sizeTableId: '',
             sizeTableText: sizeTableText,
-            relatedItem: relatedItems
+            title: '【XLARGE×Champion】REVERSE WEAVE S/S TEE',
+            titleExtend: itemTitleText,
+            variant: variants,
+            weight: '350',
         }
     );
     const colorList = sd.variant.map((obj) => {
@@ -269,16 +275,20 @@ export default function Detail() {
     });
     const [si, setSI] = React.useState(sd.images[0]);
     const [flag, setFlag] = React.useState({ upload: false });
-    const setValue = (event, target) => {
-        setSasage({ ...sd, [target]: event.target.value });
+    const setValue = (event) => {
+        setSasage({ ...sd, [event.target.name]: event.target.value });
+    }
+    const setChecked = (event) => {
+        setSasage({ ...sd, [event.target.name]: event.target.checked });
     }
     const setRepresentive = (event, newRepresentive) => {
+        let images = sd.images;
         if (newRepresentive) {
-            sd.images[sd.images.indexOf(si)].representive = newRepresentive;
+            images[sd.images.indexOf(si)].representive = newRepresentive;
         } else {
-            sd.images[sd.images.indexOf(si)].representive = '';
+            images[sd.images.indexOf(si)].representive = '';
         }
-        setSasage(sd);
+        setSasage({ ...sd, images: images });
     };
     const setAlt = (event) => {
         sd.images[sd.images.indexOf(si)].alt = event.target.value;
@@ -298,28 +308,29 @@ export default function Detail() {
     const onDragEnd = (result) => {
         const { source, destination } = result;
         if (!destination) { return; }
-        sd.images.splice(destination.index, 0, sd.images.splice(source.index, 1)[0]);
-        setSasage(sd);
+        setSasage({ sd, images: sd.images.splice(destination.index, 0, sd.images.splice(source.index, 1)[0]) });
     }
     const selectImage = (item) => {
         setSI(item);
         setFlag({ ...flag, upload: false });
     }
+    const setDateTime = (date) => {
+        setSasage({ ...sd, publishDate: date });
+    }
     const deleteImage = () => {
         let imgList = sd.images;
         imgList.splice(sd.images.indexOf(si), 1);
-        sd['images'] = imgList;
-        setSasage(sd);
+        setSasage({ ...sd, images: imgList });
         setSI(imgList[0]);
     }
     const changeVisible = (count, index) => {
-        if (sd.variant[count].size[index].visible) {
-            sd.variant[count].size[index].visible = false;
+        let vari = sd.variant;
+        if (vari[count].size[index].visible) {
+            vari[count].size[index].visible = false;
         } else {
-            sd.variant[count].size[index].visible = true;
+            vari[count].size[index].visible = true;
         }
-        setSasage(sd);
-        //console.log(sd.variant[count].size[index].visible);
+        setSasage({ ...sd, variant: vari });
     }
     const setRelatedItem = (event, index) => {
         let ri = sd.relatedItem;
@@ -510,7 +521,7 @@ export default function Detail() {
                     <Grid item xs={6}>
                         <Container>
                             <Box className={classes.orange}>
-                                <TextField key="item" label="Title" variant="standard" fullWidth onChange={e => setValue(e, 'title')} defaultValue={sd.title} />
+                                <TextField key="item" label="Title" variant="standard" fullWidth onChange={setValue} defaultValue={sd.title} />
                             </Box>
                             <Box className={classes.blue}>
                                 <Editor
@@ -525,6 +536,72 @@ export default function Detail() {
                                 />
                             </Box>
                             <Box>
+                                <Grid container>
+                                    <Grid item xs={6}>
+                                        <FormControl className={classes.formControl}>
+                                            <InputLabel id="brand-select">ステータス</InputLabel>
+                                            <Select
+                                                labelId="status"
+                                                id="productType"
+                                                fullWidth
+                                                defaultValue={sd.productType}
+                                                onBlur={setValue}
+                                            >
+                                                <MenuItem value="none"></MenuItem>
+                                                {status.map((item, num) => (
+                                                    <MenuItem value={item} key={num}>{item}</MenuItem>
+                                                ))}
+                                            </Select>
+                                        </FormControl>
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                        <TextField id="compareAt" label="セール価格" variant="standard" fullWidth defaultValue={sd.compareAt} onBlur={setValue} />
+                                    </Grid>
+
+                                    <Grid item xs={12}>
+                                        <FormControlLabel
+                                            control={
+                                                <Checkbox
+                                                    checked={sd.scheduled}
+                                                    onChange={setChecked}
+                                                    name="scheduled"
+                                                    disabled={publicStatus.indexOf(sd.productType) > 0 ? false : true}
+                                                    color="primary"
+                                                />
+                                            }
+                                            label="公開日時指定"
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} >
+                                        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                            <KeyboardDatePicker
+                                                margin="normal"
+                                                id="date-picker"
+                                                label="公開日付"
+                                                format="yyyy-MM-dd"
+                                                defualtValue={sd.publishDate}
+                                                onChange={setDateTime}
+                                                disabled={sd.scheduled ? false : true}
+                                                KeyboardButtonProps={{
+                                                    'aria-label': 'change date',
+                                                }}
+                                            />
+                                            <KeyboardTimePicker
+                                                margin="normal"
+                                                id="time-picker"
+                                                label="公開時刻"
+                                                ampm={false}
+                                                defaultValue={sd.publishDate}
+                                                onChange={setDateTime}
+                                                disabled={sd.scheduled ? false : true}
+                                                KeyboardButtonProps={{
+                                                    'aria-label': 'change time',
+                                                }}
+                                            />
+                                        </MuiPickersUtilsProvider>
+                                    </Grid>
+
+                                </Grid>
                                 <TableContainer component={Paper}>
                                     <Table className={classes.table} size="small" aria-label="a dense table">
                                         <TableHead>
@@ -581,9 +658,9 @@ export default function Detail() {
                                         <Select
                                             labelId="brand-select"
                                             id="brand"
-                                            value={sd['brand']}
+                                            defaultValue={sd['brand']}
                                             fullWidth
-                                            onChange={() => (setSasage(sd))}
+                                            onChange={setValue}
                                         >
                                             <MenuItem value="none"></MenuItem>
                                             {brand.map((item, num) => (
@@ -596,9 +673,9 @@ export default function Detail() {
                                         <Select
                                             labelId="big-genre"
                                             id="big-genre"
-                                            value={sd['genre']}
+                                            defaultValue={sd['genre']}
                                             fullWidth
-                                            onChange={() => (setSasage(sd))}
+                                            onChange={setValue}
                                         >
                                             <MenuItem value="none"></MenuItem>
                                             {genre.map((item, cnt) => (
@@ -607,11 +684,11 @@ export default function Detail() {
                                         </Select>
                                     </FormControl>
                                 </Box>
-                                <TextField id="fabric" label="素材" variant="standard" fullWidth defaultValue={sd.fabric} onBlur={e => setValue(e, 'fabric')} />
-                                <TextField id="manifactured" label="原産国" variant="standard" fullWidth defaultValue={sd.madeby} onBlur={e => setValue(e, 'madeby')} />
-                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth defaultValue={sd.jancode} onBlur={e => setValue(e, 'jancode')} />
-                                <TextField id="return" label="返品について" variant="standard" fullWidth defaultValue={sd.return} onBlur={e => setValue(e, 'return')} />
-                                <TextField id="weight" label="重量" variant="standard" fullWidth defaultValue={sd.weight} onBlur={e => setValue(e, 'weight')} />
+                                <TextField id="fabric" label="素材" variant="standard" fullWidth defaultValue={sd.fabric} onBlur={setValue} />
+                                <TextField id="manifactured" label="原産国" variant="standard" fullWidth defaultValue={sd.madeby} onBlur={setValue} />
+                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth defaultValue={sd.jancode} onBlur={setValue} />
+                                <TextField id="return" label="返品について" variant="standard" fullWidth defaultValue={sd.return} onBlur={setValue} />
+                                <TextField id="weight" label="重量" variant="standard" fullWidth defaultValue={sd.weight} onBlur={setValue} />
                             </Box>
                         </Container>
                     </Grid>
