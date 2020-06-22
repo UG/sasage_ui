@@ -23,31 +23,31 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function createData(id, title, price, size, madeby, nutrition, isNew) {
-    return { id, title, price, size, madeby, nutrition, isNew };
+function createData(id, title, productType, price, compareAt, size, lastModified, isNew) {
+    return { id, title, productType, price, compareAt, size, lastModified, isNew };
 }
 
 const rows = [
-    createData('0000001', 'CROSSFIRE SWEAT 1', 10000, 'S,M,L,XL', '中国', '綿100%', false),
-    createData('0000002', 'CROSSFIRE SWEAT 2', 10100, 'S,M,L,XL', '中国', '綿100%', false),
-    createData('0000003', 'CROSSFIRE SWEAT 3', 102000, 'S,M,L,XL', '中国', '綿100%', false),
-    createData('0000004', 'CROSSFIRE SWEAT 4', 10300, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000005', 'CROSSFIRE SWEAT 5', 10400, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000006', 'CROSSFIRE FULL SWEAT1', 11200, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000007', 'CROSSFIRE FULL SWEAT2', 12200, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000008', 'CROSSFIRE FULL SWEAT3', 13200, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000009', 'CROSSFIRE FULL SWEAT4', 14200, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000010', 'CROSSFIRE FULL SWEAT5', 13500, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000011', 'CROSSFIRE ZIPPED SWEAT1', 100, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000012', 'CROSSFIRE ZIPPED SWEAT2', 200, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000013', 'CROSSFIRE ZIPPED SWEAT3', 300, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000014', 'CROSSFIRE ZIPPED SWEAT4', 400, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000015', 'CROSSFIRE ZIPPED SWEAT5', 500, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000016', 'CROSSFIRE FULLZIPPED SWEAT1', 3000, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000017', 'CROSSFIRE FULLZIPPED SWEAT2', 3000, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000018', 'CROSSFIRE FULLZIPPED SWEAT3', 4000, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000019', 'CROSSFIRE FULLZIPPED SWEAT4', 4000, 'S,M,L,XL', '中国', '綿100%', true),
-    createData('0000020', 'CROSSFIRE FULLZIPPED SWEAT5', 3200, 'S,M,L,XL', '中国', '綿100%', true),
+    createData('0000001', 'CROSSFIRE SWEAT 1', 'セール', 10000, 9000, 'S,M,L,XL', '2020-02-22 22:22:22', false),
+    createData('0000002', 'CROSSFIRE SWEAT 2', '予定商品', 10100, null, 'S,M,L,XL', '2020-02-22 22:22:22', false),
+    createData('0000003', 'CROSSFIRE SWEAT 3', '販売中', 102000, null, 'S,M,L,XL', '2020-02-22 22:22:22', false),
+    createData('0000004', 'CROSSFIRE SWEAT 4', '販売中', 10300, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000005', 'CROSSFIRE SWEAT 5', '販売中', 10400, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000006', 'CROSSFIRE FULL SWEAT1', '予約受付', 11200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000007', 'CROSSFIRE FULL SWEAT2', '予約受付', 12200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000008', 'CROSSFIRE FULL SWEAT3', 'セール', 13200, 12000, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000009', 'CROSSFIRE FULL SWEAT4', '販売中', 14200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000010', 'CROSSFIRE FULL SWEAT5', '予定商品', 13500, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000011', 'CROSSFIRE ZIPPED SWEAT1', '予定商品', 100, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000012', 'CROSSFIRE ZIPPED SWEAT2', '販売中', 200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000013', 'CROSSFIRE ZIPPED SWEAT3', '予定商品', 300, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000014', 'CROSSFIRE ZIPPED SWEAT4', '予定商品', 400, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000015', 'CROSSFIRE ZIPPED SWEAT5', '予定商品', 500, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000016', 'CROSSFIRE FULLZIPPED SWEAT1', '予定商品', 3000, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000017', 'CROSSFIRE FULLZIPPED SWEAT2', '予定商品', 3000, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000018', 'CROSSFIRE FULLZIPPED SWEAT3', '予定商品', 4000, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000019', 'CROSSFIRE FULLZIPPED SWEAT4', '予定商品', 4000, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
+    createData('0000020', 'CROSSFIRE FULLZIPPED SWEAT5', '予定商品', 3200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -77,13 +77,14 @@ function stableSort(array, comparator) {
 }
 
 const headCells = [
-    { id: 'id', numeric: false, disablePadding: false, label: '商品id' },
-    { id: 'title', numeric: false, disablePadding: false, label: 'タイトル' },
-    { id: 'price', numeric: true, disablePadding: false, label: '値段' },
-    { id: 'size', numeric: false, disablePadding: false, label: 'サイズ' },
-    { id: 'madeby', numeric: false, disablePadding: false, label: '生産国' },
-    { id: 'nutrition', numeric: false, disablePadding: false, label: '混率' },
-    { id: 'isNew', numeric: false, disablePadding: false, label: 'New' },
+    { id: 'id', numeric: false, label: '商品id' },
+    { id: 'title', numeric: false, label: 'タイトル' },
+    { id: 'productType', numeric: false, label: 'ステータス' },
+    { id: 'price', numeric: true, label: '値段' },
+    { id: 'compareAt', numeric: true, label: 'セール価格' },
+    { id: 'size', numeric: false, label: 'サイズ' },
+    { id: 'lastModified', numeric: false, label: '最終更新日' },
+    { id: 'isNew', numeric: false, label: 'New' },
 ];
 
 function EnhancedTableHead(props) {
@@ -118,7 +119,7 @@ function EnhancedTableHead(props) {
                             {headCell.label}
                             {orderBy === headCell.id ? (
                                 <span className={classes.visuallyHidden}>
-                                    {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
+                                    {order === 'desc' ? '(降順)' : '(昇順)'}
                                 </span>
                             ) : null}
                         </TableSortLabel>
@@ -207,7 +208,7 @@ const EnhancedTableToolbar = (props) => {
 export default function ListView(props) {
     const classes = useStyles();
     const [order, setOrder] = React.useState('asc');
-    const [orderBy, setOrderBy] = React.useState('calories');
+    const [orderBy, setOrderBy] = React.useState('');
     const [selected, setSelected] = React.useState([]);
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(20);
@@ -304,10 +305,11 @@ export default function ListView(props) {
                                             </TableCell>
                                             <TableCell component="th" id={labelId} scope="row" padding="none" align="center"><Link to={'/Detail/' + row.id + '/'}>{row.id}</Link></TableCell>
                                             <TableCell align="center">{row.title}</TableCell>
+                                            <TableCell align="center">{row.productType}</TableCell>
                                             <TableCell align="center">{row.price}</TableCell>
+                                            <TableCell align="center">{row.compareAt}</TableCell>
                                             <TableCell align="center">{row.size}</TableCell>
-                                            <TableCell align="center">{row.madeby}</TableCell>
-                                            <TableCell align="center">{row.nutrition}</TableCell>
+                                            <TableCell align="center">{row.lastModified}</TableCell>
                                             <TableCell align="center">{row.isNew ? '◯' : '☓'}</TableCell>
                                         </TableRow>
                                     );

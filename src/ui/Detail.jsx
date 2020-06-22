@@ -158,24 +158,28 @@ const variants = [
                 label: 'S',
                 stock: 10,
                 price: 6050,
+                compareAt: 5500,
                 visible: true
             },
             {
                 label: 'M',
                 stock: 3,
                 price: 6050,
+                compareAt: 5500,
                 visible: true,
             },
             {
                 label: 'L',
                 stock: 0,
                 price: 6050,
+                compareAt: 5500,
                 visible: true,
             },
             {
                 label: 'XL',
                 stock: 0,
                 price: 6050,
+                compareAt: 5500,
                 visible: true,
             }
         ]
@@ -223,7 +227,7 @@ const variants = [
         ]
     }
 ];
-const variantsHeader = ['カラー', 'サイズ', '価格', '在庫'];
+const variantsHeader = ['カラー', 'サイズ', '価格/Sale', '在庫', '表示'];
 function createData(size, length, shawl, hood, sleeve) {
     return { size, length, shawl, hood, sleeve };
 }
@@ -535,7 +539,8 @@ export default function Detail() {
                                                         <TableRow key={item.color_id + "-" + index}>
                                                             <TableCell align="center">{item.color}</TableCell>
                                                             <TableCell align="center">{vari['label']}</TableCell>
-                                                            <TableCell align="center">{vari.price.toLocaleString() + "円（税込み）"}</TableCell>
+                                                            <TableCell align="center">{"¥" + vari.price.toLocaleString()}
+                                                                {vari.compareAt ? <Typography color="secondary" variant="body1">{"¥" + vari.compareAt.toLocaleString()}</Typography> : ''}</TableCell>
                                                             <TableCell align="center">{vari['stock'] === 0 ? '在庫切れ' : vari['stock']}</TableCell>
                                                             <TableCell align="center">{sd.variant[count].size[index].visible ?
                                                                 <IconButton key={"visblle-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
