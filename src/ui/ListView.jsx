@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Table, TableBody, TableCell, TableHead, TableRow, TablePagination, TableSortLabel, Toolbar, Paper, Box, Typography, TableContainer, Grid, InputBase, IconButton, FormControl, Select, MenuItem } from '@material-ui/core';
+import { Table, TableBody, TableCell, TableHead, TableRow, TablePagination, TableSortLabel, Toolbar, Paper, Box, Typography, TableContainer, Grid, InputBase, IconButton, } from '@material-ui/core';
 import { Search, GetApp, Publish, Block } from '@material-ui/icons';
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ const rows = [
     { id: '0000001', title: 'CROSSFIRE SWEAT 1', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
     { id: '0000002', title: 'CROSSFIRE SWEAT 2', productType: 'ささげ済み', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
     { id: '0000003', title: 'CROSSFIRE SWEAT 3', productType: '未公開', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
-    { id: '0000004', title: 'CROSSFIRE SWEAT 4', productType: '販売予定告知中', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000004', title: 'CROSSFIRE SWEAT 4', productType: '予約販売停止', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
     { id: '0000005', title: 'CROSSFIRE SWEAT 5', productType: '予約販売', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
     { id: '0000006', title: 'CROSSFIRE1', productType: '販売中', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
     { id: '0000007', title: 'CROSSFIRE2', productType: '予約販売', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
@@ -83,7 +83,7 @@ const headCells = [
     { id: 'compareAt', numeric: true, label: '予定商品価格' },
     { id: 'size', numeric: false, label: 'サイズ' },
     { id: 'lastModified', numeric: false, label: '最終更新日' },
-    { id: 'malls', numeric: false, label: '連携モール' },
+    { id: 'mall', numeric: false, label: '連携モール' },
 ];
 
 function EnhancedTableHead(props) {
@@ -173,17 +173,7 @@ const EnhancedTableToolbar = (props) => {
                     </Paper>
                 </Grid>
                 <Grid item xs={3} className={classes.files}>
-                    <FormControl className={classes.formControl}>
-                        <Select
-                            id="templateSelect"
-                            placeholder="サイズテンプレート"
-                            value={'予定商品'}
-                        >
-                            <MenuItem key={"uno"} value={'予定商品'} >予定商品</MenuItem>
-                            <MenuItem key={"dos"} value={'販売中'}>販売中</MenuItem>
-                            <MenuItem key={"tres"} value={'SALE'}>SALE</MenuItem>
-                        </Select>
-                    </FormControl>
+
                     <IconButton><GetApp /></IconButton>
                     <IconButton><Publish /></IconButton>
                 </Grid>
@@ -264,11 +254,10 @@ export default function ListView(props) {
                                     return (
                                         <TableRow
                                             hover
-                                            role="checkbox"
                                             tabIndex={-1}
                                             key={row.id}
                                         >
-                                            <TableCell component="th" id={labelId} scope="row" padding="none" align="center"><Link to={'/Detail/' + row.id + '/'}>{row.id}</Link></TableCell>
+                                            <TableCell align="center" id={labelId}><Link to={'/Detail/' + row.id + '/'}>{row.id}</Link></TableCell>
                                             <TableCell align="center">{row.title}</TableCell>
                                             <TableCell align="center">{row.productType}</TableCell>
                                             <TableCell align="center">{row.price}</TableCell>
