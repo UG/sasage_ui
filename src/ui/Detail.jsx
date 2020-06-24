@@ -92,7 +92,7 @@ const genre = ["アウター", "ベスト", "ブルゾン", "ポンチョ", "ガ
 const status = ['予定商品', 'ささげ済み', '未公開', '販売予定告知中', '販売予定告知中指定', '予約販売', '販売中', 'SALE', '販売終了', 'ノベリティ', '公開終了'];
 const publicStatus = ['販売予定告知中', '予約販売', '販売中', 'SALE', '販売終了'];
 const itemDetailText = `<b>【デザイン】</b><br><span>・XLARGE×Championのコラボレーションアイテム。</span><br><span>・フロントにXLARGEのスタンダードロゴをプリントしたベーシックで使い勝手の良いデザイン。</span><br><span>・同色を使用したショートパンツ(101202031001)とのSET UP展開。</span><br><br><b>【スタイリング提案】</b><br><span>・シンプルなデザインのTシャツはオーバーサイズで、カーゴパンツなどを合わせたストリート感のあるコーディネートがオススメ。</span><br><br><b>【特徴】</b><br><span>・透け感:なし</span><br><span>・裏地:なし</span><br><span>・光沢:なし</span><br><span>・生地の厚さ:やや厚手</span><br><span>・伸縮性:なし</span><br><span>・シルエット:スタンダード</span><br><br><b>【CHAMPION】</b><br><span>1919年、サイモン・フェインブルームによってニューヨーク州ロチェスターに設立。</span><br><span>米軍の訓練用ウエアや大学のアスレチックウエアとして注目された後、数々のオフィシャルスポーツウエアやユニフォームを手がけることに。</span><br><span>チャンピオンのウエアは、デザインや機能性に優れ、プロリーグも愛用するハイクオリティーなアイテムとして愛され続けている。</span><br><br><br><b>【取り扱い注意事項】</b><br><span>素材の特性上、汗や雨に濡れた場合、色にじみ・移染の恐れが有ります。濡れた場合は素早く拭き取り乾かして下さい。</span><br><br><b>※この商品は海外配送対応を行っておりませんので、予めご了承ください。</b><br><b>※画像の商品は光の照射や角度により、実物と色味が異なる場合がございます。</b><br><b>また表示のサイズ感と実物は若干異なる場合もございますので、予めご了承ください。</b><br>`;
-const itemTitleText = `<h1>【XLARGE×Champion】REVERSE WEAVE S/S TEE</h1><br>`;
+const itemTitleText = `【XLARGE×Champion】REVERSE WEAVE S/S TEE`;
 let sizeTableText =
     `サイズ      |着丈(CB)    |肩巾     |身巾    |袖丈
 S{}            |70.5            |44        |46.5    |17
@@ -555,17 +555,8 @@ export default function Detail() {
                     </Grid>
                     <Grid item xs={6}>
                         <Container>
-                            <Box className={classes.blue}>
-                                <Editor
-                                    id={"title"}
-                                    ref={editor}
-                                    value={sd.title}
-                                    config={{ readonly: false }}
-                                    tabIndex={1} // tabIndex of textarea
-                                    onBlur={(obj) => {
-                                        if (obj && obj !== "") { setValue({ target: { value: obj, 'name': 'title' } }) }
-                                    }}
-                                />
+                            <Box>
+                                <TextField id={'title'} label="タイトル" variant="standard" defaultValue={sd.title} onBlur={setValue} fullWidth />
                             </Box>
                             <Grid container>
                                 <Grid item xs={4}>
