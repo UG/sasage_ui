@@ -10,6 +10,9 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import ReactImageMagnify from 'react-image-magnify';
 import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker, } from '@material-ui/pickers';
+import axios from 'axios';
+
+const apiUrl = '';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -232,7 +235,8 @@ const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 export default function Detail() {
     let { id } = useParams();
     const editor = useRef(null);
-    const [sd, setSasage] = useState(   //mainSatate
+    //states
+    const [sd, setSasage] = useState(   //mainSatate localstorageがあればレストア 
         {
             brand: '',
             category: '',
@@ -253,19 +257,39 @@ export default function Detail() {
             sizeTableHTML: '',
             sizeTableId: '',
             sizeTableText: sizeTableText,
-            titleExtend: itemTitleText,
+            title: itemTitleText,
             variant: variants,
             weight: '350',
+            lastModified: new Date(),
         }
     );
-
     const [si, setSI] = React.useState(sd.images[0]);  //Selected Iamge
     const [flag, setFlag] = React.useState({ upload: false });  // switch for upload mode and view Image mode
+    const [files, setFiles] = React.useState({ files: [] });
+    const classes = useStyles();
+    const handleUpload = (files) => {
+        console.log(files);
+        setFiles({ files: files });
+        files.map(async function (file) {
+            axios.post(apiUrl + '/imgUploader', file, { 'Content-Type': file.type })
+                .then(async function (response) {
+                    console.log(response.data);
+                }).catch(async function (err) {
+                    console.log(err);
+                });
+        });
+    }
     const setValue = (event) => {
-        setSasage({ ...sd, [event.target.name]: event.target.value });
+        setSasage({ ...sd, [event.target.id]: event.target.value });
+        //localStorage.setItem(sd);
+    }
+    const setNumric = (event) => {
+        setSasage({ ...sd, [event.target.id]: parseInt(event.target.value) });
+        //localStorage.setItem(sd);
     }
     const setChecked = (event) => {
         setSasage({ ...sd, [event.target.name]: event.target.checked });
+        //localStorage.setItem(sd);
     }
     const setRepresentive = (event, newRepresentive) => {
         let images = sd.images;
@@ -275,41 +299,30 @@ export default function Detail() {
             images[sd.images.indexOf(si)].representive = '';
         }
         setSasage({ ...sd, images: images });
+        //localStorage.setItem(sd);
     };
     const setAlt = (event) => {
         sd.images[sd.images.indexOf(si)].alt = event.target.value;
         setSasage(sd);
+        //localStorage.setItem(sd);
     }
     const setTitle = (event) => {
         sd.images[sd.images.indexOf(si)].title = event.target.value;
         setSasage(sd);
+        //localStorage.setItem(sd);
     }
-    const showUploader = (event) => {
-        setFlag({ ...flag, upload: true })
-    }
-    const showImage = (event) => {
-        setFlag({ ...flag, upload: false })
-    }
-    const classes = useStyles();
+
     const onDragEnd = (result) => {
         const { source, destination } = result;
         if (!destination) { return; }
         let img = sd.images;
         img.splice(destination.index, 0, sd.images.splice(source.index, 1)[0])
         setSasage({ ...sd, images: img });
-    }
-    const selectImage = (item) => {
-        setSI(item);
-        setFlag({ ...flag, upload: false });
+        //localStorage.setItem(sd);
     }
     const setDateTime = (date) => {
         setSasage({ ...sd, publishDate: date });
-    }
-    const deleteImage = () => {
-        let imgList = sd.images;
-        imgList.splice(sd.images.indexOf(si), 1);
-        setSasage({ ...sd, images: imgList });
-        setSI(imgList[0]);
+        //localStorage.setItem(sd);
     }
     const changeVisible = (count, index) => {
         let vari = sd.variant;
@@ -319,12 +332,39 @@ export default function Detail() {
             vari[count].size[index].visible = true;
         }
         setSasage({ ...sd, variant: vari });
+        //localStorage.setItem(sd);
     }
     const setRelatedItem = (event, index) => {
         let ri = sd.relatedItem;
         ri[index] = event.target.value;
         setSasage({ ...sd, relatedItem: ri });
+        //localStorage.setItem(sd);
     }
+    const showUploader = (event) => {
+        setFlag({ ...flag, upload: true })
+    }
+    const showImage = (event) => {
+        setFlag({ ...flag, upload: false })
+    }
+
+    const selectImage = (item) => {
+        setSI(item);
+        setFlag({ ...flag, upload: false });
+    }
+    const deleteImage = () => {
+        let imgList = sd.images;
+        imgList.splice(sd.images.indexOf(si), 1);
+        setSasage({ ...sd, images: imgList });
+        setSI(imgList[0]);
+    }
+
+    const calcRatio = () => {
+        if (sd.compareAt) {
+            let result = sd.price / sd.compareAt;
+            console.log(result);
+        }
+    }
+
 
     console.log(sd);
     return (
@@ -360,7 +400,9 @@ export default function Detail() {
                     <Grid item xs={6}>
 
                         <Box className={classes.border} padding={3}>
-                            {flag.upload ? <DropzoneArea /> :
+                            {flag.upload ? <DropzoneArea
+                                onChange={handleUpload}
+                            /> :
                                 <div>
                                     <Box className={classes.mainImage}>
                                         <ReactImageMagnify {...{
@@ -399,8 +441,8 @@ export default function Detail() {
                                             </Grid>
                                         </Grid>
                                     </Box>
-                                    <TextField key={'title-' + si.id} label="モデル情報" variant="standard" fullWidth defaultValue={si.title} onChange={setTitle} />
-                                    <TextField key={'alt-' + si.id} label="ALT 文言" variant="standard" fullWidth defaultValue={si.alt} onChange={setAlt} />
+                                    <TextField id={'title-' + si.id} label="モデル情報" variant="standard" fullWidth defaultValue={si.title} onChange={setTitle} />
+                                    <TextField id={'alt-' + si.id} label="ALT 文言" variant="standard" fullWidth defaultValue={si.alt} onChange={setAlt} />
                                 </div>
                             }
                             <Box className={classes.verticalSpace} />
@@ -460,10 +502,10 @@ export default function Detail() {
                             <TextField type="string"
                                 multiline
                                 rowsMax={5}
-                                id="table_text"
+                                id="sizeTableText"
                                 fullWidth
                                 variant="filled"
-                                onChange={() => (setSasage(sd))}
+                                onBlur={setValue}
                                 defaultValue={sd['sizeTableText']}
                             />
                             <Box className={classes.verticalTiny}></Box>
@@ -495,7 +537,7 @@ export default function Detail() {
                         <Box className={classes.verticalSpace}></Box>
                         <Box>
                             <Grid container>
-                                <Grid item xs={6}><TextField id="temp_name" label="サイズテーブルテンプレート名" variant="standard" fullWidth /></Grid>
+                                <Grid item xs={6}><TextField id="sizeTableName" label="サイズテーブルテンプレート名" variant="standard" fullWidth /></Grid>
                                 <Grid item xs={6}><Button variant="contained" color="primary" fullWidth><Typography variant="body1"> サイズテーブルテンプレート保存 </Typography></Button></Grid>
                             </Grid>
                         </Box>
@@ -503,7 +545,7 @@ export default function Detail() {
                         <Typography>関連アイテム</Typography>
                         <Box className={classes.border}>
                             {relatedItems.map((itemId, idx) => (
-                                <TextField key={'relatedItems-' + idx} label={'関連アイテムID-' + (idx + 1)} defaultValue={itemId} fullWidth onBlur={(event) => (setRelatedItem(event, idx))} />
+                                <TextField id={'relatedItems-' + idx} label={'関連アイテムID-' + (idx + 1)} defaultValue={itemId} fullWidth onBlur={(event) => (setRelatedItem(event, idx))} />
                             ))}
                         </Box>
                     </Grid>
@@ -511,16 +553,27 @@ export default function Detail() {
                         <Container>
                             <Box className={classes.blue}>
                                 <Editor
-                                    key={"titleExtend"}
+                                    id={"title"}
                                     ref={editor}
-                                    value={sd.titleExtend}
+                                    value={sd.title}
                                     config={{ readonly: false }}
                                     tabIndex={1} // tabIndex of textarea
                                     onBlur={(obj) => {
-                                        if (obj && obj !== "") { setValue({ target: { value: obj } }, 'titleExtend') }
+                                        if (obj && obj !== "") { setValue({ target: { value: obj, 'name': 'title' } }) }
                                     }}
                                 />
                             </Box>
+                            <Grid container>
+                                <Grid item xs={4}>
+                                    <TextField id="price" label="価格" variant="standard" fullWidth defaultValue={sd.price} onBlur={setNumric} />
+                                </Grid>
+                                <Grid item xs={4}>
+                                    <TextField id="compareAt" label="セール価格" variant="standard" fullWidth defaultValue={sd.compareAt} onBlur={setNumric} onChange={calcRatio} />
+                                </Grid>
+                                <Grid item xs={4}>
+                                    <TextField id="discountRatio" label="ディスカウント率" variant="standard" fullWidth defaultValue={sd.discountRatio} onBlur={setValue} />
+                                </Grid>
+                            </Grid>
                             <Box>
                                 <Grid container>
                                     <Grid item xs={4}>
@@ -540,12 +593,7 @@ export default function Detail() {
                                             </Select>
                                         </FormControl>
                                     </Grid>
-                                    <Grid item xs={4}>
-                                        <TextField id="price" label="価格" variant="standard" fullWidth defaultValue={sd.price} onBlur={setValue} />
-                                    </Grid>
-                                    <Grid item xs={4}>
-                                        <TextField id="compareAt" label="セール価格" variant="standard" fullWidth defaultValue={sd.compareAt} onBlur={setValue} />
-                                    </Grid>
+
 
                                     <Grid item xs={12}>
                                         <FormControlLabel
@@ -554,7 +602,7 @@ export default function Detail() {
                                                     checked={sd.scheduled}
                                                     onChange={setChecked}
                                                     name="scheduled"
-                                                    disabled={publicStatus.find(element => element === sd.productType) ? false : true}
+                                                    disabled={publicStatus.indexOf(sd.productType) ? false : true}
                                                     color="primary"
                                                 />
                                             }
@@ -634,7 +682,7 @@ export default function Detail() {
                                     config={{ readonly: false }}
                                     tabIndex={1} // tabIndex of textarea
                                     onBlur={(obj) => {
-                                        if (obj && obj !== "") { setValue({ target: { value: obj } }, 'detail') }
+                                        if (obj && obj !== "") { setValue({ target: { value: obj, name: 'detail' } }) }
                                     }}
                                 />
                             </Box>

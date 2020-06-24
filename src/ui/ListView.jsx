@@ -1,9 +1,31 @@
 import React from 'react';
-import clsx from 'clsx';
-import { lighten, makeStyles } from '@material-ui/core/styles';
-import { Table, TableBody, TableCell, TableHead, TableRow, TablePagination, TableSortLabel, Toolbar, Paper, Box, Typography, TableContainer, Grid, InputBase, IconButton, Checkbox } from '@material-ui/core';
-import { Search, GetApp, Publish } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core/styles';
+import { Table, TableBody, TableCell, TableHead, TableRow, TablePagination, TableSortLabel, Toolbar, Paper, Box, Typography, TableContainer, Grid, InputBase, IconButton, FormControl, Select, MenuItem } from '@material-ui/core';
+import { Search, GetApp, Publish, Block } from '@material-ui/icons';
 import { Link } from "react-router-dom";
+
+const rows = [
+    { id: '0000001', title: 'CROSSFIRE SWEAT 1', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000002', title: 'CROSSFIRE SWEAT 2', productType: 'ささげ済み', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000003', title: 'CROSSFIRE SWEAT 3', productType: '未公開', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000004', title: 'CROSSFIRE SWEAT 4', productType: '販売予定告知中', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000005', title: 'CROSSFIRE SWEAT 5', productType: '予約販売', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000006', title: 'CROSSFIRE1', productType: '販売中', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000007', title: 'CROSSFIRE2', productType: '予約販売', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000008', title: 'CROSSFIRE3', productType: 'SALE', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000009', title: 'CROSSFIRE4', productType: '販売終了', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000010', title: 'CROSSFIRE5', productType: 'SALE', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000011', title: 'SWEAT 1', productType: '販売中', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000012', title: 'SWEAT 2', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000013', title: 'SWEAT 3', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000014', title: 'SWEAT 4', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000015', title: 'SWEAT 5', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000016', title: 'FIRE SWEAT 1', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000017', title: 'FIRE SWEAT 2', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000018', title: 'FIRE SWEAT 3', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000019', title: 'FIRE SWEAT 4', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+    { id: '0000020', title: 'FIRE SWEAT 5', productType: '予定商品', price: 10000, compareAt: 9000, size: 'S,M,L,XL', lastModified: '2020-02-22 22:22:22', mall: { 'amazon': true, 'rakuten': true, 'andmall': true } },
+];
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,34 +43,11 @@ const useStyles = makeStyles((theme) => ({
     virticalSpacing: {
         height: 40
     },
+
 }));
 
-function createData(id, title, productType, price, compareAt, size, lastModified, isNew) {
-    return { id, title, productType, price, compareAt, size, lastModified, isNew };
-}
 
-const rows = [
-    createData('0000001', 'CROSSFIRE SWEAT 1', 'セール', 10000, 9000, 'S,M,L,XL', '2020-02-22 22:22:22', false),
-    createData('0000002', 'CROSSFIRE SWEAT 2', '予定商品', 10100, null, 'S,M,L,XL', '2020-02-22 22:22:22', false),
-    createData('0000003', 'CROSSFIRE SWEAT 3', '販売中', 102000, null, 'S,M,L,XL', '2020-02-22 22:22:22', false),
-    createData('0000004', 'CROSSFIRE SWEAT 4', '販売中', 10300, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000005', 'CROSSFIRE SWEAT 5', '販売中', 10400, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000006', 'CROSSFIRE FULL SWEAT1', '予約受付', 11200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000007', 'CROSSFIRE FULL SWEAT2', '予約受付', 12200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000008', 'CROSSFIRE FULL SWEAT3', 'セール', 13200, 12000, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000009', 'CROSSFIRE FULL SWEAT4', '販売中', 14200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000010', 'CROSSFIRE FULL SWEAT5', '予定商品', 13500, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000011', 'CROSSFIRE ZIPPED SWEAT1', '予定商品', 100, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000012', 'CROSSFIRE ZIPPED SWEAT2', '販売中', 200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000013', 'CROSSFIRE ZIPPED SWEAT3', '予定商品', 300, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000014', 'CROSSFIRE ZIPPED SWEAT4', '予定商品', 400, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000015', 'CROSSFIRE ZIPPED SWEAT5', '予定商品', 500, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000016', 'CROSSFIRE FULLZIPPED SWEAT1', '予定商品', 3000, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000017', 'CROSSFIRE FULLZIPPED SWEAT2', '予定商品', 3000, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000018', 'CROSSFIRE FULLZIPPED SWEAT3', '予定商品', 4000, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000019', 'CROSSFIRE FULLZIPPED SWEAT4', '予定商品', 4000, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-    createData('0000020', 'CROSSFIRE FULLZIPPED SWEAT5', '予定商品', 3200, null, 'S,M,L,XL', '2020-02-22 22:22:22', true),
-];
+
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -81,14 +80,14 @@ const headCells = [
     { id: 'title', numeric: false, label: 'タイトル' },
     { id: 'productType', numeric: false, label: 'ステータス' },
     { id: 'price', numeric: true, label: '値段' },
-    { id: 'compareAt', numeric: true, label: 'セール価格' },
+    { id: 'compareAt', numeric: true, label: '予定商品価格' },
     { id: 'size', numeric: false, label: 'サイズ' },
     { id: 'lastModified', numeric: false, label: '最終更新日' },
-    { id: 'isNew', numeric: false, label: 'New' },
+    { id: 'malls', numeric: false, label: '連携モール' },
 ];
 
 function EnhancedTableHead(props) {
-    const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+    const { classes, order, orderBy, onRequestSort } = props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
     };
@@ -96,14 +95,7 @@ function EnhancedTableHead(props) {
     return (
         <TableHead>
             <TableRow>
-                <TableCell padding="checkbox">
-                    <Checkbox
-                        indeterminate={numSelected > 0 && numSelected < rowCount}
-                        checked={rowCount > 0 && numSelected === rowCount}
-                        onChange={onSelectAllClick}
-                        inputProps={{ 'aria-label': 'select all desserts' }}
-                    />
-                </TableCell>
+
                 {headCells.map((headCell) => (
                     <TableCell
                         key={headCell.id}
@@ -135,16 +127,7 @@ const useToolbarStyles = makeStyles((theme) => ({
         paddingLeft: theme.spacing(2),
         paddingRight: theme.spacing(1),
     },
-    highlight:
-        theme.palette.type === 'light'
-            ? {
-                color: theme.palette.secondary.main,
-                backgroundColor: lighten(theme.palette.primary.light, 0.85),
-            }
-            : {
-                color: theme.palette.text.primary,
-                backgroundColor: theme.palette.primary.dark,
-            },
+
     title: {
         flex: '1 1 100%',
     },
@@ -167,14 +150,10 @@ const useToolbarStyles = makeStyles((theme) => ({
 }));
 
 const EnhancedTableToolbar = (props) => {
+
     const classes = useToolbarStyles();
-    const { numSelected } = props;
     return (
-        <Toolbar
-            className={clsx(classes.root, {
-                [classes.highlight]: numSelected > 0,
-            })}
-        >
+        <Toolbar>
             <Grid container>
                 <Grid item xs={3} >
                     <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
@@ -194,6 +173,17 @@ const EnhancedTableToolbar = (props) => {
                     </Paper>
                 </Grid>
                 <Grid item xs={3} className={classes.files}>
+                    <FormControl className={classes.formControl}>
+                        <Select
+                            id="templateSelect"
+                            placeholder="サイズテンプレート"
+                            value={'予定商品'}
+                        >
+                            <MenuItem key={"uno"} value={'予定商品'} >予定商品</MenuItem>
+                            <MenuItem key={"dos"} value={'販売中'}>販売中</MenuItem>
+                            <MenuItem key={"tres"} value={'SALE'}>SALE</MenuItem>
+                        </Select>
+                    </FormControl>
                     <IconButton><GetApp /></IconButton>
                     <IconButton><Publish /></IconButton>
                 </Grid>
@@ -207,9 +197,11 @@ const EnhancedTableToolbar = (props) => {
 
 export default function ListView(props) {
     const classes = useStyles();
+    const [list, setList] = React.useState({
+        mall: { amazon: true, rakuten: true, andmall: true }
+    })
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('');
-    const [selected, setSelected] = React.useState([]);
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(20);
 
@@ -217,33 +209,6 @@ export default function ListView(props) {
         const isAsc = orderBy === property && order === 'asc';
         setOrder(isAsc ? 'desc' : 'asc');
         setOrderBy(property);
-    };
-
-    const handleSelectAllClick = (event) => {
-        if (event.target.checked) {
-            const newSelecteds = rows.map((n) => n.id);
-            setSelected(newSelecteds);
-            return;
-        }
-        setSelected([]);
-    };
-    const handleClick = (event, id) => {
-        const selectedIndex = selected.indexOf(id);
-
-        let newSelected = [];
-        if (selectedIndex === -1) {
-            newSelected = newSelected.concat(selected, id);
-        } else if (selectedIndex === 0) {
-            newSelected = newSelected.concat(selected.slice(1));
-        } else if (selectedIndex === selected.length - 1) {
-            newSelected = newSelected.concat(selected.slice(0, -1));
-        } else if (selectedIndex > 0) {
-            newSelected = newSelected.concat(
-                selected.slice(0, selectedIndex),
-                selected.slice(selectedIndex + 1),
-            );
-        }
-        setSelected(newSelected);
     };
 
     const handleChangePage = (event, newPage) => {
@@ -254,9 +219,19 @@ export default function ListView(props) {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
     };
-
-
-    const isSelected = (id) => selected.indexOf(id) !== -1;
+    const switchAvailable = (row, target) => {
+        console.log(target);
+        let bool = false;
+        if (list.mall[target] === true) {
+            bool = false;
+        } else {
+            bool = true;
+        }
+        let newmall = list.mall;
+        newmall = { ...newmall, [target]: bool };
+        setList({ mall: newmall });
+        console.log(list);
+    }
 
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
@@ -264,7 +239,7 @@ export default function ListView(props) {
         <div className={classes.root}>
             <Box className={classes.virticalSpacing} ></Box>
             <Paper className={classes.paper} >
-                <EnhancedTableToolbar numSelected={selected.length} />
+                <EnhancedTableToolbar />
                 <TableContainer>
                     <Table
                         className={classes.table}
@@ -274,10 +249,9 @@ export default function ListView(props) {
                     >
                         <EnhancedTableHead
                             classes={classes}
-                            numSelected={selected.length}
                             order={order}
                             orderBy={orderBy}
-                            onSelectAllClick={handleSelectAllClick}
+
                             onRequestSort={handleRequestSort}
                             rowCount={rows.length}
                         />
@@ -285,24 +259,15 @@ export default function ListView(props) {
                             {stableSort(rows, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
-                                    const isItemSelected = isSelected(row.id);
+                                    ;
                                     const labelId = `enhanced-table-checkbox-${index}`;
                                     return (
                                         <TableRow
                                             hover
-                                            onClick={(event) => handleClick(event, row.id)}
                                             role="checkbox"
-                                            aria-checked={isItemSelected}
                                             tabIndex={-1}
                                             key={row.id}
-                                            selected={isItemSelected}
                                         >
-                                            <TableCell padding="checkbox">
-                                                <Checkbox
-                                                    checked={isItemSelected}
-                                                    inputProps={{ 'aria-labelledby': labelId }}
-                                                />
-                                            </TableCell>
                                             <TableCell component="th" id={labelId} scope="row" padding="none" align="center"><Link to={'/Detail/' + row.id + '/'}>{row.id}</Link></TableCell>
                                             <TableCell align="center">{row.title}</TableCell>
                                             <TableCell align="center">{row.productType}</TableCell>
@@ -310,7 +275,23 @@ export default function ListView(props) {
                                             <TableCell align="center">{row.compareAt}</TableCell>
                                             <TableCell align="center">{row.size}</TableCell>
                                             <TableCell align="center">{row.lastModified}</TableCell>
-                                            <TableCell align="center">{row.isNew ? '◯' : '☓'}</TableCell>
+                                            <TableCell align="center">
+                                                <IconButton id="amazon" onClick={() => (switchAvailable(row, 'amazon'))}>
+                                                    {list.mall.amazon ?
+                                                        <img src={process.env.PUBLIC_URL + '/amazon.png'} alt="amazon" /> : <Block />
+                                                    }
+                                                </IconButton>
+                                                <IconButton id="raktuen" onClick={() => (switchAvailable(row, 'rakuten'))}>
+                                                    {list.mall.rakuten ?
+                                                        <img src={process.env.PUBLIC_URL + '/rakuten.png'} alt="rakuten" /> : <Block />
+                                                    }
+                                                </IconButton>
+                                                <IconButton id="andmall" onClick={() => (switchAvailable(row, 'andmall'))}>
+                                                    {list.mall.andmall ?
+                                                        <img src={process.env.PUBLIC_URL + '/andmall.png'} alt="andmall" /> : <Block />
+                                                    }
+                                                </IconButton>
+                                            </TableCell>
                                         </TableRow>
                                     );
                                 })}
