@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Editor from '../editor';
 import { CssBaseline, Typography, Container, Grid, Paper, Box, TextField, Button, MenuItem, FormControl, FormControlLabel, Checkbox, Select, InputLabel, IconButton, TableBody, Table, TableCell, TableContainer, TableRow, TableHead } from '@material-ui/core/';
 import { DropzoneArea } from 'material-ui-dropzone';
-import { ArrowBack, Visibility, VisibilityOff, Delete, Backup, Image } from '@material-ui/icons';
+import { ArrowBack, Visibility, VisibilityOff, Delete, Backup, Image, ImportContacts, MonetizationOn } from '@material-ui/icons';
 import { useParams, Link } from "react-router-dom";
 import { ToggleButton, ToggleButtonGroup } from '@material-ui/lab';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -175,21 +175,25 @@ const variants = [
             {
                 label: 'S',
                 stock: 10,
-                visible: true
+                reseve: false,
+                visible: true,
             },
             {
                 label: 'M',
                 stock: 3,
+                reseve: false,
                 visible: true,
             },
             {
                 label: 'L',
                 stock: 0,
+                reseve: false,
                 visible: true,
             },
             {
                 label: 'XL',
                 stock: 0,
+                reseve: false,
                 visible: true,
             }
         ]
@@ -201,21 +205,25 @@ const variants = [
             {
                 label: 'S',
                 stock: 10,
+                reseve: false,
                 visible: true,
             },
             {
                 label: 'M',
                 stock: 3,
+                reseve: false,
                 visible: true,
             },
             {
                 label: 'L',
                 stock: 0,
+                reseve: false,
                 visible: true,
             },
             {
                 label: 'XL',
                 stock: 0,
+                reseve: false,
                 visible: false,
             }
         ]
@@ -232,7 +240,7 @@ const variants = [
         ]
     }
 ];
-const variantsHeader = ['カラー', 'サイズ', '在庫', '表示'];
+const variantsHeader = ['カラー', 'サイズ', '在庫', '販売形式', '表示'];
 function createData(size, length, shawl, hood, sleeve) {
     return { size, length, shawl, hood, sleeve };
 }
@@ -294,7 +302,7 @@ export default function Detail() {
         });
     }
     const setValue = (event) => {
-        console.log(event);
+        //console.log(event);
         setSasage({ ...sd, [event.target.id]: event.target.value });
         //localStorage.setItem(sd);
     }
@@ -348,6 +356,15 @@ export default function Detail() {
         }
         setSasage({ ...sd, variant: vari });
         //localStorage.setItem(sd);
+    }
+    const changeSaleMode = (count, index) => {
+        let vari = sd.variant;
+        if (vari[count].size[index].reserve) {
+            vari[count].size[index].reserve = false;
+        } else {
+            vari[count].size[index].reserve = true;
+        }
+        setSasage({ ...sd, variant: vari });
     }
     const setRelatedItem = (event, index) => {
         let ri = sd.relatedItem;
@@ -712,9 +729,10 @@ export default function Detail() {
                                                             <TableCell align="center">{item.color}</TableCell>
                                                             <TableCell align="center">{vari['label']}</TableCell>
                                                             <TableCell align="center">{vari['stock'] === 0 ? '在庫切れ' : vari['stock']}</TableCell>
-                                                            <TableCell align="center">{sd.variant[count].size[index].visible ?
-                                                                <IconButton key={"visblle-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
-                                                                : <IconButton key={"visible-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><VisibilityOff /></IconButton>}
+                                                            <TableCell align="center">{vari['reserve'] ? <IconButton key={"visble-" + count + "-" + index} onClick={() => (changeSaleMode(count, index))}><ImportContacts /></IconButton> :
+                                                                <IconButton key={"visible-" + count + "-" + index} onClick={() => (changeSaleMode(count, index))}><MonetizationOn /></IconButton>}</TableCell> <TableCell align="center">{sd.variant[count].size[index].visible ?
+                                                                    <IconButton key={"visblle-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
+                                                                    : <IconButton key={"visible-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><VisibilityOff /></IconButton>}
                                                             </TableCell>
                                                         </TableRow>
                                                     ))
