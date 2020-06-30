@@ -12,6 +12,7 @@ import DateFnsUtils from '@date-io/date-fns';
 import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker, } from '@material-ui/pickers';
 import axios from 'axios';
 
+const today = new Date();
 const apiUrl = '';
 
 const useStyles = makeStyles((theme) => ({
@@ -175,26 +176,38 @@ const variants = [
             {
                 label: 'S',
                 stock: 10,
+                reserveStock: 0,
+                supplyPeriod: '',
                 reseve: false,
                 visible: true,
+                jancode: '10492134123',
             },
             {
                 label: 'M',
                 stock: 3,
+                reserveStock: 0,
+                supplyPeriod: '',
                 reseve: false,
                 visible: true,
+                jancode: '10492134123',
             },
             {
                 label: 'L',
                 stock: 0,
+                reserveStock: 0,
+                supplyPeriod: '',
                 reseve: false,
                 visible: true,
+                jancode: '10492134123',
             },
             {
                 label: 'XL',
                 stock: 0,
+                reserveStock: 0,
+                supplyPeriod: '2020-09上旬',
                 reseve: false,
                 visible: true,
+                jancode: '10492134123',
             }
         ]
     },
@@ -205,26 +218,38 @@ const variants = [
             {
                 label: 'S',
                 stock: 10,
+                reserveStock: 0,
+                supplyPeriod: '',
                 reseve: false,
                 visible: true,
+                jancode: '10492134123',
             },
             {
                 label: 'M',
                 stock: 3,
+                reserveStock: 0,
+                supplyPeriod: '',
                 reseve: false,
                 visible: true,
+                jancode: '10492134123',
             },
             {
                 label: 'L',
                 stock: 0,
+                reserveStock: 0,
+                supplyPeriod: '',
                 reseve: false,
                 visible: true,
+                jancode: '10492134123',
             },
             {
                 label: 'XL',
                 stock: 0,
+                reserveStock: 0,
+                supplyPeriod: '',
                 reseve: false,
                 visible: false,
+                jancode: '10492134123',
             }
         ]
     },
@@ -235,12 +260,16 @@ const variants = [
             {
                 label: 'ワンサイズ',
                 stock: 0,
+                reserveStock: 0,
+                supplyPeriod: '',
+                reseve: false,
                 visible: true,
+                jancode: '10492134123',
             }
         ]
     }
 ];
-const variantsHeader = ['カラー', 'サイズ', '在庫', '販売形式', '表示'];
+const variantsHeader = ['カラー', 'サイズ', '納入時期', '予約在庫', '在庫', '販売形式', '表示', 'JANコード'];
 function createData(size, length, shawl, hood, sleeve) {
     return { size, length, shawl, hood, sleeve };
 }
@@ -250,6 +279,31 @@ const rows = [
     createData("L", "75.5cm", "51cm", "55.5cm", "19cm"),
     createData("XL", "79.5cm", "58cm", "60.5cm", "20cm"),
 ];
+const createSupplyOption = () => {
+    let result = [];
+    result.push(<MenuItem value={'未定'}>未定</MenuItem>);
+    result.push(<MenuItem value={'リリース中'}>リリース中</MenuItem>);
+    result.push(<MenuItem value={'予定なし'}>予定なし</MenuItem>);
+    for (var a = 0; a < 12; a++) {
+        let currentDate = new Date(today.getFullYear(), today.getMonth() + a + 1, today.getDate());
+        if (currentDate.getFullYear() === today.getFullYear() && currentDate.getDate() < 10) {
+        } else {
+            const dispPeriod = formatDate(currentDate, 'YYYY-MM') + '上旬';
+            result.push(<MenuItem value={dispPeriod}>{dispPeriod}</MenuItem>);
+        }
+        if (currentDate.getFullYear() === today.getFullYear() && currentDate.getDate() < 20) {
+        } else {
+            const dispPeriod = formatDate(currentDate, 'YYYY-MM') + '中旬';
+            result.push(<MenuItem value={dispPeriod}>{dispPeriod}</MenuItem>);
+        }
+        if (currentDate.getFullYear() === today.getFullYear() && currentDate.getDate() < 30) {
+        } else {
+            const dispPeriod = formatDate(currentDate, 'YYYY-MM') + '下旬';
+            result.push(<MenuItem value={dispPeriod}>{dispPeriod}</MenuItem>);
+        }
+    }
+    return result;
+}
 const relatedItems = ['', '', '', '', '', '', '', '', '', ''];
 const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 export default function Detail() {
@@ -267,7 +321,7 @@ export default function Detail() {
             genre: '',
             productType: '予定商品',
             images: imgList,
-            jancode: 'jancode example',
+            bsItemId: 'bsItemId',
             madeby: '中国',
             price: 6050,
             relatedItem: relatedItems,
@@ -334,7 +388,6 @@ export default function Detail() {
         setSasage(sd);
         //localStorage.setItem(sd);
     }
-
     const onDragEnd = (result) => {
         const { source, destination } = result;
         if (!destination) { return; }
@@ -357,6 +410,13 @@ export default function Detail() {
         setSasage({ ...sd, variant: vari });
         //localStorage.setItem(sd);
     }
+    const setSupplyPeriod = (count, index, event) => {
+        //console.log(sd['variant'][count]['size'][index]);
+        //console.log(event.target.value)
+        let vari = sd.variant;
+        vari[count].size[index].supplyPeriod = event.target.value;
+        setSasage({ ...sd, variant: vari })
+    }
     const changeSaleMode = (count, index) => {
         let vari = sd.variant;
         if (vari[count].size[index].reserve) {
@@ -378,7 +438,6 @@ export default function Detail() {
     const showImage = (event) => {
         setFlag({ ...flag, upload: false })
     }
-
     const selectImage = (item) => {
         setSI(item);
         setFlag({ ...flag, upload: false });
@@ -389,15 +448,12 @@ export default function Detail() {
         setSasage({ ...sd, images: imgList });
         setSI(imgList[0]);
     }
-
     const calcRatio = () => {
         if (sd.compareAt) {
             let result = sd.price / sd.compareAt;
             console.log(result);
         }
     }
-
-
     console.log(sd);
     return (
         <div className={classes.root}>
@@ -714,33 +770,7 @@ export default function Detail() {
                                         </Grid>
                                     </MuiPickersUtilsProvider>
                                 </Grid>
-                                <TableContainer component={Paper}>
-                                    <Table className={classes.table} size="small" aria-label="a dense table">
-                                        <TableHead>
-                                            {variantsHeader.map((head, index) => (
-                                                <TableCell align="center" key={index}>{head}</TableCell>
-                                            ))}
-                                        </TableHead>
-                                        {variants.map((item, count) => (
-                                            <TableBody key={count}>
-                                                {
-                                                    item.size.map((vari, index) => (
-                                                        <TableRow key={item.color_id + "-" + index}>
-                                                            <TableCell align="center">{item.color}</TableCell>
-                                                            <TableCell align="center">{vari['label']}</TableCell>
-                                                            <TableCell align="center">{vari['stock'] === 0 ? '在庫切れ' : vari['stock']}</TableCell>
-                                                            <TableCell align="center">{vari['reserve'] ? <IconButton key={"visble-" + count + "-" + index} onClick={() => (changeSaleMode(count, index))}><ImportContacts /></IconButton> :
-                                                                <IconButton key={"visible-" + count + "-" + index} onClick={() => (changeSaleMode(count, index))}><MonetizationOn /></IconButton>}</TableCell> <TableCell align="center">{sd.variant[count].size[index].visible ?
-                                                                    <IconButton key={"visblle-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
-                                                                    : <IconButton key={"visible-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><VisibilityOff /></IconButton>}
-                                                            </TableCell>
-                                                        </TableRow>
-                                                    ))
-                                                }
-                                            </TableBody>
-                                        ))}
-                                    </Table>
-                                </TableContainer>
+
                             </Box>
                             <Box>
                                 <Typography variant="caption" style={{ color: 'red' }}>
@@ -797,22 +827,71 @@ export default function Detail() {
                                 </Box>
                                 <TextField id="fabric" label="素材" variant="standard" fullWidth defaultValue={sd.fabric} onBlur={setValue} className={classes.textField} />
                                 <TextField id="manifactured" label="原産国" variant="standard" fullWidth defaultValue={sd.madeby} onBlur={setValue} className={classes.textField} />
-                                <TextField id="jancode" label="商品コード" variant="standard" fullWidth defaultValue={sd.jancode} onBlur={setValue} className={classes.textField} />
+                                <TextField id="bsItemId" label="商品コード" variant="standard" fullWidth defaultValue={sd.bsItemId} onBlur={setValue} className={classes.textField} />
                                 <TextField id="return" label="返品について" variant="standard" fullWidth defaultValue={sd.return} onBlur={setValue} className={classes.textField} />
                                 <TextField id="weight" label="重量" variant="standard" fullWidth defaultValue={sd.weight} onBlur={setValue} className={classes.textField} />
                             </Box>
                         </Container>
                     </Grid>
                 </Grid>
+                <TableContainer component={Paper}>
+                    <Table className={classes.table} size="small" aria-label="a dense table">
+                        <TableHead>
+                            {variantsHeader.map((head, index) => (
+                                <TableCell align="center" key={index}>{head}</TableCell>
+                            ))}
+                        </TableHead>
+                        {variants.map((item, count) => (
+                            <TableBody key={count}>
+                                {
+                                    item.size.map((vari, index) => (
+                                        <TableRow key={item.color_id + "-" + index}>
+                                            <TableCell align="center">{item.color}</TableCell>
+                                            <TableCell align="center">{vari['label']}</TableCell>
+                                            <TableCell align="center">
+                                                <Select
+                                                    name={"supp-" + count + '-' + + index}
+                                                    value={sd['variant'][count]['size'][index]['supplyPeriod']}
+                                                    fullWidth
+                                                    onChange={(event) => (setSupplyPeriod(count, index, event))}
+                                                >
+                                                    {createSupplyOption()}
+                                                </Select>
+                                            </TableCell>
+                                            <TableCell align="center">{vari['reserveStock']}</TableCell>
+                                            <TableCell align="center">{vari['stock'] === 0 ? '在庫切れ' : vari['stock']}</TableCell>
+                                            <TableCell align="center">{vari['reserve'] ? <IconButton key={"visble-" + count + "-" + index} onClick={() => (changeSaleMode(count, index))}><ImportContacts /></IconButton> :
+                                                <IconButton key={"visible-" + count + "-" + index} onClick={() => (changeSaleMode(count, index))}><MonetizationOn /></IconButton>}</TableCell> <TableCell align="center">{sd.variant[count].size[index].visible ?
+                                                    <IconButton key={"visblle-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><Visibility /></IconButton>
+                                                    : <IconButton key={"visible-" + count + '-' + index} onClick={() => (changeVisible(count, index))}><VisibilityOff /></IconButton>}
+                                            </TableCell>
+                                            <TableCell align="center">{vari['jancode']}</TableCell>
+                                        </TableRow>
+                                    ))
+                                }
+                            </TableBody>
+                        ))}
+                    </Table>
+                </TableContainer>
                 <Box className={classes.verticalSpace}></Box>
                 <Button variant="contained" color="primary" fullWidth><Typography variant="h5"> ささげ情報を保存 </Typography></Button>
                 <Box className={classes.verticalSpace}></Box>
             </Container >
+
         </div >
     );
 }
 
-
-
-
-
+const formatDate = function (date, format) {
+    format = format.replace(/YYYY/g, date.getFullYear());
+    format = format.replace(/yyyy/g, date.getFullYear());
+    format = format.replace(/MM/g, ('0' + (date.getMonth() + 1)).slice(-2));
+    format = format.replace(/dd/g, ('0' + date.getDate()).slice(-2));
+    format = format.replace(/DD/g, ('0' + date.getDate()).slice(-2));
+    format = format.replace(/HH/g, ('0' + date.getHours()).slice(-2));
+    format = format.replace(/hh/g, ('0' + date.getHours()).slice(-2));
+    format = format.replace(/mm/g, ('0' + date.getMinutes()).slice(-2));
+    format = format.replace(/ss/g, ('0' + date.getSeconds()).slice(-2));
+    format = format.replace(/SSS/g, ('00' + date.getMilliseconds()).slice(-3));
+    return format;
+};
