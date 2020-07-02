@@ -1,0 +1,524 @@
+{
+    "data": [
+        {
+            "BrandCode": "1",
+            "BrandName": "XLARGE",
+            "Remark": "",
+            "AdminBrandId": "XLE01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "2",
+            "BrandName": "XLARGE USA",
+            "Remark": "",
+            "AdminBrandId": "XLE01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "3",
+            "BrandName": "MILKFED",
+            "Remark": "",
+            "AdminBrandId": "MFD01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "5",
+            "BrandName": "X-GIRL",
+            "Remark": "",
+            "AdminBrandId": "XGI01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "7",
+            "BrandName": "MILKFED(KIDS)",
+            "Remark": "",
+            "AdminBrandId": "MFD01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "8",
+            "BrandName": "MTG",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "9",
+            "BrandName": "HUNTISM",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "10",
+            "BrandName": "SILAS",
+            "Remark": "",
+            "AdminBrandId": "SIM01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "11",
+            "BrandName": "SILAS WOMEN",
+            "Remark": "",
+            "AdminBrandId": "SIL01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "12",
+            "BrandName": "SILAS OTHER",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "13",
+            "BrandName": "MARIA OTHER",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "14",
+            "BrandName": "X-GIRL STAGES FIRST STAGE",
+            "Remark": "展示ｻｲｽﾞ利用BR",
+            "AdminBrandId": "XGF01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "15",
+            "BrandName": "X-GIRL STAGES NEXT STAGE",
+            "Remark": "展示ｻｲｽﾞ利用BR",
+            "AdminBrandId": "XGN01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "17",
+            "BrandName": "XL-KIDS",
+            "Remark": "展示ｻｲｽﾞ利用BR",
+            "AdminBrandId": "XKD01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "20",
+            "BrandName": "STITCH",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "ZZ01",
+            "ItemCategoryName": "未設定"
+        },
+        {
+            "BrandCode": "22",
+            "BrandName": "ADIDAS",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "23",
+            "BrandName": "XG",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "24",
+            "BrandName": "SARCASTIC",
+            "Remark": "",
+            "AdminBrandId": "SCC01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "25",
+            "BrandName": "AMONGST FRIENDS",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "26",
+            "BrandName": "2K BY GINGHAM",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "27",
+            "BrandName": "SNEAKER LAB",
+            "Remark": "",
+            "AdminBrandId": "STS01",
+            "ItemCategoryID": "ZZ01",
+            "ItemCategoryName": "未設定"
+        },
+        {
+            "BrandCode": "28",
+            "BrandName": "NIKE",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "29",
+            "BrandName": "NEW BALANCE",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "30",
+            "BrandName": "REEBOK",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "31",
+            "BrandName": "MILK CRATE",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "ZZ01",
+            "ItemCategoryName": "未設定"
+        },
+        {
+            "BrandCode": "32",
+            "BrandName": "ANYTHING",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "33",
+            "BrandName": "VANS",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "ZZ01",
+            "ItemCategoryName": "未設定"
+        },
+        {
+            "BrandCode": "34",
+            "BrandName": "PUMA",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "35",
+            "BrandName": "US VERSUS THEM",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "ZZ01",
+            "ItemCategoryName": "未設定"
+        },
+        {
+            "BrandCode": "36",
+            "BrandName": "ODD FUTURE",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "ZZ01",
+            "ItemCategoryName": "未設定"
+        },
+        {
+            "BrandCode": "37",
+            "BrandName": "DJ SHADOW",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "38",
+            "BrandName": "COCOLO BLAND",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "39",
+            "BrandName": "LADYS SHOES",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "40",
+            "BrandName": "LAKAI MAIN",
+            "Remark": "",
+            "AdminBrandId": "LKI01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "41",
+            "BrandName": "LAKAI ANCHOR",
+            "Remark": "",
+            "AdminBrandId": "LKI01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "42",
+            "BrandName": "LAKAI ECHELON",
+            "Remark": "",
+            "AdminBrandId": "LKI01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "43",
+            "BrandName": "LAKAI STANDARD",
+            "Remark": "",
+            "AdminBrandId": "LKI01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "45",
+            "BrandName": "THE HILL SIDE",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "50",
+            "BrandName": "WHITE RAVEN",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "52",
+            "BrandName": "Community Mill 雑貨",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "53",
+            "BrandName": "Community Mill アパレル",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "65",
+            "BrandName": "CONVERSE",
+            "Remark": "",
+            "AdminBrandId": "STS01",
+            "ItemCategoryID": "ZZ01",
+            "ItemCategoryName": "未設定"
+        },
+        {
+            "BrandCode": "66",
+            "BrandName": "ASICS TIGER",
+            "Remark": "旧AKTR",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "67",
+            "BrandName": "STANCE",
+            "Remark": "旧VISION",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "68",
+            "BrandName": "CHAMPION",
+            "Remark": "旧NEMES",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "69",
+            "BrandName": "CANDIES",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "70",
+            "BrandName": "MISFISH T",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "71",
+            "BrandName": "NITTA KEIICHI",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "72",
+            "BrandName": "GIZMOBIES",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "73",
+            "BrandName": "OGURA",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "74",
+            "BrandName": "FLATLUX",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "75",
+            "BrandName": "TERUYA",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "76",
+            "BrandName": "X-CLOSET ADIDAS ORIGINALS",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "77",
+            "BrandName": "X-CLOSET",
+            "Remark": "STYLES用確保",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "80",
+            "BrandName": "店舗 OTHER",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "81",
+            "BrandName": "CALIF OTHER",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "ZZ01",
+            "ItemCategoryName": "未設定"
+        },
+        {
+            "BrandCode": "90",
+            "BrandName": "営サ OTHER",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "91",
+            "BrandName": "STYLES OTHER",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "92",
+            "BrandName": "MONTAGE OTHER",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "93",
+            "BrandName": "STITCH OTHER",
+            "Remark": "",
+            "AdminBrandId": "対象外(無視する)",
+            "ItemCategoryID": "",
+            "ItemCategoryName": "小カテゴリを設定してください"
+        },
+        {
+            "BrandCode": "95",
+            "BrandName": "XG OTHER",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "96",
+            "BrandName": "X-GIRL STAGES OTHER",
+            "Remark": "展示ｻｲｽﾞ利用BR",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "97",
+            "BrandName": "X-GIRL OTHER",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "98",
+            "BrandName": "MILKFED OTHER",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "LZ01",
+            "ItemCategoryName": "その他"
+        },
+        {
+            "BrandCode": "99",
+            "BrandName": "XLARGE OTHER",
+            "Remark": "",
+            "AdminBrandId": "CLS01",
+            "ItemCategoryID": "NZ01",
+            "ItemCategoryName": "その他"
+        }
+    ]
+}

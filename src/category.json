@@ -1,0 +1,4219 @@
+{
+    "アウター": {
+        "subcategory": [
+            {
+                "category_name": "アウター(ベビー)",
+                "display_order": "32700001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ジャケット",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "#ダウン",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "トップス": {
+        "subcategory": [
+            {
+                "category_name": "トップス(ベビー)",
+                "display_order": "32800001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ワンピース": {
+        "subcategory": [
+            {
+                "category_name": "ワンピース(ベビー)",
+                "display_order": "32950001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "スカート": {
+        "subcategory": [
+            {
+                "category_name": "ミニスカート",
+                "display_order": "30400001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "膝丈スカート",
+                "display_order": "30400002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ロングスカート",
+                "display_order": "30400003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "タイトスカート",
+                "display_order": "30400004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "フレアスカート",
+                "display_order": "30400005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "デニムスカート",
+                "display_order": "30400007",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ジャンスカ・サス付スカート",
+                "display_order": "30400008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "30400099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "パンツ": {
+        "subcategory": [
+            {
+                "category_name": "デニムショートパンツ",
+                "display_order": "30500001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "デニムパンツ",
+                "display_order": "30500002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ショートパンツ",
+                "display_order": "30500003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ハーフパンツ",
+                "display_order": "30500004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "キュロット",
+                "display_order": "30500005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "クロップドパンツ",
+                "display_order": "30500006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スキニー",
+                "display_order": "30500008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ロングパンツ",
+                "display_order": "30500009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "レギパン",
+                "display_order": "30500010",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スカパン",
+                "display_order": "30500011",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "チノパンツ",
+                "display_order": "30500012",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "タックパンツ",
+                "display_order": "30500013",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "カーゴパンツ",
+                "display_order": "30500014",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ブーツカットパンツ",
+                "display_order": "30500015",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ストレートパンツ",
+                "display_order": "30500016",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "サロペット",
+                "display_order": "30500017",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ワイドパンツ",
+                "display_order": "30500018",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "バギーパンツ",
+                "display_order": "30500019",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スウェットパンツ",
+                "display_order": "30500020",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "30500099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "部屋着・ルームウェア": {
+        "subcategory": [
+            {
+                "category_name": "パジャマ・ルームウェア",
+                "display_order": "10600001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "シャツ",
+                "display_order": "10600002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "Tシャツ・カットソー",
+                "display_order": "10600003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "パーカー",
+                "display_order": "10600004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "プルオーバー",
+                "display_order": "10600005",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "カーディガン",
+                "display_order": "10600006",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ショートパンツ",
+                "display_order": "10600007",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ロングパンツ",
+                "display_order": "10600008",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ワンピース",
+                "display_order": "10600009",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "オールインワン",
+                "display_order": "10600010",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "セットアップ",
+                "display_order": "10600011",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ガウン",
+                "display_order": "10600012",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "バスローブ",
+                "display_order": "10600013",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "小物",
+                "display_order": "10600014",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ヘアアクセサリー",
+                "display_order": "10600015",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ウエストウォーマー",
+                "display_order": "10600016",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "アイマスク",
+                "display_order": "10600017",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ブランケット",
+                "display_order": "10600018",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ネックピロー",
+                "display_order": "10600019",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "レッグウェア",
+                "display_order": "10600020",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他部屋着・ルームウェア",
+                "display_order": "10600099",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "スポーツウェア": {
+        "subcategory": [
+            {
+                "category_name": "インナー",
+                "display_order": "30700001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スポーツブラ",
+                "display_order": "30700002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "トップス",
+                "display_order": "30700003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スカート",
+                "display_order": "30700004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "パンツ",
+                "display_order": "30700005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ワンピース",
+                "display_order": "30700006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "アウター",
+                "display_order": "30700007",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "シューズ",
+                "display_order": "30700008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "レッグウェア",
+                "display_order": "30700009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "バッグ/ポーチ",
+                "display_order": "30700010",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スポーツグッズ",
+                "display_order": "30700011",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "サウナスーツ",
+                "display_order": "30700012",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "30700099",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#スポーツウェア",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "スーツ": {
+        "subcategory": [
+            {
+                "category_name": "ジャケット(単品)",
+                "display_order": "20800001",
+                "LMK": "MEN"
+            },
+            {
+                "category_name": "パンツ(単品)",
+                "display_order": "20800002",
+                "LMK": "MEN"
+            },
+            {
+                "category_name": "スーツセット",
+                "display_order": "20800004",
+                "LMK": "MEN"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "20800099",
+                "LMK": "MEN"
+            }
+        ]
+    },
+    "ブラックフォーマル・礼服・喪服": {
+        "subcategory": [
+            {
+                "category_name": "ジャケット(単品)",
+                "display_order": "20800101",
+                "LMK": "MEN"
+            },
+            {
+                "category_name": "スーツパンツ(単品)",
+                "display_order": "20800102",
+                "LMK": "MEN"
+            },
+            {
+                "category_name": "セット",
+                "display_order": "20800103",
+                "LMK": "MEN"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "20800199",
+                "LMK": "MEN"
+            }
+        ]
+    },
+    "ウェディングドレス・アクセサリー・小物": {
+        "subcategory": [
+            {
+                "category_name": "ウエディングドレス",
+                "display_order": "10800201",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ウェディングアクセサリー",
+                "display_order": "10800202",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他ウェディングインナー・小物",
+                "display_order": "10800299",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "制服・スクールアイテム": {
+        "subcategory": [
+            {
+                "category_name": "シャツ",
+                "display_order": "10900001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ベスト・カーディガン",
+                "display_order": "10900002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "セーター・ジャケット",
+                "display_order": "10900003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スカート",
+                "display_order": "10900004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "リボン・ネクタイ・靴下",
+                "display_order": "10900005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スクールバッグ",
+                "display_order": "10900006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他制服・スクールアイテム",
+                "display_order": "10900099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "オフィスカジュアル・事務服": {
+        "subcategory": [
+            {
+                "category_name": "事務服",
+                "display_order": "10900101",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "10900199",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "シューズ(靴)": {
+        "subcategory": [
+            {
+                "category_name": "スニーカー",
+                "display_order": "11000001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "スリッポン",
+                "display_order": "11000002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "サンダル",
+                "display_order": "11000003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "フラットシューズ",
+                "display_order": "11000004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "パンプス",
+                "display_order": "11000005",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ブーティ",
+                "display_order": "11000006",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ショートブーツ",
+                "display_order": "11000007",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ミドルブーツ",
+                "display_order": "11000008",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ロングブーツ",
+                "display_order": "11000009",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ニーハイ・サイハイブーツ",
+                "display_order": "11000010",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ドレスシューズ",
+                "display_order": "11000011",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ムートンブーツ",
+                "display_order": "11000012",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ビーチサンダル",
+                "display_order": "11000013",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "レインシューズ",
+                "display_order": "11000014",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "シューケアグッズ",
+                "display_order": "11000015",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他シューズ(靴)",
+                "display_order": "11000099",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "バッグ・財布・小物入れ": {
+        "subcategory": [
+            {
+                "category_name": "ショルダーバッグ",
+                "display_order": "31100001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ハンドバッグ",
+                "display_order": "31100002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "トートバッグ",
+                "display_order": "31100003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "リュック",
+                "display_order": "31100004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ボストンバッグ",
+                "display_order": "31100005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ボディバッグ・ウエストポーチ",
+                "display_order": "31100006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ポーチ",
+                "display_order": "31100007",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "クラッチバッグ",
+                "display_order": "31100008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "カゴバッグ",
+                "display_order": "31100009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "キャンバスバッグ",
+                "display_order": "31100010",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "キャリーケース",
+                "display_order": "31100011",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "メッセンジャーバッグ",
+                "display_order": "31100012",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "パーティーバッグ",
+                "display_order": "31100013",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ドラムバッグ",
+                "display_order": "31100014",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "エコバッグ",
+                "display_order": "31100015",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "財布",
+                "display_order": "31100016",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "コインケース・札入れ",
+                "display_order": "31100017",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "カードケース",
+                "display_order": "31100018",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "パスケース",
+                "display_order": "31100019",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "名刺入れ",
+                "display_order": "31100020",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "31100099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "帽子": {
+        "subcategory": [
+            {
+                "category_name": "ハット",
+                "display_order": "31200001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ニット帽",
+                "display_order": "31200002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ベレー帽",
+                "display_order": "31200003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "キャップ",
+                "display_order": "31200004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ツバ広帽",
+                "display_order": "31200005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "キャスケット",
+                "display_order": "31200006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "31200099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "アクセサリー": {
+        "subcategory": [
+            {
+                "category_name": "ピアス",
+                "display_order": "31300001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "イヤリング",
+                "display_order": "31300002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "リング",
+                "display_order": "31300003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ネックレス",
+                "display_order": "31300004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ブレスレット・バングル",
+                "display_order": "31300005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "アンクレット",
+                "display_order": "31300006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ヘッドアクセサリー",
+                "display_order": "31300007",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ブローチ",
+                "display_order": "31300008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "チャーム",
+                "display_order": "31300009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "31300099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ファッション雑貨": {
+        "subcategory": [
+            {
+                "category_name": "ストール・マフラー",
+                "display_order": "31400001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スカーフ・バンダナ",
+                "display_order": "31400002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ネックウォーマー",
+                "display_order": "31400003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "イヤーマフ",
+                "display_order": "31400004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "サングラス",
+                "display_order": "31400005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "メガネ",
+                "display_order": "31400006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ブランケット",
+                "display_order": "31400007",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ベルト・サスペンダー",
+                "display_order": "31400008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "グローブ",
+                "display_order": "31400009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "腕時計",
+                "display_order": "31400010",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "扇子",
+                "display_order": "31400011",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "傘",
+                "display_order": "31400012",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "キーケース・キーホルダー",
+                "display_order": "31400013",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ハンカチ・ハンドタオル",
+                "display_order": "31400014",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ネクタイ",
+                "display_order": "31400015",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ネクタイピン",
+                "display_order": "31400016",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "カフリンクス",
+                "display_order": "31400017",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "31400018",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ブローチ",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "インナー・ランジェリー": {
+        "subcategory": [
+            {
+                "category_name": "ブラジャー",
+                "display_order": "11700001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ノンワイヤーブラジャー",
+                "display_order": "11700002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ブラトップ（カップ付インナー）",
+                "display_order": "11700003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ブラ＆ショーツセット",
+                "display_order": "11700004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "キャミソール・タンクトップ",
+                "display_order": "11700004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ショーツ・パンティ",
+                "display_order": "11700005",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ヌーブラ",
+                "display_order": "11700007",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "アンダーウェア",
+                "display_order": "11700008",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "Tバック・ソング",
+                "display_order": "11700009",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ブラ＆Tバックセット",
+                "display_order": "11700010",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ベビードール",
+                "display_order": "11700013",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ガードル",
+                "display_order": "11700014",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "補正下着・シェイプファンデ",
+                "display_order": "11700015",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ブライダルインナー",
+                "display_order": "11700016",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "サニタリーショーツ",
+                "display_order": "11700017",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他インナー・ランジェリー",
+                "display_order": "11700099",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "レッグウェア": {
+        "subcategory": [
+            {
+                "category_name": "タイツ・ストッキング",
+                "display_order": "31700001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "レギンス",
+                "display_order": "31700002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ソックス",
+                "display_order": "31700003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "レッグウォーマー",
+                "display_order": "31700004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ルームシューズ",
+                "display_order": "31700005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "31700099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "水着": {
+        "subcategory": [
+            {
+                "category_name": "水着",
+                "display_order": "31800002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "水着セット",
+                "display_order": "31800003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ワンピース水着",
+                "display_order": "31800004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ビキニ",
+                "display_order": "31800005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "タンキニ",
+                "display_order": "31800006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "トップス",
+                "display_order": "31800008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ボトムス",
+                "display_order": "31800009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "パレオ",
+                "display_order": "31800010",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ショーツ",
+                "display_order": "31800011",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ラッシュガード",
+                "display_order": "31800012",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ビーチグッズ",
+                "display_order": "31800013",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "31800099",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#セット水着",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "浴衣(ゆかた)": {
+        "subcategory": [
+            {
+                "category_name": "帯",
+                "display_order": "12000001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "下駄",
+                "display_order": "12000002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "小物",
+                "display_order": "12000003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "浴衣(単品)",
+                "display_order": "12000004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "浴衣(セット)",
+                "display_order": "12000005",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他浴衣(ゆかた)",
+                "display_order": "12000099",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "着物": {
+        "subcategory": [
+            {
+                "category_name": "その他",
+                "display_order": "31900199",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "福袋": {
+        "subcategory": [
+            {
+                "category_name": "福袋",
+                "display_order": "32000001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "スキンケア": {
+        "subcategory": [
+            {
+                "category_name": "化粧水",
+                "display_order": "32100001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "乳液",
+                "display_order": "32100002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "クリーム",
+                "display_order": "32100003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "美容液・オイル",
+                "display_order": "32100004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "洗顔",
+                "display_order": "32100005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "クレンジング",
+                "display_order": "32100006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スクラブ",
+                "display_order": "32100007",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "パック・マッサージ・マスク",
+                "display_order": "32100008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "リップケア",
+                "display_order": "32100009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "バーム",
+                "display_order": "32100010",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "32100099",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#スキンケアその他",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "ヘアケア": {
+        "subcategory": [
+            {
+                "category_name": "シャンプー",
+                "display_order": "32200001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "コンディショナー",
+                "display_order": "32200002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "トリートメント",
+                "display_order": "32200003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "アウトバストリートメント",
+                "display_order": "32200006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "32200099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ボディケア": {
+        "subcategory": [
+            {
+                "category_name": "ボディローション",
+                "display_order": "32300001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ボディクリーム",
+                "display_order": "32300002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ボディオイル",
+                "display_order": "32300003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ボディウォッシュ",
+                "display_order": "32300004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スクラブ",
+                "display_order": "32300005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ハンドソープ",
+                "display_order": "32300006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ハンドクリーム",
+                "display_order": "32300007",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "フット",
+                "display_order": "32300008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "アウトドア(日焼けどめ・虫よけ)",
+                "display_order": "32300009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "32300099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "デリケートケア": {
+        "subcategory": [
+            {
+                "category_name": "デリケートケア",
+                "display_order": "12500001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "デオドラント",
+                "display_order": "12500002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "エチケット",
+                "display_order": "12500003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他デリケートケア",
+                "display_order": "12500099",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "バス用品": {
+        "subcategory": [
+            {
+                "category_name": "ソープ",
+                "display_order": "12600001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "バスオイル",
+                "display_order": "12600002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "バスソルト",
+                "display_order": "12600003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "バスミルク",
+                "display_order": "12600004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他バス用品",
+                "display_order": "12600099",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "メイクアップ": {
+        "subcategory": [
+            {
+                "category_name": "アイカラー",
+                "display_order": "12700001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ファンデーション",
+                "display_order": "12700002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "コンシーラー",
+                "display_order": "12700003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "アイライナー",
+                "display_order": "12700004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "チーク",
+                "display_order": "12700005",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "フェイスパウダー",
+                "display_order": "12700006",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "メイク小物",
+                "display_order": "12700007",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "つけまつげ用品",
+                "display_order": "12700008",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "二重コスメ",
+                "display_order": "12700009",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "アイブロウ",
+                "display_order": "12700010",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "マスカラ",
+                "display_order": "12700011",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "下地・UVケア",
+                "display_order": "12700012",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "リップ・グロス",
+                "display_order": "12700013",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ネイル",
+                "display_order": "12700014",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ミラー",
+                "display_order": "12700015",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "化粧下地",
+                "display_order": "12700016",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他メイクアップ",
+                "display_order": "12700099",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "その他": {
+        "subcategory": [
+            {
+                "category_name": "シューズ",
+                "display_order": "68300001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "インナー",
+                "display_order": "68300002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "68300003",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "メイク・スキンケアキット": {
+        "subcategory": [
+            {
+                "category_name": "トライアル/トラベルキット",
+                "display_order": "12900001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "スペシャルキット",
+                "display_order": "12900002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "キットその他",
+                "display_order": "12900003",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "ボトムス": {
+        "subcategory": [
+            {
+                "category_name": "ボトムス(ベビー)",
+                "display_order": "32900001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ルームウェア": {
+        "subcategory": [
+            {
+                "category_name": "パジャマ・ルームウェア",
+                "display_order": "30600001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "シャツ",
+                "display_order": "30600002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "Tシャツ・カットソー",
+                "display_order": "30600003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "パーカー",
+                "display_order": "30600004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "プルオーバー",
+                "display_order": "30600005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "カーディガン",
+                "display_order": "30600006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ショートパンツ",
+                "display_order": "30600007",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ロングパンツ",
+                "display_order": "30600008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ワンピース",
+                "display_order": "30600009",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "オールインワン",
+                "display_order": "30600010",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "セットアップ",
+                "display_order": "30600011",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ガウン",
+                "display_order": "30600012",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "バスローブ",
+                "display_order": "30600013",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "小物",
+                "display_order": "30600014",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ヘアアクセサリー",
+                "display_order": "30600015",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ウエストウォーマー",
+                "display_order": "30600016",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "アイマスク",
+                "display_order": "30600017",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ブランケット",
+                "display_order": "30600018",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ネックピロー",
+                "display_order": "30600019",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "レッグウェア",
+                "display_order": "30600020",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "30600099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "シューズ": {
+        "subcategory": [
+            {
+                "category_name": "シューズ",
+                "display_order": "67800001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "インナー": {
+        "subcategory": [
+            {
+                "category_name": "ブラ",
+                "display_order": "31600001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ノンワイヤーブラジャー",
+                "display_order": "31600002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ブラトップ（カップ付インナー）",
+                "display_order": "31600003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "キャミソール・タンクトップ",
+                "display_order": "31600004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ショーツ・パンティ",
+                "display_order": "31600005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ブラ＆ショーツセット",
+                "display_order": "31600006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "アンダーウェア",
+                "display_order": "31600008",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ボクサーパンツ",
+                "display_order": "31600011",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "トランクス",
+                "display_order": "31600012",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "31600099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "浴衣": {
+        "subcategory": [
+            {
+                "category_name": "帯",
+                "display_order": "31900001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "下駄",
+                "display_order": "31900002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "小物",
+                "display_order": "31900003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "浴衣(単品)",
+                "display_order": "31900004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "浴衣(セット)",
+                "display_order": "31900005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "31900099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "バス": {
+        "subcategory": [
+            {
+                "category_name": "ソープ",
+                "display_order": "32400001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "バスオイル",
+                "display_order": "32400002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "バスソルト",
+                "display_order": "32400003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "バスミルク",
+                "display_order": "32400004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "32400099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "スクールアイテム": {
+        "subcategory": [
+            {
+                "category_name": "シャツ",
+                "display_order": "30900001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "ベスト・カーディガン",
+                "display_order": "30900002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "セーター・ジャケット",
+                "display_order": "30900003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "スカート",
+                "display_order": "30900004",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "リボン・ネクタイ・靴下",
+                "display_order": "30900005",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "バッグ",
+                "display_order": "30900006",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "30900099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ロンパース・カバーオール": {
+        "subcategory": [
+            {
+                "category_name": "ロンパース・カバーオール(ベビー)",
+                "display_order": "33000001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "肌着": {
+        "subcategory": [
+            {
+                "category_name": "肌着(ベビー)",
+                "display_order": "33100001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ソックス・タイツ": {
+        "subcategory": [
+            {
+                "category_name": "ソックス・タイツ(ベビー)",
+                "display_order": "33200001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "キャップ": {
+        "subcategory": [
+            {
+                "category_name": "キャップ(ベビー)",
+                "display_order": "33400001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "マフラー": {
+        "subcategory": [
+            {
+                "category_name": "マフラー(ベビー)",
+                "display_order": "33500001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ウェアセット": {
+        "subcategory": [
+            {
+                "category_name": "ウェアセット(ベビー)",
+                "display_order": "33600001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ウェアその他": {
+        "subcategory": [
+            {
+                "category_name": "ウェアその他(ベビー)",
+                "display_order": "33700001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "スタイ・ビブ": {
+        "subcategory": [
+            {
+                "category_name": "スタイ・ビブ(ベビー)",
+                "display_order": "33800001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ブランケット・タオル": {
+        "subcategory": [
+            {
+                "category_name": "ブランケット・タオル(ベビー)",
+                "display_order": "33900001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "おもちゃ": {
+        "subcategory": [
+            {
+                "category_name": "おもちゃ(ベビー)",
+                "display_order": "34000001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "食器・カトラリー": {
+        "subcategory": [
+            {
+                "category_name": "食器・カトラリー(ベビー)",
+                "display_order": "34100001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "スキンケアグッズ": {
+        "subcategory": [
+            {
+                "category_name": "スキンケアグッズ(ベビー)",
+                "display_order": "34200001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ベビーギフト": {
+        "subcategory": [
+            {
+                "category_name": "ベビーギフト(ベビー)",
+                "display_order": "34300001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ベビーカー用品": {
+        "subcategory": [
+            {
+                "category_name": "ベビーカー用品(ベビー)",
+                "display_order": "34400001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "バッグ/ポーチ": {
+        "subcategory": [
+            {
+                "category_name": "バッグ/ポーチ(ベビー)",
+                "display_order": "34450001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ベビー雑貨その他": {
+        "subcategory": [
+            {
+                "category_name": "ベビー雑貨その他(ベビー)",
+                "display_order": "34500001",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "マタニティウェア": {
+        "subcategory": [
+            {
+                "category_name": "マタニティウェア(ベビー)",
+                "display_order": "34600001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "マタニティインナー": {
+        "subcategory": [
+            {
+                "category_name": "マタニティインナー(ベビー)",
+                "display_order": "34600101",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "マタニティグッズ": {
+        "subcategory": [
+            {
+                "category_name": "マタニティグッズ(ベビー)",
+                "display_order": "34700001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "ママバッグ・グッズ類": {
+        "subcategory": [
+            {
+                "category_name": "ママバッグ・グッズ類(ベビー)",
+                "display_order": "34800001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "ギフトラッピング": {
+        "subcategory": [
+            {
+                "category_name": "ギフトボックス",
+                "display_order": "40100001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "リボン・飾り",
+                "display_order": "40100002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ギフトボックス(のし付)",
+                "display_order": "40100003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ギフトボックス(作業付き)",
+                "display_order": "40100004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ギフトボックス(作業付き)",
+                "display_order": "40100005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他ギフトラッピング",
+                "display_order": "40100099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "雑貨": {
+        "subcategory": [
+            {
+                "category_name": "モバイルアクセサリー",
+                "display_order": "40200001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "スマホケース",
+                "display_order": "40200002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ステッカー/テープ",
+                "display_order": "40200003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "おもちゃ",
+                "display_order": "40200004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "フィギュア",
+                "display_order": "40200005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "アッシュトレイ/ライター",
+                "display_order": "40200006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "トラベルグッズ",
+                "display_order": "40200007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他雑貨",
+                "display_order": "40200099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "食器・キッチン用品": {
+        "subcategory": [
+            {
+                "category_name": "食器",
+                "display_order": "40300001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "グラス・マグカップ・タンブラー",
+                "display_order": "40300002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "キッチングッズ",
+                "display_order": "40300003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "エプロン",
+                "display_order": "40300004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他食器・キッチン用品",
+                "display_order": "40300099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "ライフスタイルグッズ": {
+        "subcategory": [
+            {
+                "category_name": "バス・トイレグッズ",
+                "display_order": "40400001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ランドリーグッズ",
+                "display_order": "40400002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "お香・ルームフレグランス",
+                "display_order": "40400003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ブランケット",
+                "display_order": "40400004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "リラックス＆リフレッシュグッズ",
+                "display_order": "40400005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ハンカチ・ハンドタオル",
+                "display_order": "40400006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "フェイスタオル",
+                "display_order": "40400007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "バスタオル",
+                "display_order": "40400008",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クッション・クッションカバー",
+                "display_order": "40400009",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ベッドリネン",
+                "display_order": "40400010",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ラグ/マット",
+                "display_order": "40400011",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ゴミ箱・ダストボックス",
+                "display_order": "40400012",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "時計",
+                "display_order": "40400013",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "家具",
+                "display_order": "40400014",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "生活家電・PCグッズ",
+                "display_order": "40400015",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "オーディオ家電",
+                "display_order": "40400016",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クリーニンググッズ",
+                "display_order": "40400017",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ライフスタイルグッズ",
+                "display_order": "40400098",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他ライフスタイルグッズ",
+                "display_order": "40400099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "本": {
+        "subcategory": [
+            {
+                "category_name": "写真集",
+                "display_order": "40500001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "絵本",
+                "display_order": "40500002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "カルチャー",
+                "display_order": "40500003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "本",
+                "display_order": "40500004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "雑誌",
+                "display_order": "40500005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他本",
+                "display_order": "40500099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "アート＆ピクチャー": {
+        "subcategory": [
+            {
+                "category_name": "ポップアート",
+                "display_order": "40600001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ストリートアート",
+                "display_order": "40600002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他アート＆ピクチャー",
+                "display_order": "40600099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "文房具・ステーショナリー": {
+        "subcategory": [
+            {
+                "category_name": "ペン･ペンケース",
+                "display_order": "40700001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ノート･ファイル",
+                "display_order": "40700002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ダイアリー",
+                "display_order": "40700003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他文房具・ステーショナリー",
+                "display_order": "40700099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "ミュージック": {
+        "subcategory": [
+            {
+                "category_name": "CD",
+                "display_order": "40800001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "レコード",
+                "display_order": "40800002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他ミュージック",
+                "display_order": "40800099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "エチケットケア": {
+        "subcategory": [
+            {
+                "category_name": "オーラルケア",
+                "display_order": "40900001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "デリケートケア",
+                "display_order": "40900002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他エチケットケア",
+                "display_order": "40900099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "食品・サプリメント": {
+        "subcategory": [
+            {
+                "category_name": "食品",
+                "display_order": "41000001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "サプリメント",
+                "display_order": "41000002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ショコラ/カレ",
+                "display_order": "41000003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ショコラ/スフェール",
+                "display_order": "41000004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ショコラ/タブレット",
+                "display_order": "41000005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ショコラ/グルマンディーズ",
+                "display_order": "41000006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "焼き菓子/フィナンシェ",
+                "display_order": "41000007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "焼き菓子/クッキー",
+                "display_order": "41000008",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "マカロン",
+                "display_order": "41000009",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ジャム",
+                "display_order": "41000010",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "紅茶",
+                "display_order": "41000011",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "アイスクリーム",
+                "display_order": "41000012",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "Online限定",
+                "display_order": "41000013",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "お中元ギフト",
+                "display_order": "41000014",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "コンフィチュールセット",
+                "display_order": "41000015",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "焼き菓子/パウンド",
+                "display_order": "41000016",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "焼き菓子/フィナンシェ＆パウンド",
+                "display_order": "41000017",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "健康食品",
+                "display_order": "41000018",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他食品・サプリメント",
+                "display_order": "41000099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "健康食品": {
+        "subcategory": [
+            {
+                "category_name": "Online限定",
+                "display_order": "41100001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ドリンク/VEGE CLEANSE YOUGRT",
+                "display_order": "41100002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ドリンク/発酵ヨーグルト",
+                "display_order": "41100003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ドリンク/亜鉛ケイ素水",
+                "display_order": "41100004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "フード/グルテンフリークッキー",
+                "display_order": "41100005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "フード/ビーガンマフィン",
+                "display_order": "41100006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クレンズシリーズ/酵素ドリンク",
+                "display_order": "41100007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クレンズシリーズ/発酵ハーブティー",
+                "display_order": "41100008",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クレンズシリーズ/酵素サプリ",
+                "display_order": "41100009",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クレンズシリーズ/梅炭パウダー",
+                "display_order": "41100010",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クレンズシリーズ/FASTING SET",
+                "display_order": "41100011",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クレンズシリーズ/PERFECT FASTING SET",
+                "display_order": "41100012",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クレンズシリーズ/DEEP CLEANSE SET",
+                "display_order": "41100013",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "オリジナルアイテム",
+                "display_order": "41100014",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "ペット": {
+        "subcategory": [
+            {
+                "category_name": "首輪・リード",
+                "display_order": "41200001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ペット服",
+                "display_order": "41200002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "食器",
+                "display_order": "41200003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ドッグフード",
+                "display_order": "41200004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "キャットフード",
+                "display_order": "41200005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ペットケア用品",
+                "display_order": "41200006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ペットベッド・ハウス",
+                "display_order": "41200007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ペットキャリーバッグ・カート",
+                "display_order": "41200008",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ペットケージ・サークル",
+                "display_order": "41200009",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ペットその他",
+                "display_order": "41200010",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "酒類": {
+        "subcategory": [
+            {
+                "category_name": "ワイン",
+                "display_order": "41300001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "洋酒・リキュール",
+                "display_order": "41300002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "その他酒類",
+                "display_order": "41300099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "【Madu】キッチン": {
+        "subcategory": [
+            {
+                "category_name": "キッチンウェア",
+                "display_order": "50100001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "土鍋・鍋小物",
+                "display_order": "50100002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ホーロー",
+                "display_order": "50100003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "耐熱食器",
+                "display_order": "50100004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "キャニスター・保存容器",
+                "display_order": "50100005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "トレー",
+                "display_order": "50100006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "キッチンクロス",
+                "display_order": "50100007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "キッチン用品",
+                "display_order": "50100008",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "キッチン家具",
+                "display_order": "50100009",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "キッチンその他",
+                "display_order": "50100099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "【Madu】食器": {
+        "subcategory": [
+            {
+                "category_name": "ボウル・プレート",
+                "display_order": "50200001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ポット・マグ・カップ&ソーサー",
+                "display_order": "50200002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "グラス・ガラス製品",
+                "display_order": "50200003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "食器",
+                "display_order": "50200004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "飯碗・汁椀",
+                "display_order": "50200005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "皿・小鉢",
+                "display_order": "50200006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "急須・湯呑",
+                "display_order": "50200007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "カトラリー",
+                "display_order": "50200008",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "箸・箸置",
+                "display_order": "50200009",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "食器その他",
+                "display_order": "50200099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "【Madu】ファブリック": {
+        "subcategory": [
+            {
+                "category_name": "テーブルクロス",
+                "display_order": "50300001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "クッションカバー・スリッパ",
+                "display_order": "50300002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "エプロン",
+                "display_order": "50300003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ランチョンマット",
+                "display_order": "50300004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "てぬぐい",
+                "display_order": "50300005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "タオル・マット",
+                "display_order": "50300006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "バッグ",
+                "display_order": "50300007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ポーチ",
+                "display_order": "50300008",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ハンカチ",
+                "display_order": "50300009",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "傘",
+                "display_order": "50300010",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ブランケット・ストール",
+                "display_order": "50300011",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ファブリックその他",
+                "display_order": "50300099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "【Madu】家具・インテリア雑貨": {
+        "subcategory": [
+            {
+                "category_name": "インテリア小物",
+                "display_order": "50400001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "家具",
+                "display_order": "50400002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "フォトフレーム・鏡",
+                "display_order": "50400003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "フラワーベース",
+                "display_order": "50400004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "時計",
+                "display_order": "50400005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ステーショナリー",
+                "display_order": "50400006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "インテリア収納",
+                "display_order": "50400007",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "バスケット",
+                "display_order": "50400008",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "収納・ガーデニング",
+                "display_order": "50400009",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "家具・インテリア雑貨その他",
+                "display_order": "50400099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "【Madu】ハウスキーピング": {
+        "subcategory": [
+            {
+                "category_name": "おそうじグッズ",
+                "display_order": "50500001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ガーデニングツール",
+                "display_order": "50500002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "レジャーシート",
+                "display_order": "50500003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ガーデンその他",
+                "display_order": "50500099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "【Madu】バス・アロマ": {
+        "subcategory": [
+            {
+                "category_name": "ボディケア",
+                "display_order": "50600001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "タオル・マット",
+                "display_order": "50600002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "キャンドル・お香",
+                "display_order": "50600003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "アロマリラックス",
+                "display_order": "50600004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "バス・アロマその他",
+                "display_order": "50600099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "【Madu】こどものもの": {
+        "subcategory": [
+            {
+                "category_name": "食器(こどものもの)",
+                "display_order": "50700001",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "インテリア小物(こどものもの)",
+                "display_order": "50700002",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "家具(こどものもの)",
+                "display_order": "50700003",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "こどものものその他",
+                "display_order": "50700099",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "ギフト": {
+        "subcategory": [
+            {
+                "category_name": "ギフトセット",
+                "display_order": "50800001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ミニギフト",
+                "display_order": "50800002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ギフトその他",
+                "display_order": "50800099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "SUITS / スーツ": {
+        "subcategory": [
+            {
+                "category_name": "SUITS / スーツ",
+                "display_order": "60100001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "JACKETS / ジャケット": {
+        "subcategory": [
+            {
+                "category_name": "JACKETS / ジャケット",
+                "display_order": "65200001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "OUTER / アウター": {
+        "subcategory": [
+            {
+                "category_name": "OUTER / アウター",
+                "display_order": "65100001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "VEST / ベスト": {
+        "subcategory": [
+            {
+                "category_name": "VEST / ベスト",
+                "display_order": "60400001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "KNIT / ニット": {
+        "subcategory": [
+            {
+                "category_name": "KNIT / ニット",
+                "display_order": "60500001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "CUT&SEWN / カットソー": {
+        "subcategory": [
+            {
+                "category_name": "CUT&SEWN / カットソー",
+                "display_order": "60600001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "SHIRTS / シャツ": {
+        "subcategory": [
+            {
+                "category_name": "SHIRTS / シャツ",
+                "display_order": "60700001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "TIES & CHIEFS / ネクタイ&チーフ": {
+        "subcategory": [
+            {
+                "category_name": "TIES & CHIEFS / ネクタイ&チーフ",
+                "display_order": "60800001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "TIES / ネクタイ",
+                "display_order": "60800002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "CHIEFS / チーフ",
+                "display_order": "60800003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "SCARF / スカーフ",
+                "display_order": "60800004",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "PANTS / パンツ": {
+        "subcategory": [
+            {
+                "category_name": "PANTS / パンツ",
+                "display_order": "65500001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "SHOES / シューズ": {
+        "subcategory": [
+            {
+                "category_name": "SHOES / シューズ",
+                "display_order": "65800001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "BAGS / バッグ": {
+        "subcategory": [
+            {
+                "category_name": "BAGS / バッグ",
+                "display_order": "65900001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "SMALL LEATHER GOODS / 革小物": {
+        "subcategory": [
+            {
+                "category_name": "SMALL LEATHER GOODS / 革小物",
+                "display_order": "66300001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "BELTS / ベルト": {
+        "subcategory": [
+            {
+                "category_name": "BELTS / ベルト",
+                "display_order": "66200001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "STOLES / ストール": {
+        "subcategory": [
+            {
+                "category_name": "STOLES / ストール",
+                "display_order": "61400001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "ACCESSORIES / アクセサリー": {
+        "subcategory": [
+            {
+                "category_name": "ACCESSORIES / アクセサリー",
+                "display_order": "66000001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "UNDERWEAR / アンダーウェア": {
+        "subcategory": [
+            {
+                "category_name": "UNDERWEAR / アンダーウェア",
+                "display_order": "61600001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "OTHERS / その他": {
+        "subcategory": [
+            {
+                "category_name": "UNDERWEAR / アンダーウェア",
+                "display_order": "66500001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "OTHERS / その他",
+                "display_order": "66500002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "PROPS / 雑貨",
+                "display_order": "67100000",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "TOPS / トップス": {
+        "subcategory": [
+            {
+                "category_name": "SHIRTS & BLOUSE / シャツ & ブラウス",
+                "display_order": "65300001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "KNITWEAR / ニット",
+                "display_order": "65300002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "CUT&SEWN / カットソー",
+                "display_order": "65300003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "VEST / ベスト",
+                "display_order": "65300004",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "ONEPIECE / ワンピース": {
+        "subcategory": [
+            {
+                "category_name": "ONEPIECE / ワンピース",
+                "display_order": "65400001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "SKIRTS / スカート": {
+        "subcategory": [
+            {
+                "category_name": "SKIRTS / スカート",
+                "display_order": "65600001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "SCARF & STOLES / スカーフ & ストール": {
+        "subcategory": [
+            {
+                "category_name": "SCARF & STOLES / スカーフ & ストール",
+                "display_order": "65700001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "SUNGLASS / サングラス": {
+        "subcategory": [
+            {
+                "category_name": "SUNGLASS / サングラス",
+                "display_order": "66100001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "UMBRELLA / 傘": {
+        "subcategory": [
+            {
+                "category_name": "UMBRELLA / 傘",
+                "display_order": "66400001",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "オーダーシャツ": {
+        "subcategory": [
+            {
+                "category_name": "オーダーシャツ",
+                "display_order": "67100001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "シャツ": {
+        "subcategory": [
+            {
+                "category_name": "スリムフィット",
+                "display_order": "67200001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "タイトフィット",
+                "display_order": "67200002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "スポーツライン",
+                "display_order": "67200003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "レギュラーフィット",
+                "display_order": "67200004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "カジュアル",
+                "display_order": "67200005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ショートスリーブ(半袖)",
+                "display_order": "67200006",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "レディース",
+                "display_order": "67200007",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "ポロシャツ": {
+        "subcategory": [
+            {
+                "category_name": "ポロシャツ",
+                "display_order": "67300001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "ニットシャツ": {
+        "subcategory": [
+            {
+                "category_name": "スリムフィット",
+                "display_order": "67400001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "レギュラーフィット",
+                "display_order": "67400002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "カジュアル",
+                "display_order": "67400003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ショートスリーブ(半袖)",
+                "display_order": "67400004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "タイトフィット",
+                "display_order": "67400005",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "半袖": {
+        "subcategory": [
+            {
+                "category_name": "半袖",
+                "display_order": "67500001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "シャツジャケット": {
+        "subcategory": [
+            {
+                "category_name": "シャツジャケット",
+                "display_order": "67600001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "ネクタイ": {
+        "subcategory": [
+            {
+                "category_name": "ネクタイ",
+                "display_order": "67700001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "バッグ": {
+        "subcategory": [
+            {
+                "category_name": "バッグ",
+                "display_order": "67900001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "ウィメンズパンツ": {
+        "subcategory": [
+            {
+                "category_name": "スキニー",
+                "display_order": "68100001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "スリム",
+                "display_order": "68100002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ストレート",
+                "display_order": "68100003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "サブリナ",
+                "display_order": "68100004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "クロップド",
+                "display_order": "68100005",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "テーパード",
+                "display_order": "68100006",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ブーツカット",
+                "display_order": "68100007",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ワイド",
+                "display_order": "68100008",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "メンズパンツ": {
+        "subcategory": [
+            {
+                "category_name": "ストレート",
+                "display_order": "68200001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "テーパード",
+                "display_order": "68200002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "スリム",
+                "display_order": "68200003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "スリムテーパード",
+                "display_order": "68200004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ハーフパンツ",
+                "display_order": "68200005",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "ドレス": {
+        "subcategory": [
+            {
+                "category_name": "ドレス",
+                "display_order": "69100001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "その他",
+                "display_order": "69100002",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "婦人靴": {
+        "subcategory": [
+            {
+                "category_name": "プレーンパンプス",
+                "display_order": "70100001",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "デザインパンプス",
+                "display_order": "70100002",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "オープンパンプス",
+                "display_order": "70100003",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ストラップパンプス",
+                "display_order": "70100004",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "サンダル・ミュール",
+                "display_order": "70100005",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ショートブーツ・ブーティ",
+                "display_order": "70100006",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ハーフブーツ",
+                "display_order": "70100007",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ロングブーツ",
+                "display_order": "70100008",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "スニーカー",
+                "display_order": "70100009",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "カジュアル",
+                "display_order": "70100010",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ローファー・モカシン",
+                "display_order": "70100011",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "バレエシューズ",
+                "display_order": "70100012",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "レイン",
+                "display_order": "70100013",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "ウォーキング",
+                "display_order": "70100014",
+                "LMK": "WOMEN"
+            }
+        ]
+    },
+    "同梱アイテム": {
+        "subcategory": [
+            {
+                "category_name": "同梱アイテム",
+                "display_order": "90100001",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "特定CSアイテム": {
+        "subcategory": [
+            {
+                "category_name": "特定CSアイテム(クーポン)",
+                "display_order": "90200001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "特定CSアイテム(カタログ)",
+                "display_order": "90200002",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "サービス": {
+        "subcategory": [
+            {
+                "category_name": "メッセージカード",
+                "display_order": "90300001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ショッパー",
+                "display_order": "90300002",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "メッセージカード(無料)",
+                "display_order": "90300003",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "有料メッセージカード",
+                "display_order": "90300004",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "ショッパー(無料)",
+                "display_order": "90300005",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "裄丈詰め加工",
+                "display_order": "90300011",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "修理",
+                "display_order": "90300012",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "加工サービス(未使用)",
+                "display_order": "90300013",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "オーダーシャツオプション",
+                "display_order": "90300014",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "裾直し",
+                "display_order": "90300021",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "加工サービス(不備)",
+                "display_order": "90300099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "エラー": {
+        "subcategory": [
+            {
+                "category_name": "未設定",
+                "display_order": "99900001",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "移行エラー",
+                "display_order": "99900099",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#キッズ": {
+        "subcategory": [
+            {
+                "category_name": "#トップス(キッズ)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ボトムス(キッズ)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ワンピース(キッズ)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#アウター(キッズ)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#小物･雑貨(キッズ)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#シューズ(キッズ)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#キッズウェアその他",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ブランケット(キッズ)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#バッグ",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#おもちゃ(キッズ)",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#ベビー": {
+        "subcategory": [
+            {
+                "category_name": "#トップス(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ボトムス(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#アウター(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#小物･雑貨(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#シューズ(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ベビーウェアその他",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ロンパース(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ママバッグ・グッズ類",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ブランケット(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#スタイ・ビブ",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#おもちゃ(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#食器・カトラリー",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#スキンケアグッズ",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ギフトセット",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            },
+            {
+                "category_name": "#ワンピース(ベビー)",
+                "display_order": "99999999",
+                "LMK": "KIDS"
+            }
+        ]
+    },
+    "#ブック": {
+        "subcategory": [
+            {
+                "category_name": "#写真集",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#絵本",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#カルチャー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#エチケットケア": {
+        "subcategory": [
+            {
+                "category_name": "#オーラルケア",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#デリケートケア",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#エチケットケアその他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#雑貨": {
+        "subcategory": [
+            {
+                "category_name": "#キーホルダー",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "#モバイルアクセサリー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#スマホケース",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#傘",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "#チャーム",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "#扇子",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "#カードケース",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "#パスケース",
+                "display_order": "99999999",
+                "LMK": "WOMEN"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#ライフスタイルグッズ": {
+        "subcategory": [
+            {
+                "category_name": "#キッチン小物",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#インテリア",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#バス・トイレグッズ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ランドリーグッズ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ルームフレグランス",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ブランケット",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#リラックス＆リフレッシュグッズ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ハンカチ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#タオル",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#クッション・寝具",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#ボトムス(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#ロングパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ハーフパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#オールインワン",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#カーゴパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#チノパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#バギーパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#スキニー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#デニムパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#デニムショートパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ベーシックパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#スウェットパンツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#帽子(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#ハット",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ニット帽",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ベレー帽",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#キャップ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#バッグ(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#リュック",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ショルダーバッグ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ボストンバッグ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#トートバッグ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ポーチ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#クラッチバッグ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#キャリーバッグ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#キャンバスバッグ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#インナー(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#アンダーウェア",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ソックス",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#小物(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#リング",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ピアス",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ネックレス",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ブレスレット・バングル",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ベルト",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#サングラス",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#メガネ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ストール・マフラー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#グローブ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#腕時計",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#ルームウェア(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#トップス",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ボトム",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#小物",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ガウン",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#セットアイテム(ルームウェア)",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#アウター(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#ジャケット",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ブルゾン",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#トレンチコート",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ダッフルコート",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#Pコート",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ダウン",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#パーカー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#プルオーバー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ガウン",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ベスト",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ライダース",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ウールコート",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ニットアウター",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#モッズコート",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#レインコート",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#メンズその他": {
+        "subcategory": [
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#シューズ(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#ブーツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ショートブーツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#スニーカー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#レインシューズ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#サンダル",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ルームシューズ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ドレスシューズ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#カジュアルシューズ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#トップス(メンズ)": {
+        "subcategory": [
+            {
+                "category_name": "#ニット",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#Tシャツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#カットソー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#タンクトップ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#カーディガン",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#シャツ",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#ミュージック": {
+        "subcategory": [
+            {
+                "category_name": "#CD",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#レコード",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#食品・サプリメント": {
+        "subcategory": [
+            {
+                "category_name": "#食品",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#サプリメント",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#食品・サプリメントその他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#ステーショナリー": {
+        "subcategory": [
+            {
+                "category_name": "#ペン･ペンケース",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ノート･ファイル",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ダイアリー",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    },
+    "#アート＆ピクチャー": {
+        "subcategory": [
+            {
+                "category_name": "#ポップアート",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#ストリートアート",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            },
+            {
+                "category_name": "#その他",
+                "display_order": "99999999",
+                "LMK": "UNISEX"
+            }
+        ]
+    }
+}
