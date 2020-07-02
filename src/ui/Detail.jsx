@@ -113,215 +113,19 @@ const genre = ["アウター", "ベスト", "ブルゾン", "ポンチョ", "ガ
 const status = ['予定商品', 'ささげ済み', '未公開', '予約販売', '予約販売停止', '販売中', 'SALE', '販売終了', 'ノベルティ', '公開終了'];
 const publicStatus = ['予約販売', '予約販売停止', '販売中', 'SALE', '販売終了'];
 const previewStatus = ['予約販売', '販売中',]
-const itemDetailText = `<b>【デザイン】</b><br><span>・XLARGE×Championのコラボレーションアイテム。</span><br><span>・フロントにXLARGEのスタンダードロゴをプリントしたベーシックで使い勝手の良いデザイン。</span><br><span>・同色を使用したショートパンツ(101202031001)とのSET UP展開。</span><br><br><b>【スタイリング提案】</b><br><span>・シンプルなデザインのTシャツはオーバーサイズで、カーゴパンツなどを合わせたストリート感のあるコーディネートがオススメ。</span><br><br><b>【特徴】</b><br><span>・透け感:なし</span><br><span>・裏地:なし</span><br><span>・光沢:なし</span><br><span>・生地の厚さ:やや厚手</span><br><span>・伸縮性:なし</span><br><span>・シルエット:スタンダード</span><br><br><b>【CHAMPION】</b><br><span>1919年、サイモン・フェインブルームによってニューヨーク州ロチェスターに設立。</span><br><span>米軍の訓練用ウエアや大学のアスレチックウエアとして注目された後、数々のオフィシャルスポーツウエアやユニフォームを手がけることに。</span><br><span>チャンピオンのウエアは、デザインや機能性に優れ、プロリーグも愛用するハイクオリティーなアイテムとして愛され続けている。</span><br><br><br><b>【取り扱い注意事項】</b><br><span>素材の特性上、汗や雨に濡れた場合、色にじみ・移染の恐れが有ります。濡れた場合は素早く拭き取り乾かして下さい。</span><br><br><b>※この商品は海外配送対応を行っておりませんので、予めご了承ください。</b><br><b>※画像の商品は光の照射や角度により、実物と色味が異なる場合がございます。</b><br><b>また表示のサイズ感と実物は若干異なる場合もございますので、予めご了承ください。</b><br>`;
-const itemTitleText = `【XLARGE×Champion】REVERSE WEAVE S/S TEE`;
-let sizeTableText =
-    `サイズ      |着丈(CB)    |肩巾     |身巾    |袖丈
-S{}            |70.5            |44        |46.5    |17
-M{}            |72              |47.5      |51.5   |17.5
-L{}            |75.5            |51         |55.5   |19
-XL{}           |79.5           |58        |60.5   |20`;
-const imgList = [
-    {
-        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a001.jpg',
-        id: 'XLE0120M0040_pz_a001',
-        title: '',
-        alt: 'alt 123',
-        representive: 'ブラック',
-    },
-    {
-        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a002.jpg',
-        id: 'XLE0120M0040_pz_a002',
-        title: 'モデル175cm',
-        alt: 'alt hoge',
-        representive: 'オレンジ',
-    },
-    {
-        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a003.jpg',
-        id: 'XLE0120M0040_pz_a003.',
-        title: 'モデル175cm',
-        alt: 'alt piyo',
-        representive: '',
-    },
-    {
-        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a004.jpg',
-        id: 'XLE0120M0040_pz_a004',
-        title: 'モデル175cm',
-        alt: '',
-        representive: '',
-    },
-    {
-        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a005.jpg',
-        id: 'XLE0120M0040_pz_a005',
-        title: 'モデル175cm',
-        alt: '',
-        representive: '',
-    },
-    {
-        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a006.jpg',
-        id: 'XLE0120M0040_pz_a006',
-        title: 'モデル175cm',
-        alt: '',
-        representive: '',
-    },
-    {
-        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a007.jpg',
-        id: 'XLE0120M0040_pz_a007',
-        title: 'モデル175cm',
-        alt: '',
-        representive: '',
-    },
-    {
-        src: 'https://calif.cc/img/item/XLE01/XLE0120M0040/XLE0120M0040_pz_a008.jpg',
-        id: 'XLE0120M0040_pz_a008',
-        title: 'モデル175cm',
-        alt: '',
-        representive: '',
-    }
-];
-
-const variants = [
-    {
-        color: 'ホワイト',
-        color_id: 'xxx',
-        size: [
-            {
-                label: 'S',
-                stock: 10,
-                reserveStock: 0,
-                supplyPeriod: '',
-                reseve: false,
-                visible: true,
-                jancode: '10492134123',
-            },
-            {
-                label: 'M',
-                stock: 3,
-                reserveStock: 0,
-                supplyPeriod: '',
-                reseve: false,
-                visible: true,
-                jancode: '10492134123',
-            },
-            {
-                label: 'L',
-                stock: 0,
-                reserveStock: 0,
-                supplyPeriod: '',
-                reseve: false,
-                visible: true,
-                jancode: '10492134123',
-            },
-            {
-                label: 'XL',
-                stock: 0,
-                reserveStock: 0,
-                supplyPeriod: '2020-09上旬',
-                reseve: false,
-                visible: true,
-                jancode: '10492134123',
-            }
-        ]
-    },
-    {
-        color: 'ブラック',
-        color_id: 'yyy',
-        size: [
-            {
-                label: 'S',
-                stock: 10,
-                reserveStock: 0,
-                supplyPeriod: '',
-                reseve: false,
-                visible: true,
-                jancode: '10492134123',
-            },
-            {
-                label: 'M',
-                stock: 3,
-                reserveStock: 0,
-                supplyPeriod: '',
-                reseve: false,
-                visible: true,
-                jancode: '10492134123',
-            },
-            {
-                label: 'L',
-                stock: 0,
-                reserveStock: 0,
-                supplyPeriod: '',
-                reseve: false,
-                visible: true,
-                jancode: '10492134123',
-            },
-            {
-                label: 'XL',
-                stock: 0,
-                reserveStock: 0,
-                supplyPeriod: '',
-                reseve: false,
-                visible: false,
-                jancode: '10492134123',
-            }
-        ]
-    },
-    {
-        color: 'オレンジ',
-        color_id: 'zzz',
-        size: [
-            {
-                label: 'ワンサイズ',
-                stock: 0,
-                reserveStock: 0,
-                supplyPeriod: '',
-                reseve: false,
-                visible: true,
-                jancode: '10492134123',
-            }
-        ]
-    }
-];
 const variantsHeader = ['カラー', 'サイズ', '納入時期', '予約在庫', '在庫', '販売形式', '表示', 'JANコード'];
 const relatedItems = ['', '', '', '', '', '', '', '', '', ''];
-const sizeHeader = ['サイズ', '着丈(CB)', '肩巾', '身巾', '袖丈'];
 export default function Detail() {
     let { id } = useParams();
     const editor = useRef(null);
     //states
-    const [sd, setSasage] = useState(   //mainSatate localstorageがあればレストア 
-        {
-            brand: '',
-            category: '',
-            compareAt: 5000,
-            detail: itemDetailText,
-            preview: false,
-            fabric: '麺100%',
-            genre: '',
-            productType: '予定商品',
-            images: imgList,
-            bsItemId: 'bsItemId',
-            madeby: '中国',
-            price: 6050,
-            relatedItem: relatedItems,
-            return: '',
-            scheduled: false,
-            small_genre: '',
-            sizeTableHTML: '',
-            sizeTableId: '',
-            sizeTableText: sizeTableText,
-            saleStart: '2020-08-10 10:00:00',
-            comingSoonStart: '2020-08-1 12:00:00',
-            title: itemTitleText,
-            variant: variants,
-            weight: '350',
-            lastModified: new Date(),
-        }
-    );
-    const [si, setSI] = React.useState(sd.images[0]);  //Selected Iamge
+    const [sd, setSasage] = useState({ images: [], variant: [] });
+    const [si, setSI] = React.useState({ src: process.env.PUBLIC_URL + "/noimg.png", id: null, title: '', alt: '', representive: '' });  //Selected Iamge
     const [flag, setFlag] = React.useState({ upload: false, sent: false });  // switch for upload mode and view Image mode
     const [supplyDate, setSupplyDate] = React.useState();
     const classes = useStyles();
     useEffect(() => {
+        getSasage();
         let options = [];
         options.push(<MenuItem value={'未定'}>未定</MenuItem>);
         options.push(<MenuItem value={'リリース中'}>リリース中</MenuItem>);
@@ -365,6 +169,17 @@ export default function Detail() {
             }
             reader.readAsArrayBuffer(file);
         });
+    }
+    const getSasage = (event) => {
+        const apiUrl = 'http://localhost:7071/api/etl/sasage';
+        axios.post(apiUrl + '/getDetail/' + id, JSON.stringify(sd, null, 4))
+            .then(async function (response) {
+                console.log(response.data);
+                setSasage(response.data);
+                setSI(response.data.images[0]);
+            }).catch(async function (err) {
+                console.log(err);
+            });
     }
     const sendSasage = (event) => {
         if (!flag.sent) {
@@ -412,7 +227,7 @@ export default function Detail() {
             outputHTML += "</TABLE>";
         }
         setSasage({ ...sd, sizeTableHTML: outputHTML })
-        console.log(sd);
+        //console.log(sd);
     }
     const setValue = (event) => {
         //console.log(event);
@@ -567,8 +382,8 @@ export default function Detail() {
                                     <Box className={classes.mainImage}>
                                         <ReactImageMagnify {...{
                                             smallImage: {
-                                                alt: si.alt,
-                                                src: si.src,
+                                                alt: si.alt || "",
+                                                src: si.src || "",
                                                 isFluidWidth: true,
                                             },
                                             largeImage: {
@@ -892,7 +707,7 @@ export default function Detail() {
                                 <TableCell align="center" key={index}>{head}</TableCell>
                             ))}
                         </TableHead>
-                        {variants.map((item, count) => (
+                        {sd.variant.map((item, count) => (
                             <TableBody key={count}>
                                 {
                                     item.size.map((vari, index) => (
