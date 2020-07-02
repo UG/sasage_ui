@@ -143,6 +143,8 @@ export default function Detail() {
     useEffect(() => {
         init();
     }, []);
+    ;
+
     const handleImageSave = (event) => {
         console.log(event);
         const apiUrl = 'http://localhost:7071/api/etl/sasage';
@@ -402,7 +404,7 @@ export default function Detail() {
                                             <Grid item xs={9}>
                                                 <ToggleButtonGroup
                                                     key={si.id}
-                                                    value={si.representive}
+                                                    value={si.representive || ""}
                                                     onChange={setRepresentive}
                                                     exclusive
                                                     aria-label="text formatting">
@@ -420,8 +422,8 @@ export default function Detail() {
                                             </Grid>
                                         </Grid>
                                     </Box>
-                                    <TextField id={'title-' + si.id} label="モデル情報" variant="standard" fullWidth defaultValue={si.title} onChange={setTitle} className={classes.textField} />
-                                    <TextField id={'alt-' + si.id} label="ALT 文言" variant="standard" fullWidth defaultValue={si.alt} onChange={setAlt} className={classes.textField} />
+                                    <TextField id={'title-' + si.id} label="モデル情報" variant="standard" fullWidth value={si.title || ""} onChange={setTitle} className={classes.textField} />
+                                    <TextField id={'alt-' + si.id} label="ALT 文言" variant="standard" fullWidth value={si.alt || ""} onChange={setAlt} className={classes.textField} />
                                 </div>
                             }
                             <Box className={classes.verticalSpace} />
@@ -486,7 +488,7 @@ export default function Detail() {
                                 variant="filled"
                                 onBlur={setValue}
                                 className={classes.textField}
-                                defaultValue={sd['sizeTableText']}
+                                value={sd['sizeTableText']}
                             />
                             <Box className={classes.verticalTiny}></Box>
                             <Button variant="contained" color="primary" fullWidth onClick={createSizeTableHTML}><Typography variant="body1"> ↓サイズテーブル生成 </Typography></Button>
@@ -504,24 +506,24 @@ export default function Detail() {
                         <Typography>関連アイテム</Typography>
                         <Box className={classes.border}>
                             {relatedItems.map((itemId, idx) => (
-                                <TextField id={'relatedItems-' + idx} label={'関連アイテムID-' + (idx + 1)} defaultValue={itemId} fullWidth onBlur={(event) => (setRelatedItem(event, idx))} className={classes.textField} />
+                                <TextField id={'relatedItems-' + idx} label={'関連アイテムID-' + (idx + 1)} value={itemId} fullWidth onBlur={(event) => (setRelatedItem(event, idx))} className={classes.textField} />
                             ))}
                         </Box>
                     </Grid>
                     <Grid item xs={6}>
                         <Container>
                             <Box>
-                                <TextField id={'title'} label="タイトル" variant="standard" defaultValue={sd.title} onBlur={setValue} fullWidth className={classes.textField} />
+                                <TextField id={'title'} label="タイトル" variant="standard" value={sd.title || ""} onBlur={setValue} fullWidth className={classes.textField} />
                             </Box>
                             <Grid container>
                                 <Grid item xs={4}>
-                                    <TextField id="price" label="価格" variant="standard" fullWidth defaultValue={sd.price} onBlur={setNumric} className={classes.textField} />
+                                    <TextField id="price" label="価格" variant="standard" fullWidth value={sd.price || ""} onBlur={setNumric} className={classes.textField} />
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <TextField id="compareAt" label="セール価格" variant="standard" fullWidth defaultValue={sd.compareAt} onBlur={setNumric} onChange={calcRatio} className={classes.textField} />
+                                    <TextField id="compareAt" label="セール価格" variant="standard" fullWidth value={sd.compareAt || ""} onBlur={setNumric} onChange={calcRatio} className={classes.textField} />
                                 </Grid>
                                 <Grid item xs={4}>
-                                    <TextField id="discountRatio" label="ディスカウント率" variant="standard" fullWidth defaultValue={sd.discountRatio} onBlur={setValue} className={classes.textField} />
+                                    <TextField id="discountRatio" label="ディスカウント率" variant="standard" fullWidth value={sd.discountRatio || ""} onBlur={setValue} className={classes.textField} />
                                 </Grid>
                             </Grid>
                             <Box>
@@ -533,7 +535,7 @@ export default function Detail() {
                                                 labelId="productTypeLabel"
                                                 id="productType"
                                                 fullWidth
-                                                value={sd.productType}
+                                                value={sd.productType || ""}
                                                 onChange={(event) => (setValue({ target: { id: 'productType', value: event.target.value } }))}
                                             >
                                                 <MenuItem value="none"></MenuItem>
@@ -565,7 +567,7 @@ export default function Detail() {
                                                     id="saleStartDate"
                                                     label="販売開始日付"
                                                     format="yyyy-MM-dd"
-                                                    value={new Date(Date.parse(sd.saleStart))}
+                                                    value={new Date(Date.parse(sd.saleStart || 0))}
                                                     onChange={(date) => (setDateTime(date, 'saleStart'))}
                                                     disabled={sd.scheduled ? false : true}
                                                     KeyboardButtonProps={{
@@ -581,7 +583,7 @@ export default function Detail() {
                                                         id="salestartTime"
                                                         label="販売開始時刻"
                                                         ampm={false}
-                                                        value={new Date(Date.parse(sd.saleStart))}
+                                                        value={new Date(Date.parse(sd.saleStart || 0))}
                                                         onChange={(date) => (setDateTime(date, 'saleStart'))}
                                                         disabled={sd.scheduled ? false : true}
                                                         className={classes.datePicker}
@@ -613,7 +615,7 @@ export default function Detail() {
                                                     id="previewStartDate"
                                                     label="告知開始日付"
                                                     format="yyyy-MM-dd"
-                                                    value={new Date(Date.parse(sd.comingSoonStart))}
+                                                    value={new Date(Date.parse(sd.comingSoonStart || 0))}
                                                     onChange={(date) => (setDateTime(date, 'comingSoonStart'))}
                                                     disabled={sd.preview ? false : true}
                                                     KeyboardButtonProps={{
@@ -629,7 +631,7 @@ export default function Detail() {
                                                         id="previewStartTime"
                                                         label="告知開始時刻"
                                                         ampm={false}
-                                                        value={new Date(Date.parse(sd.comingSoonStart))}
+                                                        value={new Date(Date.parse(sd.comingSoonStart || 0))}
                                                         onChange={(date) => (setDateTime(date, 'comingSoonStart'))}
                                                         disabled={sd.preview ? false : true}
                                                         KeyboardButtonProps={{
@@ -669,7 +671,7 @@ export default function Detail() {
                                         <Select
                                             labelId="brand-select"
                                             id="brand"
-                                            defaultValue={sd['brand']}
+                                            value={sd['brand']}
                                             fullWidth
                                             onChange={setValue}
                                         >
@@ -684,18 +686,18 @@ export default function Detail() {
                                         <Select
                                             labelId="big-genre"
                                             id="big-genre"
-                                            defaultValue={sd['genre']}
+                                            value={sd['genre']}
                                             fullWidth
                                             onChange={setValue}
                                         >
                                         </Select>
                                     </FormControl>
                                 </Box>
-                                <TextField id="bsItemId" label="アイテムコード" variant="standard" fullWidth disabled={true} defaultValue={sd.bsItemId} onBlur={setValue} className={classes.textField} />
-                                <TextField id="fabric" label="素材" variant="standard" fullWidth defaultValue={sd.fabric} onBlur={setValue} className={classes.textField} />
-                                <TextField id="manifactured" label="原産国" variant="standard" fullWidth defaultValue={sd.madeby} onBlur={setValue} className={classes.textField} />
-                                <TextField id="return" label="返品について" variant="standard" fullWidth defaultValue={sd.return} onBlur={setValue} className={classes.textField} />
-                                <TextField id="weight" label="重量" variant="standard" fullWidth defaultValue={sd.weight} onBlur={setValue} className={classes.textField} />
+                                <TextField id="bsItemId" label="アイテムコード" variant="standard" fullWidth disabled={true} value={sd.bsItemId || ""} onBlur={setValue} className={classes.textField} />
+                                <TextField id="fabric" label="素材" variant="standard" fullWidth value={sd.fabric || ""} onBlur={setValue} className={classes.textField} />
+                                <TextField id="manifactured" label="原産国" variant="standard" fullWidth value={sd.madeby || ""} onBlur={setValue} className={classes.textField} />
+                                <TextField id="return" label="返品について" variant="standard" fullWidth value={sd.return || ""} onBlur={setValue} className={classes.textField} />
+                                <TextField id="weight" label="重量" variant="standard" fullWidth value={sd.weight || ""} onBlur={setValue} className={classes.textField} />
                             </Box>
                         </Container>
                     </Grid>
@@ -725,10 +727,10 @@ export default function Detail() {
                                                 </Select>
                                             </TableCell>
                                             <TableCell align="center">
-                                                <TextField label="予約在庫" variant="standard" defaultValue={sd['variant'][count]['size'][index]['reserveStock']} onBlur={(event) => (setVariantValue(count, index, event))} className={classes.stockTextWidth} />
+                                                <TextField label="予約在庫" variant="standard" value={sd['variant'][count]['size'][index]['reserveStock']} onBlur={(event) => (setVariantValue(count, index, event))} className={classes.stockTextWidth} />
                                             </TableCell>
                                             <TableCell align="center">
-                                                <TextField label="在庫" variant="standard" defaultValue={sd['variant'][count]['size'][index]['stock']} onBlur={(event) => (setVariantValue(count, index, event))} className={classes.stockTextWidth} />
+                                                <TextField label="在庫" variant="standard" value={sd['variant'][count]['size'][index]['stock']} onBlur={(event) => (setVariantValue(count, index, event))} className={classes.stockTextWidth} />
                                             </TableCell>
                                             <TableCell align="center">{vari['reserve'] ? <IconButton key={"visble-" + count + "-" + index} onClick={() => (changeSaleMode(count, index))}><AccessAlarm /></IconButton> :
                                                 <IconButton key={"visible-" + count + "-" + index} onClick={() => (changeSaleMode(count, index))}><MonetizationOn /></IconButton>}</TableCell> <TableCell align="center">{sd.variant[count].size[index].visible ?
